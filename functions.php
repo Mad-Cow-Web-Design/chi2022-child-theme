@@ -27,31 +27,11 @@ function madcow_disable_page_title( $return ) {
   return false;
 }
 
-
 // REGISTER ALL CUSTOM SHORTCODES
 add_action( 'init', 'madcowweb_shortcodes');
 function madcowweb_shortcodes(){
-    add_shortcode('instructor-map', 'instructor_map');
     add_shortcode('blog-post-products', 'blog_post_products');
 }
-
-function instructor_map() {
-    $instructors = get_users( array( 'role__in' => array( 'instructor' ) ) );
-    $html = '<div class="acf-map" data-zoom="16">';
-    foreach ( $instructors as $instructor ) :
-        // Creating the var instructor_id to use with ACF Pro
-        $instructor_id = 'user_'. esc_html( $instructor->ID );
-        $instructor_name = $instructor->display_name;
-        $location = get_field('location', $instructor_id);
-        if( $location['lat'] && $location['lng'] ) :
-            $html .= '<div id="' . $instructor_name . '" class="marker" data-lat="' . $location["lat"] . '" data-lng="' . $location["lng"] . '"></div><a href="/instructor/' . $instructor_name . '/"></a>';
-        endif;
-    endforeach;
-    $html .= '</div><!-- end acf map -->';
-
-    return $html;
-}
-
 
 function blog_post_products() {
     $post_products = get_field('post_product', $post_object->ID);
