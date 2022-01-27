@@ -6,16 +6,6 @@
 }
 
 
-/* INSTRUCTOR MAP */
-
-.acf-map {
-    width: 90%;
-    height: 600px;
-    border: #ccc solid 1px;
-    margin: 0 auto;
-}
-
-
 /* SEARCH FORM */
 
 .elementor-search-form--skin-minimal .elementor-search-form__icon {
@@ -40,4 +30,11 @@
 .elementor-search-form__input:-moz-placeholder {
     /* Firefox 18- */
     color: #ffffff;
+}
+
+.footer-top-arrow {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 50px;
 }

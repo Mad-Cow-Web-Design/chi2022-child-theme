@@ -92,3 +92,12 @@ function madcowweb_header_snippet() { ?>
   <!-- THIS ADDS SUPPORT FOR FONT AWESOME -->
 <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
 <?php }
+
+add_action('wp_body_open','back_to_top_anchor');
+function back_to_top_anchor(){
+    echo '<span id="top"></span>';
+}
+add_action ('get_footer', 'back_to_top_image');
+function back_to_top_image() { ?>
+    <a class="footer-top-arrow" href="#top"><img src="/wp-content/uploads/2022/01/back-to-top-icon.png" alt="back to top"></a>
+<?php }
