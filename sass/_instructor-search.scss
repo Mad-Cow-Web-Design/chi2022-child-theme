@@ -150,6 +150,11 @@
 
 .madcow-instructor-list-item-article-left {
     margin-right: 1rem;
+    img {
+        object-fit: cover;
+        height: 100px;
+        width: 100px;
+    }
 }
 
 .madcow-instructor-list-item-article-right {
