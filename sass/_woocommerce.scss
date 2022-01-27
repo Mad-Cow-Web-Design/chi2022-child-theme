@@ -55,7 +55,7 @@
 
 .variations .value select {
     border-radius: 0;
-    color: #19AECB;
+    color: #4a4a4a;
 }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs {
@@ -277,7 +277,7 @@ input.text[type=number] {
 .fab-section {
     background-color: #19AECB;
     left: 50%;
-    padding: 20px 10px 70px;
+    padding: 20px 10px;
     margin-left: -50vw;
     margin-right: -50vw;
     max-width: 100vw;
@@ -285,6 +285,7 @@ input.text[type=number] {
     right: 50%;
     width: 100vw;
     font-family: 'Lato', sans-serif;
+    margin-bottom: 70px;
 }
 
 .fab-section h2 {
