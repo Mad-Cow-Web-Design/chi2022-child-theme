@@ -458,20 +458,17 @@ h2.elementor-heading-title:after {
 }
 
 .map-legend {
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
   display: flex;
 }
 .map-legend div {
   padding-top: 5px;
   padding-bottom: 8px;
-  text-align: center !important;
   flex-grow: 1;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
   -webkit-box-flex: 0;
@@ -480,95 +477,56 @@ h2.elementor-heading-title:after {
   flex-shrink: 0;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   justify-content: center;
+  color: #4a4a4a;
+  font-size: 12px;
+  line-height: 1.3;
 }
 .map-legend div figure {
   height: 24px;
   width: 24px;
 }
-.map-legend div figure em {
-  font-size: 1rem;
-}
-.map-legend img {
+.map-legend div figure img {
   padding-right: 5px;
-  display: inline-block;
-  vertical-align: top;
-  height: auto;
-  width: 100%;
-  max-width: 100%;
 }
 
-.running-legend {
-  background-color: rgba(119, 176, 18, 0.2);
+#madcow-instructors-search-filter-form {
+  display: flex;
+  justify-content: space-between;
+}
+#madcow-instructors-search-filter-form #madcow-instructors-country-list-filter,
+#madcow-instructors-search-filter-form #madcow-instructors-search,
+#madcow-instructors-search-filter-form #madcow-instructors-search-filter-form-submit {
+  width: 33%;
 }
 
-.walking-legend {
-  background-color: rgba(44, 171, 143, 0.2);
+#madcow-instructors-instructor-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .madcow-instructor-list-item {
+  width: 30%;
   position: relative;
-  border: 1px solid #81C723;
   margin-bottom: 1.5rem;
   background-color: white;
-  border-radius: 6px;
   -webkit-box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
   color: #4a4a4a;
   display: block;
-  padding: 1.25rem;
+  padding: 5px;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.75;
 }
 
-.madcow-instructor-list-item-article {
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  text-align: left;
-}
-
-.madcow-instructor-list-item-col {
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
-}
-
-.madcow-instructor-list-item-article-left,
-.madcow-instructor-list-item-article-right {
-  -webkit-box-flex: 0;
-  -ms-flex-positive: 0;
-  flex-grow: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.madcow-instructor-list-item-article-center {
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-}
-
-.madcow-instructor-list-item-article-left {
-  margin-right: 1rem;
-}
-.madcow-instructor-list-item-article-left img {
-  object-fit: cover;
-  height: 100px;
-  width: 100px;
-}
-
-.madcow-instructor-list-item-article-right {
-  margin-left: 1rem;
-}
-.madcow-instructor-list-item-article-right figure {
-  height: 32px;
-  width: 32px;
+.madcow-instructor-list-item-article img.cert-level-icon {
+  height: 30px;
+  width: 30px;
 }
 
 .madcow-instructors-list-button-container {
