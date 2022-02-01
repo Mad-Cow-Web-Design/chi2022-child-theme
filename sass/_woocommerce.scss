@@ -13,6 +13,14 @@
 }
 
 
+/* ARCHIVE PAGES */
+
+.woocommerce .products .product .price {
+    color: #4a4a4a!important;
+    font-size: 12px!important;
+}
+
+
 /* set image width to be the max width of the image file*/
 
 .woocommerce div.product div.images img {
@@ -134,6 +142,8 @@
 }
 
 .single_add_to_cart_button.button.alt,
+.woocommerce .button.mcw-archive-page-button,
+.woocommerce .button.product_type_external,
 .woocommerce #respond input#submit {
     border: 2px solid #19AECB;
     background-color: #fff!important;
@@ -392,6 +402,12 @@ input.text[type=number] {
     padding: 40px;
     height: 300px;
     object-fit: contain;
+}
+
+.woocommerce.archive .products li.product a img {
+    -webkit-box-shadow: 0 0 5px 4px #f5f5f5;
+    -moz-box-shadow: 0 0 5px 4px #f5f5f5;
+    box-shadow: 0 0 5px 4px #f5f5f5;
 }
 
 @media screen and (min-width: 600px) {

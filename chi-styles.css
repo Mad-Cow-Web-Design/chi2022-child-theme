@@ -674,6 +674,12 @@ h2.elementor-heading-title:after {
   font-weight: 600;
 }
 
+/* ARCHIVE PAGES */
+.woocommerce .products .product .price {
+  color: #4a4a4a !important;
+  font-size: 12px !important;
+}
+
 /* set image width to be the max width of the image file*/
 .woocommerce div.product div.images img {
   width: auto;
@@ -790,6 +796,8 @@ h2.elementor-heading-title:after {
 }
 
 .single_add_to_cart_button.button.alt,
+.woocommerce .button.mcw-archive-page-button,
+.woocommerce .button.product_type_external,
 .woocommerce #respond input#submit {
   border: 2px solid #19AECB;
   background-color: #fff !important;
@@ -800,6 +808,8 @@ h2.elementor-heading-title:after {
   font-weight: 700;
 }
 .single_add_to_cart_button.button.alt:hover,
+.woocommerce .button.mcw-archive-page-button:hover,
+.woocommerce .button.product_type_external:hover,
 .woocommerce #respond input#submit:hover {
   border: 2px solid #19AECB;
   background-color: #19AECB !important;
@@ -1042,6 +1052,12 @@ input.text[type=number] {
   padding: 40px;
   height: 300px;
   object-fit: contain;
+}
+
+.woocommerce.archive .products li.product a img {
+  -webkit-box-shadow: 0 0 5px 4px #f5f5f5;
+  -moz-box-shadow: 0 0 5px 4px #f5f5f5;
+  box-shadow: 0 0 5px 4px #f5f5f5;
 }
 
 @media screen and (min-width: 600px) {
