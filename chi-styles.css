@@ -806,6 +806,10 @@ h2.elementor-heading-title:after {
   color: #fff !important;
 }
 
+.single_add_to_cart_button.button.alt {
+  flex-grow: 1;
+}
+
 .qty-nav {
   display: none;
 }
@@ -815,6 +819,7 @@ h2.elementor-heading-title:after {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
+  padding-right: 16px;
 }
 
 .woocommerce div.product form.cart::after,
@@ -822,6 +827,9 @@ h2.elementor-heading-title:after {
   display: none;
 }
 
+.woocommerce .quantity {
+  width: 150px;
+}
 .woocommerce .quantity .mcw-quantity-number .qty {
   width: 45px;
   padding: 10px;
@@ -1065,6 +1073,7 @@ input.text[type=number] {
   }
 }
 .related.products .products li .add_to_cart_button,
+.related.products .products li .button,
 .related.products .products li .star-rating {
   display: none;
 }

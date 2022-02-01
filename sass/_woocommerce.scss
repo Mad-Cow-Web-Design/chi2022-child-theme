@@ -149,6 +149,10 @@
     }
 }
 
+.single_add_to_cart_button.button.alt {
+    flex-grow: 1;
+}
+
 .qty-nav {
     display: none;
 }
@@ -158,6 +162,7 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
+    padding-right: 16px;
 }
 
 .woocommerce div.product form.cart::after,
@@ -166,6 +171,7 @@
 }
 
 .woocommerce .quantity {
+    width: 150px;
     .mcw-quantity-number .qty {
         width: 45px;
         padding: 10px;
@@ -419,6 +425,7 @@ input.text[type=number] {
 }
 
 .related.products .products li .add_to_cart_button,
+.related.products .products li .button,
 .related.products .products li .star-rating {
     display: none;
 }
