@@ -49,7 +49,7 @@
     }
 }
 
-.madcow-instructors-instructor-count {
+#madcow-instructors-instructor-count {
     margin-bottom: 20px;
 }
 
@@ -57,6 +57,8 @@
     width: 90%;
     margin: 0 auto;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     div {
         padding-top: 5px;
         padding-bottom: 8px;
@@ -90,24 +92,30 @@
 }
 
 #madcow-instructors-search-filter-form {
-    display: flex;
-    justify-content: space-between;
+    @media screen and (min-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+    }
     #madcow-instructors-country-list-filter,
     #madcow-instructors-search,
     #madcow-instructors-search-filter-form-submit {
-        width: 33%;
+        @media screen and (min-width: 768px) {
+            width: 33%;
+        }
     }
 }
 
 #madcow-instructors-instructor-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .madcow-instructor-list-item {
     width: 30%;
+    min-width: 325px;
     min-height: 520px;
+    margin-right: 15px;
     position: relative;
     margin-bottom: 1.5rem;
     background-color: white;
