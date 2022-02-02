@@ -49,6 +49,10 @@
     }
 }
 
+.madcow-instructors-instructor-count {
+    margin-bottom: 20px;
+}
+
 .map-legend {
     width: 90%;
     margin: 0 auto;
@@ -143,7 +147,7 @@
     .certification-level {
         display: flex;
         flex-wrap: nowrap;
-        justify-content: flex-start;
+        justify-content: center;
         text-transform: uppercase;
         margin-bottom: 10px;
         img.cert-level-icon {
