@@ -184,9 +184,17 @@
     display: none;
     padding: 10px;
     animation: fadeEffect 1s;
-    &#about {
+    &#About {
         p {
             text-align: justify;
+        }
+    }
+    &#Video {
+        iframe {
+            border: 6px solid #fff;
+            -webkit-box-shadow: 0 0 5px 5px #c5c2c2;
+            -moz-box-shadow: 0 0 5px 5px #c5c2c2;
+            box-shadow: 0 0 5px 5px #c5c2c2;
         }
     }
 }

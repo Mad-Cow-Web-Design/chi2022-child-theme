@@ -18,7 +18,6 @@ $author_id = get_the_author_meta('ID');
 $author_first_name = $curauth->first_name;
 $ins_bio = get_field('bio', 'user_'. $author_id );
 $ins_background = get_field('instructor_background_hero_image', 'option');
-$ins_short_description  = get_field('short_description', 'user_'. $author_id);
 $ins_youtube_video_url  = get_field('youtube_video_url', 'user_'. $author_id);
 $ins_source_photo  = get_field('source_photo', 'user_'. $author_id);
 $ins_workshop_text  = get_field('workshop_text', 'user_'. $author_id);
@@ -66,7 +65,6 @@ $ins_regional_director  = get_field('regional_director', 'user_'. $author_id);
             </div>
             <div class="right">
                 <h2><?php echo $curauth->nickname; ?></h2>
-                <p><?php echo $ins_short_description; ?></p>
                 <h3>Connect with <?php echo $author_first_name; ?></h3>
                 <div class="instructor-social">
                     <?php if ($ins_facebook) : ?>
@@ -97,8 +95,11 @@ $ins_regional_director  = get_field('regional_director', 'user_'. $author_id);
             </div>
         </div><!-- End instructor header -->
         <div class="tab">
+            <?php if ($ins_youtube_video_url) : ?>
+            <button class="tablinks active" onclick="openDetails(event, 'Video')" id="defaultOpen">Instructor Video</button>
+            <?php endif; ?>
             <?php if ($ins_bio) : ?>
-            <button class="tablinks active" onclick="openDetails(event, 'About')" id="defaultOpen">About</button>
+            <button class="tablinks active" onclick="openDetails(event, 'About')">About</button>
             <?php endif; ?>
             <?php if ($ins_testimonial) : ?>
             <button class="tablinks" onclick="openDetails(event, 'Testimonials')">Testimonials</button>
@@ -106,7 +107,11 @@ $ins_regional_director  = get_field('regional_director', 'user_'. $author_id);
             <button class="tablinks" onclick="openDetails(event, 'Contact')">Contact</button>
         </div>
         <!-- Tab content -->
-        <div id="About" class="tabcontent" style="display: block;">
+        <div id="Video" class="tabcontent" style="display: block;">
+        <iframe width="560" height="315" src="<?php echo $ins_youtube_video_url; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div id="About" class="tabcontent">
         <p><?php echo $ins_bio; ?></p>
         </div>
 

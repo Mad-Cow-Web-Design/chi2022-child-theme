@@ -101,3 +101,47 @@ add_action ('get_footer', 'back_to_top_image');
 function back_to_top_image() { ?>
     <a class="footer-top-arrow" href="#top"><img src="/wp-content/uploads/2022/01/back-to-top-icon.png" alt="back to top"></a>
 <?php }
+
+
+add_filter('acf/load_value/key=field_61d8b086552d9', 'set_testimonial_start_rows', 20, 3);
+function set_testimonial_start_rows($value, $post_id, $field) {
+    if (!$value) {
+      $row = array(
+        'field_61d8af3a349db' => NULL,
+        'field_61d8af51349dc' => NULL,
+        'field_61d8af7a349dd' => NULL
+      );
+      $number_of_rows = 1;
+      $value = array_fill(0, $number_of_rows, $row);
+    }
+    return $value;
+  }
+
+add_filter('acf/load_value/key=field_61d8b005349e0', 'set_races_start_rows', 20, 3);
+function set_races_start_rows($value, $post_id, $field) {
+    if (!$value) {
+        $row = array(
+        'field_61d8afdf349df' => NULL,
+        'field_61d8b021349e1' => NULL,
+        );
+        $number_of_rows = 1;
+        $value = array_fill(0, $number_of_rows, $row);
+    }
+return $value;
+}
+
+add_filter('acf/load_value/key=field_61d8b0f3552dc', 'set_best_races_start_rows', 20, 3);
+function set_best_races_start_rows($value, $post_id, $field) {
+    if (!$value) {
+        $row = array(
+        'field_61d8b0ef552db' => NULL,
+        'field_61d8b12d552dd' => NULL,
+        'field_61d8b143552de' => NULL,
+        'field_61d8b14e552df' => NULL,
+        'field_61d8b15f552e0' => NULL
+        );
+        $number_of_rows = 1;
+        $value = array_fill(0, $number_of_rows, $row);
+    }
+return $value;
+}

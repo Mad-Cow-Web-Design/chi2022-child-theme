@@ -1,0 +1,67 @@
+.page-id-250 {
+    .acf-fields {
+        .acf-tab-wrap {
+            background: none;
+            .acf-tab-group {
+                border: none;
+                li {
+                    &.active {
+                        border-bottom: 4px solid #19AECB;
+                    }
+                    &:not(.active) {
+                        background: none;
+                    }
+                    a {
+                        background: none;
+                        border: none;
+                    }
+                }
+            }
+        }
+        .acf-field {
+            .acf-input-wrap {
+                input {
+                    border-radius: 0;
+                }
+            }
+            input[type='radio']:checked:after {
+                width: 15px;
+                height: 15px;
+                border-radius: 15px;
+                top: -3px;
+                left: -1px;
+                position: relative;
+                background-color: #19AECB;
+                content: '';
+                display: inline-block;
+                visibility: visible;
+                border: 2px solid white;
+            }
+            .acf-repeater {
+                .acf-table {
+                    margin-bottom: 40px;
+                }
+                .acf-actions {
+                    text-align: left;
+                    .acf-button {
+                        border: 2px solid #19AECB;
+                        background-color: #fff;
+                        color: #19AECB;
+                        border-radius: 0;
+                        padding: 11px 35px;
+                        font-size: 15px;
+                        font-weight: 700;
+                        &:hover {
+                            border: 2px solid #19AECB;
+                            background-color: #19AECB;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .acf-form-submit {
+        padding-left: 12px;
+    }
+}

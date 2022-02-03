@@ -58,8 +58,8 @@ h2.comment-reply-title {
 h2.elementor-heading-title:after {
   position: absolute;
   content: "";
-  background-color: red;
-  width: 100px;
+  background-color: 19AECB;
+  width: 200px;
   height: 25px;
   left: -5px;
   top: 36px;
@@ -268,8 +268,14 @@ h2.elementor-heading-title:after {
   padding: 10px;
   animation: fadeEffect 1s;
 }
-.tabcontent#about p {
+.tabcontent#About p {
   text-align: justify;
+}
+.tabcontent#Video iframe {
+  border: 6px solid #fff;
+  -webkit-box-shadow: 0 0 5px 5px #c5c2c2;
+  -moz-box-shadow: 0 0 5px 5px #c5c2c2;
+  box-shadow: 0 0 5px 5px #c5c2c2;
 }
 
 @keyframes fadeEffect {
@@ -410,6 +416,62 @@ h2.elementor-heading-title:after {
 .workshop-signup p {
   color: #fff;
   margin-bottom: 50px;
+}
+
+.page-id-250 .acf-fields .acf-tab-wrap {
+  background: none;
+}
+.page-id-250 .acf-fields .acf-tab-wrap .acf-tab-group {
+  border: none;
+}
+.page-id-250 .acf-fields .acf-tab-wrap .acf-tab-group li.active {
+  border-bottom: 4px solid #19AECB;
+}
+.page-id-250 .acf-fields .acf-tab-wrap .acf-tab-group li:not(.active) {
+  background: none;
+}
+.page-id-250 .acf-fields .acf-tab-wrap .acf-tab-group li a {
+  background: none;
+  border: none;
+}
+.page-id-250 .acf-fields .acf-field .acf-input-wrap input {
+  border-radius: 0;
+}
+.page-id-250 .acf-fields .acf-field input[type=radio]:checked:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -3px;
+  left: -1px;
+  position: relative;
+  background-color: #19AECB;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+.page-id-250 .acf-fields .acf-field .acf-repeater .acf-table {
+  margin-bottom: 40px;
+}
+.page-id-250 .acf-fields .acf-field .acf-repeater .acf-actions {
+  text-align: left;
+}
+.page-id-250 .acf-fields .acf-field .acf-repeater .acf-actions .acf-button {
+  border: 2px solid #19AECB;
+  background-color: #fff;
+  color: #19AECB;
+  border-radius: 0;
+  padding: 11px 35px;
+  font-size: 15px;
+  font-weight: 700;
+}
+.page-id-250 .acf-fields .acf-field .acf-repeater .acf-actions .acf-button:hover {
+  border: 2px solid #19AECB;
+  background-color: #19AECB;
+  color: #fff;
+}
+.page-id-250 .acf-form-submit {
+  padding-left: 12px;
 }
 
 /**
