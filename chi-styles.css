@@ -53,6 +53,7 @@ h2.comment-reply-title {
 .site-main {
   max-width: 1140px !important;
   padding: 10px 20px;
+  margin: 0 auto;
 }
 
 h2.elementor-heading-title:after {
@@ -97,6 +98,12 @@ h2.elementor-heading-title:after {
   right: 40px;
   width: 50px;
   z-index: 1;
+}
+
+/* FOOTER */
+.elementor-133 .elementor-element.elementor-element-32ef576 .uael-img-gallery-wrap {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 /* AUTHOR / INSTRUCTOR PAGES */
