@@ -107,30 +107,37 @@ $ins_regional_director  = get_field('regional_director', 'user_'. $author_id);
             <button class="tablinks" onclick="openDetails(event, 'Contact')">Contact</button>
         </div>
         <!-- Tab content -->
-        <div id="Video" class="tabcontent" style="display: block;">
-        <iframe width="560" height="315" src="<?php echo $ins_youtube_video_url; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
+        <?php if ($ins_youtube_video_url) : ?>
+            <div id="Video" class="tabcontent" style="display: block;">
+                <iframe width="560" height="315" src="<?php echo $ins_youtube_video_url; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        <?php endif; ?>
 
-        <div id="About" class="tabcontent">
-        <p><?php echo $ins_bio; ?></p>
-        </div>
+        <?php if ($ins_bio) : ?>
+            <div id="About" class="tabcontent">
+                <p><?php echo $ins_bio; ?></p>
+            </div>
+        <?php endif; ?>
 
-        <div id="Testimonials" class="tabcontent">
-            <?php
-            if( have_rows('testimonial', 'user_'. $author_id) ):
-                while( have_rows('testimonial', 'user_'. $author_id) ) : the_row();
-                    $testimonial_image = get_sub_field('testimonial_image');
-                    $testimonial_text = get_sub_field('testimonial_text');
-                    $testimonial_author = get_sub_field('testimonial_author'); ?>
-                    <div class="testimonial">
-                            <img src="<?php echo $testimonial_image; ?>" alt="<?php echo $testimonial_author; ?>">
-                            <p><?php echo $testimonial_text; ?></p>
-                            <p><?php echo $testimonial_author; ?></p>
-                    </div>
-                <?php endwhile;
-                else :
-            endif; ?>
-        </div>
+        <?php if ($ins_testimonial) : ?>
+            <div id="Testimonials" class="tabcontent">
+                <?php
+                if( have_rows('testimonial', 'user_'. $author_id) ):
+                    while( have_rows('testimonial', 'user_'. $author_id) ) : the_row();
+                        $testimonial_image = get_sub_field('testimonial_image');
+                        $testimonial_text = get_sub_field('testimonial_text');
+                        $testimonial_author = get_sub_field('testimonial_author'); ?>
+                        <div class="testimonial">
+                                <img src="<?php echo $testimonial_image; ?>" alt="<?php echo $testimonial_author; ?>">
+                                <p><?php echo $testimonial_text; ?></p>
+                                <p><?php echo $testimonial_author; ?></p>
+                        </div>
+                    <?php endwhile;
+                    else :
+                endif; ?>
+            </div>
+        <?php endif; ?>
+
         <div id="Contact" class="tabcontent">
             <h3>Contact <?php echo $curauth->nickname; ?></h3>
             <?php gravity_form( 1, false, false, false, '', false ); ?>
