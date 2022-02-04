@@ -1,15 +1,23 @@
 /* BLOG PAGE */
 @media screen and (min-width: 1025px) {
-  .page-id-47 .uael-post__inner-wrap {
+  .uael-post__inner-wrap {
     height: 553px;
   }
 }
-.page-id-47 .uael-post__inner-wrap.uael-post__noimage .uael-post__content-wrap {
-  margin-top: 145px;
+.uael-post__inner-wrap.uael-post__noimage .uael-post__content-wrap {
+  margin-top: 137px;
 }
 
 @media screen and (min-width: 768px) {
-  .page-id-47 .uael-post__content-wrap {
+  .uael-post__thumbnail {
+    height: 202px;
+  }
+  .uael-post__thumbnail a img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .uael-post__content-wrap {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -228,6 +236,18 @@ h2.comment-reply-title {
   }
 }
 
+.chiliving-testimonial .elementor-swiper-button {
+  color: #19AECB;
+}
+
+.chirunning-testimonial .elementor-swiper-button {
+  color: #81c723;
+}
+
+.chiwalking-testimonial .elementor-swiper-button {
+  color: #3dc3a5;
+}
+
 /* SEARCH FORM */
 .elementor-search-form--skin-minimal .elementor-search-form__icon {
   opacity: 1;
@@ -267,6 +287,32 @@ h2.comment-reply-title {
   z-index: 1;
 }
 
+/* ANY POST TEMPLATE SECTION */
+@media screen and (min-width: 1025px) {
+  .uael-post__inner-wrap {
+    height: 553px;
+  }
+}
+.uael-post__inner-wrap.uael-post__noimage .uael-post__content-wrap {
+  margin-top: 137px;
+}
+
+@media screen and (min-width: 768px) {
+  .uael-post__thumbnail {
+    height: 202px;
+  }
+  .uael-post__thumbnail a img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .uael-post__content-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 385px;
+  }
+}
 /* AUTHOR / INSTRUCTOR PAGES */
 .author .author-content,
 .single-workshops .workshop-content,

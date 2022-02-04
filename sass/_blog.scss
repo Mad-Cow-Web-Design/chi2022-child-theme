@@ -1,17 +1,40 @@
 /* BLOG PAGE */
 
+// @media screen and (min-width: 1025px) {
+//     .page-id-47 .uael-post__inner-wrap {
+//         height: 553px;
+//     }
+// }
+// .page-id-47 .uael-post__inner-wrap.uael-post__noimage .uael-post__content-wrap {
+//     margin-top: 137px;
+// }
+// @media screen and (min-width: 768px) {
+//     .page-id-47 .uael-post__content-wrap {
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: space-between;
+//         height: 385px;
+//     }
+// }
 @media screen and (min-width: 1025px) {
-    .page-id-47 .uael-post__inner-wrap {
+    .uael-post__inner-wrap {
         height: 553px;
     }
 }
 
-.page-id-47 .uael-post__inner-wrap.uael-post__noimage .uael-post__content-wrap {
-    margin-top: 145px;
+.uael-post__inner-wrap.uael-post__noimage .uael-post__content-wrap {
+    margin-top: 137px;
 }
 
 @media screen and (min-width: 768px) {
-    .page-id-47 .uael-post__content-wrap {
+    .uael-post__thumbnail {
+        height: 202px;
+        a img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .uael-post__content-wrap {
         display: flex;
         flex-direction: column;
         justify-content: space-between;

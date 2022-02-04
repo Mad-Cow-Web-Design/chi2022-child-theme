@@ -122,6 +122,18 @@
     }
 }
 
+.chiliving-testimonial .elementor-swiper-button {
+    color: #19AECB;
+}
+
+.chirunning-testimonial .elementor-swiper-button {
+    color: #81c723;
+}
+
+.chiwalking-testimonial .elementor-swiper-button {
+    color: #3dc3a5;
+}
+
 
 /* SEARCH FORM */
 
@@ -163,4 +175,33 @@
     right: 40px;
     width: 50px;
     z-index: 1;
+}
+
+
+/* ANY POST TEMPLATE SECTION */
+
+@media screen and (min-width: 1025px) {
+    .uael-post__inner-wrap {
+        height: 553px;
+    }
+}
+
+.uael-post__inner-wrap.uael-post__noimage .uael-post__content-wrap {
+    margin-top: 137px;
+}
+
+@media screen and (min-width: 768px) {
+    .uael-post__thumbnail {
+        height: 202px;
+        a img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .uael-post__content-wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 385px;
+    }
 }
