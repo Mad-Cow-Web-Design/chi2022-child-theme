@@ -56,15 +56,73 @@ h2.comment-reply-title {
   margin: 0 auto;
 }
 
-h2.elementor-heading-title:after {
+.chiliving-headline-underline h1:after,
+.chiliving-headline-underline h2:after,
+.chiliving-headline-underline h3:after,
+.chiliving-headline-underline h4:after,
+.chiliving-headline-underline h5:after,
+.chiliving-headline-underline h6:after,
+.chiruning-headline-underline h1:after,
+.chiruning-headline-underline h2:after,
+.chiruning-headline-underline h3:after,
+.chiruning-headline-underline h4:after,
+.chiruning-headline-underline h5:after,
+.chiruning-headline-underline h6:after,
+.chiwalking-headline-underline h1:after,
+.chiwalking-headline-underline h2:after,
+.chiwalking-headline-underline h3:after,
+.chiwalking-headline-underline h4:after,
+.chiwalking-headline-underline h5:after,
+.chiwalking-headline-underline h6:after,
+.white-headline-underline h1:after,
+.white-headline-underline h2:after,
+.white-headline-underline h3:after,
+.white-headline-underline h4:after,
+.white-headline-underline h5:after,
+.white-headline-underline h6:after {
   position: absolute;
   content: "";
-  background-color: #19AECB;
   width: 200px;
   height: 25px;
   left: -5px;
   top: 36px;
   z-index: -1;
+}
+
+.chiliving-headline-underline h1:after,
+.chiliving-headline-underline h2:after,
+.chiliving-headline-underline h3:after,
+.chiliving-headline-underline h4:after,
+.chiliving-headline-underline h5:after,
+.chiliving-headline-underline h6:after {
+  background-color: #19AECB;
+}
+
+.chiruning-headline-underline h1:after,
+.chiruning-headline-underline h2:after,
+.chiruning-headline-underline h3:after,
+.chiruning-headline-underline h4:after,
+.chiruning-headline-underline h5:after,
+.chiruning-headline-underline h6:after {
+  background-color: #81c723;
+}
+
+.chiwalking-headline-underline h1:after,
+.chiwalking-headline-underline h2:after,
+.chiwalking-headline-underline h3:after,
+.chiwalking-headline-underline h4:after,
+.chiwalking-headline-underline h5:after,
+.chiwalking-headline-underline h6:after {
+  background-color: #3dc3a5;
+}
+
+.white-headline-underline h1:after,
+.white-headline-underline h2:after,
+.white-headline-underline h3:after,
+.white-headline-underline h4:after,
+.white-headline-underline h5:after,
+.white-headline-underline h6:after {
+  background-color: #ffffff;
 }
 
 /* TESTIMONIAL SLIDER */

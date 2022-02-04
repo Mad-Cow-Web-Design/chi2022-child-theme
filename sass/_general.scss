@@ -6,15 +6,78 @@
     margin: 0 auto;
 }
 
-h2.elementor-heading-title:after {
-    position: absolute;
-    content: "";
-    background-color: #19AECB;
-    width: 200px;
-    height: 25px;
-    left: -5px;
-    top: 36px;
-    z-index: -1;
+.chiliving-headline-underline,
+.chiruning-headline-underline,
+.chiwalking-headline-underline,
+.white-headline-underline {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        &:after {
+            position: absolute;
+            content: "";
+            width: 200px;
+            height: 25px;
+            left: -5px;
+            top: 36px;
+            z-index: -1;
+        }
+    }
+}
+
+.chiliving-headline-underline {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        &:after {
+            background-color: #19AECB;
+        }
+    }
+}
+
+.chiruning-headline-underline {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        &:after {
+            background-color: #81c723;
+        }
+    }
+}
+
+.chiwalking-headline-underline {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        &:after {
+            background-color: #3dc3a5;
+        }
+    }
+}
+
+.white-headline-underline {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        &:after {
+            background-color: #ffffff;
+        }
+    }
 }
 
 
