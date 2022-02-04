@@ -7,7 +7,7 @@
 }
 
 .chiliving-headline-underline,
-.chiruning-headline-underline,
+.chirunning-headline-underline,
 .chiwalking-headline-underline,
 .white-headline-underline {
     h1,
@@ -16,6 +16,8 @@
     h4,
     h5,
     h6 {
+        position: relative;
+        z-index: 1;
         &:after {
             position: absolute;
             content: "";
@@ -35,6 +37,8 @@
     h4,
     h5,
     h6 {
+        position: relative;
+        z-index: 1;
         &:after {
             background-color: #19AECB;
         }
@@ -48,6 +52,8 @@
     h4,
     h5,
     h6 {
+        position: relative;
+        z-index: 1;
         &:after {
             background-color: #81c723;
         }
@@ -61,6 +67,8 @@
     h4,
     h5,
     h6 {
+        position: relative;
+        z-index: 1;
         &:after {
             background-color: #3dc3a5;
         }
@@ -74,6 +82,8 @@
     h4,
     h5,
     h6 {
+        position: relative;
+        z-index: 1;
         &:after {
             background-color: #ffffff;
         }

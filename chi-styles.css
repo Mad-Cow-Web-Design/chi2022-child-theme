@@ -56,18 +56,45 @@ h2.comment-reply-title {
   margin: 0 auto;
 }
 
+.chiliving-headline-underline h1,
+.chiliving-headline-underline h2,
+.chiliving-headline-underline h3,
+.chiliving-headline-underline h4,
+.chiliving-headline-underline h5,
+.chiliving-headline-underline h6,
+.chirunning-headline-underline h1,
+.chirunning-headline-underline h2,
+.chirunning-headline-underline h3,
+.chirunning-headline-underline h4,
+.chirunning-headline-underline h5,
+.chirunning-headline-underline h6,
+.chiwalking-headline-underline h1,
+.chiwalking-headline-underline h2,
+.chiwalking-headline-underline h3,
+.chiwalking-headline-underline h4,
+.chiwalking-headline-underline h5,
+.chiwalking-headline-underline h6,
+.white-headline-underline h1,
+.white-headline-underline h2,
+.white-headline-underline h3,
+.white-headline-underline h4,
+.white-headline-underline h5,
+.white-headline-underline h6 {
+  position: relative;
+  z-index: 1;
+}
 .chiliving-headline-underline h1:after,
 .chiliving-headline-underline h2:after,
 .chiliving-headline-underline h3:after,
 .chiliving-headline-underline h4:after,
 .chiliving-headline-underline h5:after,
 .chiliving-headline-underline h6:after,
-.chiruning-headline-underline h1:after,
-.chiruning-headline-underline h2:after,
-.chiruning-headline-underline h3:after,
-.chiruning-headline-underline h4:after,
-.chiruning-headline-underline h5:after,
-.chiruning-headline-underline h6:after,
+.chirunning-headline-underline h1:after,
+.chirunning-headline-underline h2:after,
+.chirunning-headline-underline h3:after,
+.chirunning-headline-underline h4:after,
+.chirunning-headline-underline h5:after,
+.chirunning-headline-underline h6:after,
 .chiwalking-headline-underline h1:after,
 .chiwalking-headline-underline h2:after,
 .chiwalking-headline-underline h3:after,
@@ -89,6 +116,15 @@ h2.comment-reply-title {
   z-index: -1;
 }
 
+.chiliving-headline-underline h1,
+.chiliving-headline-underline h2,
+.chiliving-headline-underline h3,
+.chiliving-headline-underline h4,
+.chiliving-headline-underline h5,
+.chiliving-headline-underline h6 {
+  position: relative;
+  z-index: 1;
+}
 .chiliving-headline-underline h1:after,
 .chiliving-headline-underline h2:after,
 .chiliving-headline-underline h3:after,
@@ -98,6 +134,15 @@ h2.comment-reply-title {
   background-color: #19AECB;
 }
 
+.chiruning-headline-underline h1,
+.chiruning-headline-underline h2,
+.chiruning-headline-underline h3,
+.chiruning-headline-underline h4,
+.chiruning-headline-underline h5,
+.chiruning-headline-underline h6 {
+  position: relative;
+  z-index: 1;
+}
 .chiruning-headline-underline h1:after,
 .chiruning-headline-underline h2:after,
 .chiruning-headline-underline h3:after,
@@ -107,6 +152,15 @@ h2.comment-reply-title {
   background-color: #81c723;
 }
 
+.chiwalking-headline-underline h1,
+.chiwalking-headline-underline h2,
+.chiwalking-headline-underline h3,
+.chiwalking-headline-underline h4,
+.chiwalking-headline-underline h5,
+.chiwalking-headline-underline h6 {
+  position: relative;
+  z-index: 1;
+}
 .chiwalking-headline-underline h1:after,
 .chiwalking-headline-underline h2:after,
 .chiwalking-headline-underline h3:after,
@@ -116,6 +170,15 @@ h2.comment-reply-title {
   background-color: #3dc3a5;
 }
 
+.white-headline-underline h1,
+.white-headline-underline h2,
+.white-headline-underline h3,
+.white-headline-underline h4,
+.white-headline-underline h5,
+.white-headline-underline h6 {
+  position: relative;
+  z-index: 1;
+}
 .white-headline-underline h1:after,
 .white-headline-underline h2:after,
 .white-headline-underline h3:after,
