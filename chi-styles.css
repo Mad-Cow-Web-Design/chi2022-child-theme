@@ -59,12 +59,52 @@ h2.comment-reply-title {
 h2.elementor-heading-title:after {
   position: absolute;
   content: "";
-  background-color: 19AECB;
+  background-color: #19AECB;
   width: 200px;
   height: 25px;
   left: -5px;
   top: 36px;
   z-index: -1;
+}
+
+/* TESTIMONIAL SLIDER */
+.elementor-swiper-button {
+  top: unset;
+  bottom: -15px;
+  padding: 8px;
+  background-color: #fff;
+  color: #FFD107;
+}
+@media screen and (min-width: 768px) {
+  .elementor-swiper-button {
+    bottom: -50px;
+  }
+}
+.elementor-swiper-button.elementor-swiper-button-prev {
+  left: 38%;
+}
+@media screen and (min-width: 768px) {
+  .elementor-swiper-button.elementor-swiper-button-prev {
+    left: 43%;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .elementor-swiper-button.elementor-swiper-button-prev {
+    left: 46%;
+  }
+}
+.elementor-swiper-button.elementor-swiper-button-next {
+  right: 38%;
+}
+@media screen and (min-width: 768px) {
+  .elementor-swiper-button.elementor-swiper-button-next {
+    right: 43%;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .elementor-swiper-button.elementor-swiper-button-next {
+    right: 46%;
+  }
 }
 
 /* SEARCH FORM */
@@ -92,18 +132,18 @@ h2.elementor-heading-title:after {
   color: #ffffff;
 }
 
+/* FOOTER */
+.elementor-133 .elementor-element.elementor-element-32ef576 .uael-img-gallery-wrap {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .footer-top-arrow {
   position: fixed;
   bottom: 40px;
   right: 40px;
   width: 50px;
   z-index: 1;
-}
-
-/* FOOTER */
-.elementor-133 .elementor-element.elementor-element-32ef576 .uael-img-gallery-wrap {
-  margin-left: 0;
-  margin-right: 0;
 }
 
 /* AUTHOR / INSTRUCTOR PAGES */
@@ -656,6 +696,29 @@ h2.elementor-heading-title:after {
   border: 2px solid #19AECB;
   background-color: #19AECB !important;
   color: #fff !important;
+}
+
+/* HOME */
+/* BLOG */
+/* search on top of blog */
+.page-id-47 .elementor-search-form__input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #4a4a4a;
+}
+
+.page-id-47 .elementor-search-form__input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #4a4a4a;
+}
+
+.page-id-47 .elementor-search-form__input:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #4a4a4a;
+}
+
+.page-id-47 .elementor-search-form__input:-moz-placeholder {
+  /* Firefox 18- */
+  color: #4a4a4a;
 }
 
 /* ALL WOO PAGES */

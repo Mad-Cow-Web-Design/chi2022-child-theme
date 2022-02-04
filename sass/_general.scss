@@ -9,12 +9,44 @@
 h2.elementor-heading-title:after {
     position: absolute;
     content: "";
-    background-color: 19AECB;
+    background-color: #19AECB;
     width: 200px;
     height: 25px;
     left: -5px;
     top: 36px;
     z-index: -1;
+}
+
+
+/* TESTIMONIAL SLIDER */
+
+.elementor-swiper-button {
+    top: unset;
+    bottom: -15px;
+    padding: 8px;
+    background-color: #fff;
+    color: #FFD107;
+    @media screen and (min-width: 768px) {
+        bottom: -50px;
+    }
+    &.elementor-swiper-button-prev {
+        left: 38%;
+        @media screen and (min-width: 768px) {
+            left: 43%;
+        }
+        @media screen and (min-width: 1025px) {
+            left: 46%;
+        }
+    }
+    &.elementor-swiper-button-next {
+        right: 38%;
+        @media screen and (min-width: 768px) {
+            right: 43%;
+        }
+        @media screen and (min-width: 1025px) {
+            right: 46%;
+        }
+    }
 }
 
 
@@ -44,18 +76,18 @@ h2.elementor-heading-title:after {
     color: #ffffff;
 }
 
-.footer-top-arrow {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    width: 50px;
-    z-index: 1;
-}
-
 
 /* FOOTER */
 
 .elementor-133 .elementor-element.elementor-element-32ef576 .uael-img-gallery-wrap {
     margin-left: 0;
     margin-right: 0;
+}
+
+.footer-top-arrow {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 50px;
+    z-index: 1;
 }
