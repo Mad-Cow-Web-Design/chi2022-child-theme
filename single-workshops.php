@@ -39,6 +39,7 @@ $workshop_end_date = get_field('end_date_&_time');
 $workshop_additional_details = get_field('additional_details');
 $workshop_venue = get_field('venue');
 $workshop_address = get_field('address');
+$workshop_location  = get_field('location');
 $workshop_city = get_field('city');
 $workshop_state = get_field('state');
 $workshop_country = get_field('country');
@@ -123,6 +124,9 @@ $workshop_img = get_field('background_img', 'workshop_type' . '_' . $term_id);
             <?php if ($workshop_description) : ?>
                 <button class="tablinks active" onclick="openDetails(event, 'Details')" id="defaultOpen">Workshop Details</button>
             <?php endif;
+            if ($workshop_location) : ?>
+                <button class="tablinks" onclick="openDetails(event, 'Location')">Workshop Location</button>
+            <?php endif;
             if ($workshop_additional_details) : ?>
                 <button class="tablinks" onclick="openDetails(event, 'Info')">Helpful Information</button>
             <?php endif;
@@ -131,15 +135,32 @@ $workshop_img = get_field('background_img', 'workshop_type' . '_' . $term_id);
             <?php endif; ?>
         </div>
         <!-- Tab content -->
+        <?php if ($workshop_description) : ?>
         <div id="Details" class="tabcontent" style="display: block;">
             <p><?php echo $workshop_description; ?></p>
         </div>
+        <?php endif; ?>
+
+        <?php if ($workshop_location) : ?>
+        <div id="Location" class="tabcontent">
+            <div class="acf-map" data-zoom="16">
+                <div class="marker" data-lat="<?php echo esc_attr($workshop_location['lat']); ?>" data-lng="<?php echo esc_attr($workshop_location['lng']); ?>"></div>
+            </div>
+        </div>
+        <?php endif; ?>
+
+        <?php if ($workshop_additional_details) : ?>
         <div id="Info" class="tabcontent">
             <p><?php echo $workshop_additional_details; ?></p>
         </div>
+        <?php endif; ?>
+
+        <?php if ($workshop_override_default_refund_policy) : ?>
         <div id="Cancel" class="tabcontent">
             <p><?php echo $workshop_custom_refund; ?></p>
         </div>
+        <?php endif; ?>
+
         <div class="workshop-signup">
             <div class="content">
                 <h2>Start Your Registration</h2>
