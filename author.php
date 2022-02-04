@@ -51,10 +51,10 @@ $ins_regional_director  = get_field('regional_director', 'user_'. $author_id);
                 <div class="instructor-sub-header">
                     <div class="instructor-icons">
                         <?php if ($ins_chirunning_certification) : ?>
-                            <img src="https://chiliving2021.wpengine.com/wp-content/uploads/2022/01/chirunning-certified-instructor.png" alt="">
+                            <img src="/wp-content/uploads/2022/01/chirunning-certified-instructor.png" alt="">
                         <?php endif; ?>
                         <?php if ($ins_chiwalking_certification) : ?>
-                            <img src="https://chiliving2021.wpengine.com/wp-content/uploads/2022/01/chiwalking-certified-instructor.png" alt="">
+                            <img src="/wp-content/uploads/2022/01/chiwalking-certified-instructor.png" alt="">
                         <?php endif; ?>
                     </div>
                     <div class="instructor-title">
@@ -65,44 +65,48 @@ $ins_regional_director  = get_field('regional_director', 'user_'. $author_id);
             </div>
             <div class="right">
                 <h2><?php echo $curauth->nickname; ?></h2>
+                <div class="quick-location">
+                    <img src="/wp-content/uploads/2022/01/instructor-map-marker-icon.png" alt="instructor map marker">
+                    <?php echo $ins_location['state']; ?>
+                </div>
                 <h3>Connect with <?php echo $author_first_name; ?></h3>
                 <div class="instructor-social">
                     <?php if ($ins_facebook) : ?>
-                        <a href="<?php echo $ins_facebook; ?>"><img src="https://chiliving2021.wpengine.com/wp-content/uploads/2022/01/instructor-facebook-icon.png" alt="facebook"></a>
+                        <a target="_blank" href="<?php echo $ins_facebook; ?>"><img src="/wp-content/uploads/2022/01/instructor-facebook-icon.png" alt="facebook"></a>
                     <?php endif; ?>
                     <?php if ($ins_twitter) : ?>
-                        <a href="<?php echo $ins_twitter; ?>"><img src="https://chiliving2021.wpengine.com/wp-content/uploads/2022/01/instructor-twitter-icon.png" alt="twitter"></a>
+                        <a target="_blank" href="<?php echo $ins_twitter; ?>"><img src="/wp-content/uploads/2022/01/instructor-twitter-icon.png" alt="twitter"></a>
                     <?php endif; ?>
                     <?php if ($ins_linkedin) : ?>
-                        <a href="<?php echo $ins_linkedin; ?>"><img src="https://chiliving2021.wpengine.com/wp-content/uploads/2022/01/instructor-twitter-icon.png" alt="linkedin"></a>
+                        <a target="_blank" href="<?php echo $ins_linkedin; ?>"><img src="/wp-content/uploads/2022/01/instructor-twitter-icon.png" alt="linkedin"></a>
                     <?php endif; ?>
                     <?php if ($ins_instagram) : ?>
-                        <a href="<?php echo $ins_instagram; ?>"><img src="https://chiliving2021.wpengine.com/wp-content/uploads/2022/01/instructor-instagram-icon.png" alt="instagram"></a>
+                        <a target="_blank" href="<?php echo $ins_instagram; ?>"><img src="/wp-content/uploads/2022/01/instructor-instagram-icon.png" alt="instagram"></a>
                     <?php endif; ?>
                     <?php if ($ins_youtube) : ?>
-                        <a href="<?php echo $ins_youtube; ?>"><img src="https://chiliving2021.wpengine.com/wp-content/uploads/2022/01/instructor-twitter-icon.png" alt="youtube"></a>
+                        <a target="_blank" href="<?php echo $ins_youtube; ?>"><img src="/wp-content/uploads/2022/01/instructor-twitter-icon.png" alt="youtube"></a>
                     <?php endif; ?>
                     <?php if ($ins_website) : ?>
-                        <a href="<?php echo $ins_website; ?>"><img src="https://chiliving2021.wpengine.com/wp-content/uploads/2022/01/instructor-website-icon.png" alt="website"></a>
+                        <a target="_blank" href="<?php echo $ins_website; ?>"><img src="/wp-content/uploads/2022/01/instructor-website-icon.png" alt="website"></a>
                     <?php endif; ?>
                     <?php if ($ins_phone && $ins_show_phone_publicly == 'yes') : ?>
-                        <a href="tel:<?php echo $ins_phone; ?>"><img src="https://chiliving2021.wpengine.com/wp-content/uploads/2022/01/instructor-phone-number-icon.png" alt="phone"></a>
+                        <a target="_blank" href="tel:<?php echo $ins_phone; ?>"><img src="/wp-content/uploads/2022/01/instructor-phone-number-icon.png" alt="phone"></a>
                     <?php endif; ?>
                     <?php if ($ins_email && $ins_show_email_publicly == 'yes') : ?>
-                        <a href="mailto:<?php echo $ins_email; ?>"><img src="https://chiliving2021.wpengine.com/wp-content/uploads/2022/01/instructor-email-icon.png" alt="email"></a>
+                        <a target="_blank" href="mailto:<?php echo $ins_email; ?>"><img src="/wp-content/uploads/2022/01/instructor-email-icon.png" alt="email"></a>
                     <?php endif; ?>
                 </div> <!-- end instructor social -->
             </div>
         </div><!-- End instructor header -->
         <div class="tab">
             <?php if ($ins_youtube_video_url) : ?>
-            <button class="tablinks active" onclick="openDetails(event, 'Video')" id="defaultOpen">Instructor Video</button>
+                <button class="tablinks active" onclick="openDetails(event, 'Video')" id="defaultOpen">Instructor Video</button>
             <?php endif; ?>
             <?php if ($ins_bio) : ?>
-            <button class="tablinks active" onclick="openDetails(event, 'About')">About</button>
+                <button class="tablinks" onclick="openDetails(event, 'About')">About</button>
             <?php endif; ?>
             <?php if ($ins_testimonial) : ?>
-            <button class="tablinks" onclick="openDetails(event, 'Testimonials')">Testimonials</button>
+                <button class="tablinks" onclick="openDetails(event, 'Testimonials')">Testimonials</button>
             <?php endif; ?>
             <button class="tablinks" onclick="openDetails(event, 'Contact')">Contact</button>
         </div>
@@ -140,7 +144,7 @@ $ins_regional_director  = get_field('regional_director', 'user_'. $author_id);
 
         <div id="Contact" class="tabcontent">
             <h3>Contact <?php echo $curauth->nickname; ?></h3>
-            <?php gravity_form( 1, false, false, false, '', false ); ?>
+            <?php gravity_form( 4, false, false, false, '', false ); ?>
         </div>
         <?php $today = date("Y-m-d H:i:s");
         $workshops = get_posts (array(

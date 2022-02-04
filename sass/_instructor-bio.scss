@@ -4,6 +4,7 @@
 .single-workshops .workshop-content,
 .workshop-signup .content {
     max-width: 1140px;
+    padding: 0 20px;
     margin: 0 auto;
 }
 
@@ -63,7 +64,7 @@
 }
 
 .instructor-header .left {
-    width: 50%;
+    width: 40%;
     &>img {
         border: 6px solid #fff;
         -webkit-box-shadow: 0 0 5px 5px #c5c2c2;
@@ -103,8 +104,17 @@
     margin-right: 20px;
 }
 
-.instructor-header div h2 {
-    color: #4a4a4a
+.instructor-header {
+    div {
+        &.right {
+            h3 {
+                font-size: 20px;
+            }
+        }
+        h2 {
+            color: #4a4a4a
+        }
+    }
 }
 
 .instructor-social {
@@ -156,11 +166,13 @@
 
 .tab {
     overflow: hidden;
+    border-bottom: 1px solid #d9d3d3;
     button {
         float: left;
         border: none;
         outline: none;
         cursor: pointer;
+        font-weight: 600;
         padding: 14px 16px;
         transition: 0.3s;
         color: #4a4a4a;
@@ -168,14 +180,11 @@
         width: 200px;
         text-align: left;
         &:hover,
-        &:active,
-        &:focus {
-            color: #000000;
-        }
-        &:hover,
         &.active {
             border-bottom: 2px solid #19AECB;
             background: transparent;
+            color: #000000;
+            font-weight: 800;
         }
     }
 }

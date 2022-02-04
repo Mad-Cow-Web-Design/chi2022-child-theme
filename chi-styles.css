@@ -314,6 +314,7 @@ h2.comment-reply-title {
 .single-workshops .workshop-content,
 .workshop-signup .content {
   max-width: 1140px;
+  padding: 0 20px;
   margin: 0 auto;
 }
 
@@ -371,7 +372,7 @@ h2.comment-reply-title {
 }
 
 .instructor-header .left {
-  width: 50%;
+  width: 40%;
 }
 .instructor-header .left > img {
   border: 6px solid #fff;
@@ -407,6 +408,9 @@ h2.comment-reply-title {
   margin-right: 20px;
 }
 
+.instructor-header div.right h3 {
+  font-size: 20px;
+}
 .instructor-header div h2 {
   color: #4a4a4a;
 }
@@ -452,12 +456,14 @@ h2.comment-reply-title {
 /* Style the tab */
 .tab {
   overflow: hidden;
+  border-bottom: 1px solid #d9d3d3;
 }
 .tab button {
   float: left;
   border: none;
   outline: none;
   cursor: pointer;
+  font-weight: 600;
   padding: 14px 16px;
   transition: 0.3s;
   color: #4a4a4a;
@@ -465,12 +471,11 @@ h2.comment-reply-title {
   width: 200px;
   text-align: left;
 }
-.tab button:hover, .tab button:active, .tab button:focus {
-  color: #000000;
-}
 .tab button:hover, .tab button.active {
   border-bottom: 2px solid #19AECB;
   background: transparent;
+  color: #000000;
+  font-weight: 800;
 }
 
 .tabcontent {
