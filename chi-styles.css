@@ -480,17 +480,30 @@ h2.comment-reply-title {
 
 .tabcontent {
   display: none;
-  padding: 10px;
+  padding: 30px 10px;
   animation: fadeEffect 1s;
 }
-.tabcontent#About p {
+.tabcontent#about p {
   text-align: justify;
 }
-.tabcontent#Video iframe {
+.tabcontent#video iframe {
   border: 6px solid #fff;
   -webkit-box-shadow: 0 0 5px 5px #c5c2c2;
   -moz-box-shadow: 0 0 5px 5px #c5c2c2;
   box-shadow: 0 0 5px 5px #c5c2c2;
+}
+.tabcontent#contact #gform_wrapper_4 {
+  padding: 20px;
+  border: 2px solid #4a4a4a;
+}
+.tabcontent#contact #gform_wrapper_4 input,
+.tabcontent#contact #gform_wrapper_4 textarea {
+  border: 2px solid rgba(197, 194, 194, 0.19);
+  border-bottom: 2px solid #19AECB;
+}
+.tabcontent#contact #gform_wrapper_4 input#gform_submit_button_4 {
+  border: 2px solid #19AECB;
+  width: 225px;
 }
 
 @keyframes fadeEffect {

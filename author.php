@@ -100,31 +100,31 @@ $ins_regional_director  = get_field('regional_director', 'user_'. $author_id);
         </div><!-- End instructor header -->
         <div class="tab">
             <?php if ($ins_youtube_video_url) : ?>
-                <button class="tablinks active" onclick="openDetails(event, 'Video')" id="defaultOpen">Instructor Video</button>
+                <button class="tablinks active" onclick="openDetails(event, 'video')" id="defaultOpen">Instructor Video</button>
             <?php endif; ?>
             <?php if ($ins_bio) : ?>
-                <button class="tablinks" onclick="openDetails(event, 'About')">About</button>
+                <button class="tablinks" onclick="openDetails(event, 'about')">About</button>
             <?php endif; ?>
             <?php if ($ins_testimonial) : ?>
-                <button class="tablinks" onclick="openDetails(event, 'Testimonials')">Testimonials</button>
+                <button class="tablinks" onclick="openDetails(event, 'testimonials')">Testimonials</button>
             <?php endif; ?>
-            <button class="tablinks" onclick="openDetails(event, 'Contact')">Contact</button>
+            <button class="tablinks" onclick="openDetails(event, 'contact')">Contact</button>
         </div>
         <!-- Tab content -->
         <?php if ($ins_youtube_video_url) : ?>
-            <div id="Video" class="tabcontent" style="display: block;">
+            <div id="video" class="tabcontent" style="display: block;">
                 <iframe width="560" height="315" src="<?php echo $ins_youtube_video_url; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         <?php endif; ?>
 
         <?php if ($ins_bio) : ?>
-            <div id="About" class="tabcontent">
+            <div id="about" class="tabcontent">
                 <p><?php echo $ins_bio; ?></p>
             </div>
         <?php endif; ?>
 
         <?php if ($ins_testimonial) : ?>
-            <div id="Testimonials" class="tabcontent">
+            <div id="testimonials" class="tabcontent">
                 <?php
                 if( have_rows('testimonial', 'user_'. $author_id) ):
                     while( have_rows('testimonial', 'user_'. $author_id) ) : the_row();
@@ -142,8 +142,7 @@ $ins_regional_director  = get_field('regional_director', 'user_'. $author_id);
             </div>
         <?php endif; ?>
 
-        <div id="Contact" class="tabcontent">
-            <h3>Contact <?php echo $curauth->nickname; ?></h3>
+        <div id="contact" class="tabcontent">
             <?php gravity_form( 4, false, false, false, '', false ); ?>
         </div>
         <?php $today = date("Y-m-d H:i:s");

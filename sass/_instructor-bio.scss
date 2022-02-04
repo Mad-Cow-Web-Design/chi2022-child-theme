@@ -191,19 +191,34 @@
 
 .tabcontent {
     display: none;
-    padding: 10px;
+    padding: 30px 10px;
     animation: fadeEffect 1s;
-    &#About {
+    &#about {
         p {
             text-align: justify;
         }
     }
-    &#Video {
+    &#video {
         iframe {
             border: 6px solid #fff;
             -webkit-box-shadow: 0 0 5px 5px #c5c2c2;
             -moz-box-shadow: 0 0 5px 5px #c5c2c2;
             box-shadow: 0 0 5px 5px #c5c2c2;
+        }
+    }
+    &#contact {
+        #gform_wrapper_4 {
+            padding: 20px;
+            border: 2px solid #4a4a4a;
+            input,
+            textarea {
+                border: 2px solid rgba(197, 194, 194, 0.19);
+                border-bottom: 2px solid #19AECB;
+            }
+            input#gform_submit_button_4 {
+                border: 2px solid #19AECB;
+                width: 225px;
+            }
         }
     }
 }
