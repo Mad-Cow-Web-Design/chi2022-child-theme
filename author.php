@@ -33,7 +33,11 @@ $ins_email  = get_field('email', 'user_'. $author_id);
 $ins_show_email_publicly  = get_field('show_email_publicly', 'user_'. $author_id);
 $ins_location  = get_field('location', 'user_'. $author_id);
 $ins_testimonial  = get_field('testimonial', 'user_'. $author_id);
-$ins_race  = get_field('race', 'user_'. $author_id);
+$ultra_marathon = get_field('number_of_ultra_marathons', 'user_'. $author_id);
+$marathon = get_field('number_of_marathons', 'user_'. $author_id);
+$half_marathon = get_field('number_of_half_marathons', 'user_'. $author_id);
+$tenk = get_field('number_of_10ks', 'user_'. $author_id);
+$fivek = get_field('number_of_5ks', 'user_'. $author_id);
 $ins_personal_racing_best  = get_field('personal_racing_best', 'user_'. $author_id);
 $ins_certification_level  = get_field('certification_level', 'user_'. $author_id);
 $ins_chirunning_certification  = get_field('chirunning_certification', 'user_'. $author_id);
@@ -43,60 +47,59 @@ $ins_certification_date = new DateTime($ins_certification_date);
 $ins_regional_director  = get_field('regional_director', 'user_'. $author_id);
 ?>
 <div class="author-content">
-        <div class="instructor-banner">
+    <div class="instructor-banner"></div>
+    <div class="instructor-header">
+        <div class="left">
+            <img src="<?php echo $ins_source_photo; ?>" alt="<?php echo $curauth->nickname; ?>">
+            <div class="instructor-sub-header">
+                <div class="instructor-icons">
+                    <?php if ($ins_chirunning_certification) : ?>
+                        <img src="/wp-content/uploads/2022/01/chirunning-certified-instructor.png" alt="">
+                    <?php endif; ?>
+                    <?php if ($ins_chiwalking_certification) : ?>
+                        <img src="/wp-content/uploads/2022/01/chiwalking-certified-instructor.png" alt="">
+                    <?php endif; ?>
+                </div>
+                <div class="instructor-title">
+                    <h3><?php echo $ins_certification_level; ?></h3>
+                    <h4>Certified since <?php echo $ins_certification_date->format('F Y'); ?></h4>
+                </div>
+            </div>
         </div>
-        <div class="instructor-header">
-            <div class="left">
-                <img src="<?php echo $ins_source_photo; ?>" alt="<?php echo $curauth->nickname; ?>">
-                <div class="instructor-sub-header">
-                    <div class="instructor-icons">
-                        <?php if ($ins_chirunning_certification) : ?>
-                            <img src="/wp-content/uploads/2022/01/chirunning-certified-instructor.png" alt="">
-                        <?php endif; ?>
-                        <?php if ($ins_chiwalking_certification) : ?>
-                            <img src="/wp-content/uploads/2022/01/chiwalking-certified-instructor.png" alt="">
-                        <?php endif; ?>
-                    </div>
-                    <div class="instructor-title">
-                        <h3><?php echo $ins_certification_level; ?></h3>
-                        <h4>Certified since <?php echo $ins_certification_date->format('F Y'); ?></h4>
-                    </div>
-                </div>
+        <div class="right">
+            <h2><?php echo $curauth->nickname; ?></h2>
+            <div class="quick-location">
+                <img src="/wp-content/uploads/2022/01/instructor-map-marker-icon.png" alt="instructor map marker">
+                <?php echo $ins_location['state']; ?>
             </div>
-            <div class="right">
-                <h2><?php echo $curauth->nickname; ?></h2>
-                <div class="quick-location">
-                    <img src="/wp-content/uploads/2022/01/instructor-map-marker-icon.png" alt="instructor map marker">
-                    <?php echo $ins_location['state']; ?>
-                </div>
-                <h3>Connect with <?php echo $author_first_name; ?></h3>
-                <div class="instructor-social">
-                    <?php if ($ins_facebook) : ?>
-                        <a target="_blank" href="<?php echo $ins_facebook; ?>"><img src="/wp-content/uploads/2022/01/instructor-facebook-icon.png" alt="facebook"></a>
-                    <?php endif; ?>
-                    <?php if ($ins_twitter) : ?>
-                        <a target="_blank" href="<?php echo $ins_twitter; ?>"><img src="/wp-content/uploads/2022/01/instructor-twitter-icon.png" alt="twitter"></a>
-                    <?php endif; ?>
-                    <?php if ($ins_linkedin) : ?>
-                        <a target="_blank" href="<?php echo $ins_linkedin; ?>"><img src="/wp-content/uploads/2022/01/instructor-twitter-icon.png" alt="linkedin"></a>
-                    <?php endif; ?>
-                    <?php if ($ins_instagram) : ?>
-                        <a target="_blank" href="<?php echo $ins_instagram; ?>"><img src="/wp-content/uploads/2022/01/instructor-instagram-icon.png" alt="instagram"></a>
-                    <?php endif; ?>
-                    <?php if ($ins_youtube) : ?>
-                        <a target="_blank" href="<?php echo $ins_youtube; ?>"><img src="/wp-content/uploads/2022/01/instructor-twitter-icon.png" alt="youtube"></a>
-                    <?php endif; ?>
-                    <?php if ($ins_website) : ?>
-                        <a target="_blank" href="<?php echo $ins_website; ?>"><img src="/wp-content/uploads/2022/01/instructor-website-icon.png" alt="website"></a>
-                    <?php endif; ?>
-                    <?php if ($ins_phone && $ins_show_phone_publicly == 'yes') : ?>
-                        <a target="_blank" href="tel:<?php echo $ins_phone; ?>"><img src="/wp-content/uploads/2022/01/instructor-phone-number-icon.png" alt="phone"></a>
-                    <?php endif; ?>
-                    <?php if ($ins_email && $ins_show_email_publicly == 'yes') : ?>
-                        <a target="_blank" href="mailto:<?php echo $ins_email; ?>"><img src="/wp-content/uploads/2022/01/instructor-email-icon.png" alt="email"></a>
-                    <?php endif; ?>
-                </div> <!-- end instructor social -->
-            </div>
+            <h3>Connect with <?php echo $author_first_name; ?></h3>
+            <div class="instructor-social">
+                <?php if ($ins_facebook) : ?>
+                    <a target="_blank" href="<?php echo $ins_facebook; ?>"><img src="/wp-content/uploads/2022/01/instructor-facebook-icon.png" alt="facebook"></a>
+                <?php endif; ?>
+                <?php if ($ins_twitter) : ?>
+                    <a target="_blank" href="<?php echo $ins_twitter; ?>"><img src="/wp-content/uploads/2022/01/instructor-twitter-icon.png" alt="twitter"></a>
+                <?php endif; ?>
+                <?php if ($ins_linkedin) : ?>
+                    <a target="_blank" href="<?php echo $ins_linkedin; ?>"><img src="/wp-content/uploads/2022/01/instructor-twitter-icon.png" alt="linkedin"></a>
+                <?php endif; ?>
+                <?php if ($ins_instagram) : ?>
+                    <a target="_blank" href="<?php echo $ins_instagram; ?>"><img src="/wp-content/uploads/2022/01/instructor-instagram-icon.png" alt="instagram"></a>
+                <?php endif; ?>
+                <?php if ($ins_youtube) : ?>
+                    <a target="_blank" href="<?php echo $ins_youtube; ?>"><img src="/wp-content/uploads/2022/01/instructor-twitter-icon.png" alt="youtube"></a>
+                <?php endif; ?>
+                <?php if ($ins_website) : ?>
+                    <a target="_blank" href="<?php echo $ins_website; ?>"><img src="/wp-content/uploads/2022/01/instructor-website-icon.png" alt="website"></a>
+                <?php endif; ?>
+                <?php if ($ins_phone && $ins_show_phone_publicly == 'yes') : ?>
+                    <a target="_blank" href="tel:<?php echo $ins_phone; ?>"><img src="/wp-content/uploads/2022/01/instructor-phone-number-icon.png" alt="phone"></a>
+                <?php endif; ?>
+                <?php if ($ins_email && $ins_show_email_publicly == 'yes') : ?>
+                    <a target="_blank" href="mailto:<?php echo $ins_email; ?>"><img src="/wp-content/uploads/2022/01/instructor-email-icon.png" alt="email"></a>
+                <?php endif; ?>
+            </div> <!-- end instructor social -->
+        </div>
         </div><!-- End instructor header -->
         <div class="tab">
             <?php if ($ins_youtube_video_url) : ?>
@@ -189,26 +192,48 @@ $ins_regional_director  = get_field('regional_director', 'user_'. $author_id);
                         <?php endforeach; ?>
                 </div><!-- end workshop row -->
             </div><!-- end instructor workshop section -->
-        <?php endif;
-        if( have_rows('race', 'user_'. $author_id) ): ?>
+        <?php endif; ?>
             <div class="instructor-races">
                 <h2>Race Resume</h2>
                 <div class="race-row">
-                    <?php while( have_rows('race', 'user_'. $author_id) ) : the_row();
-                        $race_type = get_sub_field('race_type');
-                        $number_completed = get_sub_field('number_of_races_completed'); ?>
-                        <div class="race">
-                                <p><?php echo $race_type; ?></p>
-                                <p class="race-number" id="value"><?php echo $number_completed; ?></p>
-                        </div>
-                    <?php endwhile; ?>
+                    <div class="race">
+                        <p>Ultra Marathons</p>
+                        <?php if ($ultra_marathon):
+                            echo '<p class="race-number" id="value">' . $ultra_marathon . '</p>';
+                        else :
+                            echo '<p class="race-number" id="value">0</p>';
+                        endif; ?>
+                    </div>
+                    <div class="race">
+                        <p>Marathons</p>
+                        <?php if ($marathon):
+                            echo '<p class="race-number" id="value">' . $marathon . '</p>';
+                        else :
+                            echo '<p class="race-number" id="value">0</p>';
+                        endif; ?>                    </div>
+                    <div class="race">
+                        <p>Half Marathons</p>
+                        <?php if ($half_marathon):
+                            echo '<p class="race-number" id="value">' . $half_marathon . '</p>';
+                        else :
+                            echo '<p class="race-number" id="value">0</p>';
+                        endif; ?>                    </div>
+                    <div class="race">
+                        <p>10Ks</p>
+                        <?php if ($tenk):
+                            echo '<p class="race-number" id="value">' . $tenk . '</p>';
+                        else :
+                            echo '<p class="race-number" id="value">0</p>';
+                        endif; ?>                    </div>
+                    <div class="race">
+                        <p>5Ks</p>
+                        <?php if ($fivek):
+                            echo '<p class="race-number" id="value">' . $fivek . '</p>';
+                        else :
+                            echo '<p class="race-number" id="value">0</p>';
+                        endif; ?>                    </div>
                 </div><!-- end race row -->
             </div><!-- end instructor races -->
-        <?php else :
-        endif; ?>
     </div><!-- end author-content -->
 <?php
 get_footer();
-
-
-

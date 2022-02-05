@@ -605,16 +605,15 @@ h2.comment-reply-title {
 
 .race-row {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  align-content: center;
-  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   color: #4a4a4a;
 }
 .race-row .race {
   background-color: #fff;
   border: 2px solid #4a4a4a;
   padding: 20px;
+  margin: 0 5px 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -622,7 +621,7 @@ h2.comment-reply-title {
   -webkit-box-shadow: 0 0 5px 4px #f5f5f5;
   -moz-box-shadow: 0 0 5px 4px #f5f5f5;
   box-shadow: 0 0 5px 4px #f5f5f5;
-  width: 210px;
+  min-width: 200px;
 }
 .race-row .race .race-number {
   font-size: 70px;
