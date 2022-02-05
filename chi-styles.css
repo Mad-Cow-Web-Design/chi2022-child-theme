@@ -904,6 +904,23 @@ h2.comment-reply-title {
   font-size: 12px !important;
 }
 
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product {
+  min-height: 470px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 768px) {
+  .woocommerce ul.products[class*=columns-] li.product,
+.woocommerce-page ul.products[class*=columns-] li.product {
+    width: 100%;
+    float: none;
+    clear: both;
+    margin: 0 auto 30px;
+  }
+}
 /* set image width to be the max width of the image file*/
 .woocommerce div.product div.images img {
   width: auto;
@@ -1017,6 +1034,8 @@ h2.comment-reply-title {
 
 .woocommerce-product-details__short-description {
   margin-bottom: 30px;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .single_add_to_cart_button.button.alt,
@@ -1030,6 +1049,7 @@ h2.comment-reply-title {
   padding: 12px 35px;
   font-size: 15px;
   font-weight: 700;
+  display: block;
 }
 .single_add_to_cart_button.button.alt:hover,
 .woocommerce .button.mcw-archive-page-button:hover,
