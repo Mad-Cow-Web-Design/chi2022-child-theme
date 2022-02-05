@@ -34,6 +34,10 @@ h2.comment-reply-title {
   margin-bottom: 2px;
 }
 
+.single-post .post-product h2 {
+  font-size: 20px;
+}
+
 .single-post .post-product .blog-product-price {
   margin-bottom: 10px;
 }
@@ -44,7 +48,6 @@ h2.comment-reply-title {
   background-color: #ffffff;
   color: #19aecb;
   display: block;
-  width: 150px;
   text-align: center;
 }
 
@@ -709,7 +712,7 @@ h2.comment-reply-title {
  */
 /* INSTRUCTOR MAP */
 .acf-map {
-  width: 90%;
+  width: 100%;
   height: 600px;
   border: #ccc solid 1px;
   margin: 0 auto;
@@ -788,16 +791,29 @@ h2.comment-reply-title {
   padding-right: 5px;
 }
 
+.inst-map-title {
+  margin: 70px 0;
+}
+
 @media screen and (min-width: 768px) {
   #madcow-instructors-search-filter-form {
     display: flex;
     justify-content: space-between;
   }
 }
+#madcow-instructors-search-filter-form #madcow-instructors-country-list-filter,
+#madcow-instructors-search-filter-form #madcow-instructors-search {
+  margin-bottom: 10px;
+}
 @media screen and (min-width: 768px) {
   #madcow-instructors-search-filter-form #madcow-instructors-country-list-filter,
-#madcow-instructors-search-filter-form #madcow-instructors-search,
-#madcow-instructors-search-filter-form #madcow-instructors-search-filter-form-submit {
+#madcow-instructors-search-filter-form #madcow-instructors-search {
+    width: 33%;
+    margin-right: 20px;
+  }
+}
+@media screen and (min-width: 768px) {
+  #madcow-instructors-search-filter-form #madcow-instructors-search-filter-form-submit {
     width: 33%;
   }
 }
@@ -805,38 +821,31 @@ h2.comment-reply-title {
 #madcow-instructors-instructor-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .madcow-instructor-list-item {
   width: 30%;
   min-width: 325px;
   min-height: 520px;
-  margin-right: 15px;
-  position: relative;
-  margin-bottom: 1.5rem;
+  margin-bottom: 50px;
   background-color: white;
   -webkit-box-shadow: 0 0 5px 4px #f5f5f5;
   -moz-box-shadow: 0 0 5px 4px #f5f5f5;
   box-shadow: 0 0 5px 4px #f5f5f5;
   color: #4a4a4a;
-  display: block;
   padding: 5px;
   font-size: 1rem;
-  font-weight: 400;
   line-height: 1.75;
 }
 
 .madcow-instructor-list-item-article {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
 }
 .madcow-instructor-list-item-article .instructor-photo {
-  max-width: 325px;
   width: 100%;
   height: 325px;
   object-fit: cover;
@@ -870,7 +879,7 @@ h2.comment-reply-title {
   font-weight: 700;
   text-align: center;
   width: 87%;
-  margin: 0 auto;
+  margin: 0 auto 20px;
   padding: 12px 0;
 }
 .madcow-instructors-list-button:hover {

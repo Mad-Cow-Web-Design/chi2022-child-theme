@@ -41,8 +41,8 @@ function blog_post_products() {
         $html .= '<div class="post-product">';
         $html .= wp_get_attachment_image( get_post_thumbnail_id( $post_product->ID ), 'single-post-thumbnail' );
         $html .= '<p>' . $product->get_categories() . '</p>';
-        $html .= '<p>' . $post_product->post_title . '</p>';
-        $html .= '<p class="blog-product-price">' . $product->get_price() . '</p>';
+        $html .= '<h2>' . $post_product->post_title . '</h2>';
+        $html .= '<p class="blog-product-price">$' . $product->get_price() . '</p>';
         $html .= '<a href="' . $post_product->guid . '" class="blog-product-link">View Product</a>';
         $html .= '</div>';
     endforeach;
