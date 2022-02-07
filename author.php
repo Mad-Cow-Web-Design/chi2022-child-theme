@@ -210,28 +210,32 @@ $ins_regional_director  = get_field('regional_director', 'user_'. $author_id);
                             echo '<p class="race-number" id="value" data-value="' . $marathon . '>' . $marathon . '</p>';
                         else :
                             echo '<p class="race-number" id="value">0</p>';
-                        endif; ?>                    </div>
+                        endif; ?>
+					</div>
                     <div class="race">
                         <p>Half Marathons</p>
                         <?php if ($half_marathon):
                             echo '<p class="race-number" id="value" data-value="' . $half_marathon . '>' . $half_marathon . '</p>';
                         else :
                             echo '<p class="race-number" id="value">0</p>';
-                        endif; ?>                    </div>
+                        endif; ?>
+					</div>
                     <div class="race">
                         <p>10Ks</p>
                         <?php if ($tenk):
                             echo '<p class="race-number" id="value" data-value="' . $tenk . '>' . $tenk . '</p>';
                         else :
                             echo '<p class="race-number" id="value">0</p>';
-                        endif; ?>                    </div>
+                        endif; ?>
+					</div>
                     <div class="race">
                         <p>5Ks</p>
                         <?php if ($fivek):
                             echo '<p class="race-number" id="value" data-value="' . $fivek . '>' . $fivek . '</p>';
                         else :
                             echo '<p class="race-number" id="value">0</p>';
-                        endif; ?>                    </div>
+                        endif; ?>
+					</div>
                 </div><!-- end race row -->
             </div><!-- end instructor races -->
     </div><!-- end author-content -->
