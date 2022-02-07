@@ -8,6 +8,9 @@
     width: 100%;
     border-top: 5px solid #19AECB;
     padding: 20px;
+    h2 {
+        font-size: 40px;
+    }
 }
 
 @media (min-width: 800px) {
@@ -31,7 +34,7 @@
 
 .workshop-date {
     width: 100%;
-    max-width: 125px;
+    max-width: 75px;
     height: 45px;
     margin-right: 10px;
 }

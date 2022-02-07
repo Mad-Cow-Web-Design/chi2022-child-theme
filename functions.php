@@ -100,13 +100,19 @@ function workshop_calendar( $chi_workshops ) {
                         $end_date = new DateTime($end_date);
                         $workshop_start_day = $start_date->format('d');
                         $workshop_end_day = $end_date->format('d');
+                        $workshop_start_month = $start_date->format('n');
+                        $workshop_end_month = $end_date->format('n');
                         $html .= '<div class="workshop-block">';
                                 $html .= '<div class="workshop-date">';
                                     $html .= '<span>';
-                                    $html .= $workshop_date->format('d');
+                                    $html .= $workshop_start_month . ' / ' . $workshop_start_day;
+                                    if ($workshop_start_month != $workshop_end_month):
+                                        $html .= ' -<br/>' . $workshop_end_month . ' / ' . $workshop_end_day;
+                                    else:
                                         if ($workshop_start_day != $workshop_end_day):
-                                            $html .= ' - ' . $workshop_end_day;
+                                            $html .= ' -<br/>' . $workshop_end_month . ' / ' . $workshop_end_day;
                                         endif;
+                                    endif;
                                     $html .= '</span>';
                                 $html .= '</div>';
                             $html .= '<a href="' . get_permalink($workshop->ID) . '">' . $workshop->post_title . '</a>';
