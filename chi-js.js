@@ -1,3 +1,4 @@
+//jQuery start
 jQuery(document).ready(function($) {
     $('form.cart').on('click', 'button.plus, button.minus', function() {
 
@@ -26,7 +27,21 @@ jQuery(document).ready(function($) {
         }
 
     })
+	
+	$('.race-number').each(function () {
+		$(this).prop('Counter', 0).animate({
+				Counter: $(this).data('value')
+			}, {
+			duration: 1000,
+			easing: 'swing',
+			step: function (now) {                      
+				$(this).text(this.Counter.toFixed(0));
+			}
+		});
+	});
 });
+
+//jQuery end
 
 function openDetails(evt, detailName) {
     // Declare all variables
@@ -48,18 +63,6 @@ function openDetails(evt, detailName) {
     document.getElementById(detailName).style.display = "block";
     evt.currentTarget.className += " active";
 }
-
-$('.race-number').each(function () {
-	$(this).prop('Counter', 0).animate({
-			Counter: $(this).data('value')
-		}, {
-		duration: 1000,
-		easing: 'swing',
-		step: function (now) {                      
-			$(this).text(this.Counter.toFixed(0));
-		}
-	});
-});
 
 // function animateValue(obj, start, end, duration) {
 //     let startTimestamp = null;
