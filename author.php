@@ -207,7 +207,7 @@ $ins_regional_director  = get_field('regional_director', 'user_'. $author_id);
                     <div class="race">
                         <p>Marathons</p>
                         <?php if ($marathon):
-                            echo '<p class="race-number" id="value" data-value="' . $marathon . '>' . $marathon . '</p>';
+                            echo '<p class="race-number" id="value" data-value="' . $marathon . '">' . $marathon . '</p>';
                         else :
                             echo '<p class="race-number" id="value">0</p>';
                         endif; ?>
@@ -215,7 +215,7 @@ $ins_regional_director  = get_field('regional_director', 'user_'. $author_id);
                     <div class="race">
                         <p>Half Marathons</p>
                         <?php if ($half_marathon):
-                            echo '<p class="race-number" id="value" data-value="' . $half_marathon . '>' . $half_marathon . '</p>';
+                            echo '<p class="race-number" id="value" data-value="' . $half_marathon . '">' . $half_marathon . '</p>';
                         else :
                             echo '<p class="race-number" id="value">0</p>';
                         endif; ?>
@@ -223,7 +223,7 @@ $ins_regional_director  = get_field('regional_director', 'user_'. $author_id);
                     <div class="race">
                         <p>10Ks</p>
                         <?php if ($tenk):
-                            echo '<p class="race-number" id="value" data-value="' . $tenk . '>' . $tenk . '</p>';
+                            echo '<p class="race-number" id="value" data-value="' . $tenk . '">' . $tenk . '</p>';
                         else :
                             echo '<p class="race-number" id="value">0</p>';
                         endif; ?>
@@ -231,7 +231,7 @@ $ins_regional_director  = get_field('regional_director', 'user_'. $author_id);
                     <div class="race">
                         <p>5Ks</p>
                         <?php if ($fivek):
-                            echo '<p class="race-number" id="value" data-value="' . $fivek . '>' . $fivek . '</p>';
+                            echo '<p class="race-number" id="value" data-value="' . $fivek . '">' . $fivek . '</p>';
                         else :
                             echo '<p class="race-number" id="value">0</p>';
                         endif; ?>
