@@ -81,13 +81,13 @@ $ins_regional_director  = get_field('regional_director', 'user_'. $author_id);
                     <a target="_blank" href="<?php echo $ins_twitter; ?>"><img src="/wp-content/uploads/2022/01/instructor-twitter-icon.png" alt="twitter"></a>
                 <?php endif; ?>
                 <?php if ($ins_linkedin) : ?>
-                    <a target="_blank" href="<?php echo $ins_linkedin; ?>"><img src="/wp-content/uploads/2022/01/instructor-twitter-icon.png" alt="linkedin"></a>
+                    <a target="_blank" href="<?php echo $ins_linkedin; ?>"><img src="/wp-content/uploads/2022/01/instructor-linked-in-icon.png" alt="linkedin"></a>
                 <?php endif; ?>
                 <?php if ($ins_instagram) : ?>
                     <a target="_blank" href="<?php echo $ins_instagram; ?>"><img src="/wp-content/uploads/2022/01/instructor-instagram-icon.png" alt="instagram"></a>
                 <?php endif; ?>
                 <?php if ($ins_youtube) : ?>
-                    <a target="_blank" href="<?php echo $ins_youtube; ?>"><img src="/wp-content/uploads/2022/01/instructor-twitter-icon.png" alt="youtube"></a>
+                    <a target="_blank" href="<?php echo $ins_youtube; ?>"><img src="/wp-content/uploads/2022/01/instructor-youtube-icon.png" alt="youtube"></a>
                 <?php endif; ?>
                 <?php if ($ins_website) : ?>
                     <a target="_blank" href="<?php echo $ins_website; ?>"><img src="/wp-content/uploads/2022/01/instructor-website-icon.png" alt="website"></a>

@@ -709,6 +709,12 @@ h2.comment-reply-title {
  * included in this file.
  * Styling for the Google Map
  */
+#madcow-instructors-find-an-instructor {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
 /* INSTRUCTOR MAP */
 .acf-map {
   width: 100%;

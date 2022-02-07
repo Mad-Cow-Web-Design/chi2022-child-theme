@@ -4,7 +4,11 @@
  * Styling for the Google Map
  */
 
-#madcow-instructors-find-an-instructor {}
+#madcow-instructors-find-an-instructor {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+}
 
 
 /* INSTRUCTOR MAP */
