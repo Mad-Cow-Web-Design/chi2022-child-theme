@@ -31,6 +31,7 @@ function madcow_disable_page_title( $return ) {
 add_action( 'init', 'madcowweb_shortcodes');
 function madcowweb_shortcodes(){
     add_shortcode('blog-post-products', 'blog_post_products');
+    add_shortcode('workshop-calendar', 'workshop_calendar');
 }
 
 function blog_post_products() {
@@ -49,6 +50,89 @@ function blog_post_products() {
     $html .= '</div>';
     return $html;
 }
+
+function workshop_calendar( $chi_workshops ) {
+    $date_now = date('Y-m-d');
+    $time_now = strtotime($date_now);
+
+    $chi_workshops = get_posts( array(
+        'posts_per_page' => -1,
+        'post_type' => 'workshops',
+        'meta_key'  => 'start_date_&_time',
+        'orderby'   => 'meta_value',
+        'order'     => 'ASC',
+        'meta_type' => 'DATETIME',
+        'meta_query' => array(
+            array(
+            'key'		=> 'start_date_&_time',
+            'compare'	=> '>=',
+            'value'       => $date_now,
+            'type' => 'DATETIME'
+            ),
+       ),
+    ) );
+    $group_workshops = array();
+    if ( $chi_workshops ) {
+        $html = '<div class="workshops">';
+        foreach ( $chi_workshops as $workshop ) :
+            $start_date = get_field('start_date_&_time', $workshop->ID, false);
+            $start_date = new DateTime($start_date);
+            $year = $start_date->format('Y');
+            $month = $start_date->format('F');
+            $group_workshops[$year][$month][] = [
+                'workshop' => $workshop,
+                'date' => $start_date
+            ];
+        endforeach;
+
+        foreach ($group_workshops as $yearKey => $years) :
+            $html .= '<div class="workshops-year-block">';
+            $html .= '<div class="post-grid workshops">';
+            foreach ($years as $monthKey => $months) :
+                $html .= '<div class="workshop-month">';
+                $html .= '<h2>' . $monthKey . ' ' . $yearKey . '</h2>';
+                    foreach ($months as $postKey => $posts) :
+                        $workshop = $posts['workshop'];
+                        $workshop_date = $posts['date'];
+                        $start_date = get_field('start_date_&_time', $workshop->ID, false);
+                        $start_date = new DateTime($start_date);
+                        $end_date = get_field('end_date_&_time', $workshop->ID, false);
+                        $end_date = new DateTime($end_date);
+                        $workshop_start_day = $start_date->format('d');
+                        $workshop_end_day = $end_date->format('d');
+                        $html .= '<div class="workshop-block">';
+                                $html .= '<div class="workshop-date">';
+                                    $html .= '<span>';
+                                    $html .= $workshop_date->format('d');
+                                        if ($workshop_start_day != $workshop_end_day):
+                                            $html .= ' - ' . $workshop_end_day;
+                                        endif;
+                                    $html .= '</span>';
+                                $html .= '</div>';
+                            $html .= '<a href="' . get_permalink($workshop->ID) . '">' . $workshop->post_title . '</a>';
+                        $html .= '</div><!--end workshop-block -->';
+                    endforeach;
+                $html .= '</div><!--end workshop-month -->';
+            endforeach;
+            $html .= '</div><!-- end post-grid workshops -->';
+            $html .= '</div><!--end workshop year block -->';
+        endforeach;
+    }
+    return $html;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //PRE POPULATE INSTRUCTOR GRAVITY FORM FIELD WITH INSTRUCTOR EMAIL
 add_filter('gform_field_value_instructor_email', 'instructor_email');

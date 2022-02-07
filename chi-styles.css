@@ -1349,4 +1349,47 @@ input.text[type=number] {
   font-size: 12px;
 }
 
+/* EVENTS */
+.workshops-year-block {
+  width: 100%;
+}
+
+.workshop-month {
+  width: 100%;
+  border-top: 5px solid #19AECB;
+  padding: 20px;
+}
+
+@media (min-width: 800px) {
+  .workshops {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+  }
+
+  .workshop-month {
+    max-width: 45%;
+    margin: 0 20px 50px;
+  }
+}
+.workshop-block {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+}
+
+.workshop-date {
+  width: 100%;
+  max-width: 125px;
+  height: 45px;
+  margin-right: 10px;
+}
+
+.workshop-block a {
+  color: #19AECB;
+  letter-spacing: 0.75px;
+  font-weight: 400;
+}
+
 /*# sourceMappingURL=chi-styles.css.map */
