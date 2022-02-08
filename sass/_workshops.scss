@@ -32,6 +32,17 @@
             color: #19AECB;
             letter-spacing: 0.75px;
             font-weight: 400;
+            &.chirunning-clinic,
+            &.chirunning-tune-up,
+            &.chirunning-workshop {
+                color: #81C723;
+            }
+            &.chiwalk-run-workshop {
+                color: #3DC3A5;
+            }
+            &.chiwalking-workshop {
+                color: #3F68B1;
+            }
         }
     }
     .workshop-date {
@@ -39,6 +50,7 @@
         max-width: 75px;
         height: 45px;
         margin-right: 10px;
+        font-weight: bold;
     }
 }
 

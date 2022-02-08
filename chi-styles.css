@@ -1389,11 +1389,21 @@ input.text[type=number] {
   letter-spacing: 0.75px;
   font-weight: 400;
 }
+.page-id-53 .workshop-block a.chirunning-clinic, .page-id-53 .workshop-block a.chirunning-tune-up, .page-id-53 .workshop-block a.chirunning-workshop {
+  color: #81C723;
+}
+.page-id-53 .workshop-block a.chiwalk-run-workshop {
+  color: #3DC3A5;
+}
+.page-id-53 .workshop-block a.chiwalking-workshop {
+  color: #3F68B1;
+}
 .page-id-53 .workshop-date {
   width: 100%;
   max-width: 75px;
   height: 45px;
   margin-right: 10px;
+  font-weight: bold;
 }
 
 .single-workshops #label_5_5_1 {
