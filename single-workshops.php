@@ -60,7 +60,7 @@ $workshop_img = get_field('background_img', 'workshop_type' . '_' . $term_id);
                 if ($workshop_img) :
                     echo $workshop_img ;
                 else :
-                    echo 'https://chiliving2021.wpengine.com/wp-content/uploads/2022/01/workshop-header.jpg' ;
+                    echo site_url( '/' ) . 'wp-content/uploads/2022/01/workshop-header.jpg' ;
                 endif; ?>');">
         </div>
         <h1><?php echo $workshop_name; ?></h1>
@@ -70,10 +70,10 @@ $workshop_img = get_field('background_img', 'workshop_type' . '_' . $term_id);
                 <div class="instructor-sub-header">
                     <div class="instructor-icons">
                         <?php if ($ins_chirunning_certification) : ?>
-                            <img src="https://chiliving2021.wpengine.com/wp-content/uploads/2022/01/chirunning-certified-instructor.png" alt="">
+                            <img src="<?php echo site_url( '/' ); ?>wp-content/uploads/2022/01/chirunning-certified-instructor.png" alt="">
                         <?php endif; ?>
                         <?php if ($ins_chiwalking_certification) : ?>
-                            <img src="https://chiliving2021.wpengine.com/wp-content/uploads/2022/01/chiwalking-certified-instructor.png" alt="">
+                            <img src="<?php echo site_url( '/' ); ?>wp-content/uploads/2022/01/chiwalking-certified-instructor.png" alt="">
                         <?php endif; ?>
                     </div>
                     <div class="instructor-title">
@@ -83,39 +83,39 @@ $workshop_img = get_field('background_img', 'workshop_type' . '_' . $term_id);
             </div>
             <div class="right">
                 <p class="workshop-date">
-                    <img src="https://chiliving2021.wpengine.com/wp-content/uploads/2022/01/workshop-date-icon.png" alt=""><?php echo $workshop_start_date->format('m\/d\/Y | g A'); ?>
+                    <img src="<?php echo site_url( '/' ); ?>wp-content/uploads/2022/01/workshop-date-icon.png" alt=""><?php echo $workshop_start_date->format('m\/d\/Y | g A'); ?>
                 </p>
                 <p class="workshop-location">
-                    <a target="_blank" href="<?php echo $workshop_link_to_map_for_location; ?>"><img src="https://chiliving2021.wpengine.com/wp-content/uploads/2022/01/workshop-location-icon.png" alt=""><?php echo $workshop_venue; ?></a>
+                    <a target="_blank" href="<?php echo $workshop_link_to_map_for_location; ?>"><img src="<?php echo site_url( '/' ); ?>wp-content/uploads/2022/01/workshop-location-icon.png" alt=""><?php echo $workshop_venue; ?></a>
                 </p>
                 <p class="workshop-cost">
-                <img src="https://chiliving2021.wpengine.com/wp-content/uploads/2022/01/workshop-price-icon.png" alt=""><?php echo $workshop_cost; ?>
+                <img src="<?php echo site_url( '/' ); ?>wp-content/uploads/2022/01/workshop-price-icon.png" alt=""><?php echo $workshop_cost; ?>
                 </p>
                 <h3>Connect with <?php echo $author_first_name; ?></h3>
                 <div class="instructor-social">
                     <?php if ($ins_facebook) : ?>
-                        <a target="_blank" href="<?php echo $ins_facebook; ?>"><img src="https://chiliving2021.wpengine.com/wp-content/uploads/2022/01/instructor-facebook-icon.png" alt="facebook"></a>
+                        <a target="_blank" href="<?php echo $ins_facebook; ?>"><img src="<?php echo site_url( '/' ); ?>wp-content/uploads/2022/01/instructor-facebook-icon.png" alt="facebook"></a>
                     <?php endif; ?>
                     <?php if ($ins_twitter) : ?>
-                        <a target="_blank" href="<?php echo $ins_twitter; ?>"><img src="https://chiliving2021.wpengine.com/wp-content/uploads/2022/01/instructor-twitter-icon.png" alt="twitter"></a>
+                        <a target="_blank" href="<?php echo $ins_twitter; ?>"><img src="<?php echo site_url( '/' ); ?>wp-content/uploads/2022/01/instructor-twitter-icon.png" alt="twitter"></a>
                     <?php endif; ?>
                     <?php if ($ins_linkedin) : ?>
-                        <a target="_blank" href="<?php echo $ins_linkedin; ?>"><img src="https://chiliving2021.wpengine.com/wp-content/uploads/2022/01/instructor-linked-in-icon.png" alt="linkedin"></a>
+                        <a target="_blank" href="<?php echo $ins_linkedin; ?>"><img src="<?php echo site_url( '/' ); ?>wp-content/uploads/2022/01/instructor-linked-in-icon.png" alt="linkedin"></a>
                     <?php endif; ?>
                     <?php if ($ins_instagram) : ?>
-                        <a target="_blank" href="<?php echo $ins_instagram; ?>"><img src="https://chiliving2021.wpengine.com/wp-content/uploads/2022/01/instructor-instagram-icon.png" alt="instagram"></a>
+                        <a target="_blank" href="<?php echo $ins_instagram; ?>"><img src="<?php echo site_url( '/' ); ?>wp-content/uploads/2022/01/instructor-instagram-icon.png" alt="instagram"></a>
                     <?php endif; ?>
                     <?php if ($ins_youtube) : ?>
-                        <a target="_blank" href="<?php echo $ins_youtube; ?>"><img src="https://chiliving2021.wpengine.com/wp-content/uploads/2022/01/instructor-youtube-icon.png" alt="youtube"></a>
+                        <a target="_blank" href="<?php echo $ins_youtube; ?>"><img src="<?php echo site_url( '/' ); ?>wp-content/uploads/2022/01/instructor-youtube-icon.png" alt="youtube"></a>
                     <?php endif; ?>
                     <?php if ($ins_website) : ?>
-                        <a target="_blank" href="<?php echo $ins_website; ?>"><img src="https://chiliving2021.wpengine.com/wp-content/uploads/2022/01/instructor-website-icon.png" alt="website"></a>
+                        <a target="_blank" href="<?php echo $ins_website; ?>"><img src="<?php echo site_url( '/' ); ?>wp-content/uploads/2022/01/instructor-website-icon.png" alt="website"></a>
                     <?php endif; ?>
                     <?php if ($ins_phone && $ins_show_phone_publicly == 'yes') : ?>
-                        <a target="_blank" href="tel:<?php echo $ins_phone; ?>"><img src="https://chiliving2021.wpengine.com/wp-content/uploads/2022/01/instructor-phone-number-icon.png" alt="phone"></a>
+                        <a target="_blank" href="tel:<?php echo $ins_phone; ?>"><img src="<?php echo site_url( '/' ); ?>wp-content/uploads/2022/01/instructor-phone-number-icon.png" alt="phone"></a>
                     <?php endif; ?>
                     <?php if ($ins_email && $ins_show_email_publicly == 'yes') : ?>
-                        <a target="_blank" href="mailto:<?php echo $ins_email; ?>"><img src="https://chiliving2021.wpengine.com/wp-content/uploads/2022/01/instructor-email-icon.png" alt="email"></a>
+                        <a target="_blank" href="mailto:<?php echo $ins_email; ?>"><img src="<?php echo site_url( '/' ); ?>wp-content/uploads/2022/01/instructor-email-icon.png" alt="email"></a>
                     <?php endif; ?>
                 </div> <!-- end instructor social -->
             </div>
