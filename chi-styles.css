@@ -831,6 +831,9 @@ h2.comment-reply-title {
     margin-right: 20px;
   }
 }
+#madcow-instructors-search-filter-form #madcow-instructors-search-filter-form-submit {
+  height: 42px;
+}
 @media screen and (min-width: 768px) {
   #madcow-instructors-search-filter-form #madcow-instructors-search-filter-form-submit {
     width: 33%;
