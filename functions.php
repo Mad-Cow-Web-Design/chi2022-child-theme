@@ -143,19 +143,6 @@ function workshop_calendar( $chi_workshops ) {
     return $html;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 //PRE POPULATE INSTRUCTOR GRAVITY FORM FIELD WITH INSTRUCTOR EMAIL
 add_filter('gform_field_value_instructor_email', 'instructor_email');
 function instructor_email($value){
@@ -238,3 +225,8 @@ function set_best_races_start_rows($value, $post_id, $field) {
     }
 return $value;
 }
+// global $wp_roles;
+// $roles = $wp_roles->roles;
+
+// // print it to the screen
+// echo '<pre>' . print_r( $roles, true ) . '</pre>';

@@ -50,7 +50,7 @@ $ins_regional_director  = get_field('regional_director', 'user_'. $author_id);
     <div class="instructor-banner"></div>
     <div class="instructor-header">
         <div class="left">
-            <img src="<?php echo $ins_source_photo; ?>" alt="<?php echo $curauth->nickname; ?>">
+            <img class="inst-img" src="<?php echo $ins_source_photo; ?>" alt="<?php echo $curauth->nickname; ?>">
             <div class="instructor-sub-header">
                 <div class="instructor-icons">
                     <?php if ($ins_chirunning_certification) : ?>
@@ -75,28 +75,28 @@ $ins_regional_director  = get_field('regional_director', 'user_'. $author_id);
             <h3>Connect with <?php echo $author_first_name; ?></h3>
             <div class="instructor-social">
                 <?php if ($ins_facebook) : ?>
-                    <a target="_blank" href="<?php echo $ins_facebook; ?>"><img src="/wp-content/uploads/2022/01/instructor-facebook-icon.png" alt="facebook"></a>
+                    <a class="elementor-animation-push" target="_blank" href="<?php echo $ins_facebook; ?>"><i class="fab fa-facebook-f"></i></a>
                 <?php endif; ?>
                 <?php if ($ins_twitter) : ?>
-                    <a target="_blank" href="<?php echo $ins_twitter; ?>"><img src="/wp-content/uploads/2022/01/instructor-twitter-icon.png" alt="twitter"></a>
+                    <a class="elementor-animation-push" target="_blank" href="<?php echo $ins_twitter; ?>"><i class="fab fa-twitter"></i></a>
                 <?php endif; ?>
                 <?php if ($ins_linkedin) : ?>
-                    <a target="_blank" href="<?php echo $ins_linkedin; ?>"><img src="/wp-content/uploads/2022/01/instructor-linked-in-icon.png" alt="linkedin"></a>
+                    <a class="elementor-animation-push" target="_blank" href="<?php echo $ins_linkedin; ?>"><i class="fab fa-linkedin"></i></a>
                 <?php endif; ?>
                 <?php if ($ins_instagram) : ?>
-                    <a target="_blank" href="<?php echo $ins_instagram; ?>"><img src="/wp-content/uploads/2022/01/instructor-instagram-icon.png" alt="instagram"></a>
+                    <a class="elementor-animation-push" target="_blank" href="<?php echo $ins_instagram; ?>"><i class="fab fa-instagram"></i></a>
                 <?php endif; ?>
                 <?php if ($ins_youtube) : ?>
-                    <a target="_blank" href="<?php echo $ins_youtube; ?>"><img src="/wp-content/uploads/2022/01/instructor-youtube-icon.png" alt="youtube"></a>
+                    <a class="elementor-animation-push" target="_blank" href="<?php echo $ins_youtube; ?>"><i class="fab fa-youtube"></i></a>
                 <?php endif; ?>
                 <?php if ($ins_website) : ?>
-                    <a target="_blank" href="<?php echo $ins_website; ?>"><img src="/wp-content/uploads/2022/01/instructor-website-icon.png" alt="website"></a>
+                    <a class="elementor-animation-push" target="_blank" href="<?php echo $ins_website; ?>"><i class="fas fa-globe"></i></a>
                 <?php endif; ?>
                 <?php if ($ins_phone && $ins_show_phone_publicly == 'yes') : ?>
-                    <a target="_blank" href="tel:<?php echo $ins_phone; ?>"><img src="/wp-content/uploads/2022/01/instructor-phone-number-icon.png" alt="phone"></a>
+                    <a class="elementor-animation-push" target="_blank" href="tel:<?php echo $ins_phone; ?>"><i class="fas fa-phone"></i></a>
                 <?php endif; ?>
                 <?php if ($ins_email && $ins_show_email_publicly == 'yes') : ?>
-                    <a target="_blank" href="mailto:<?php echo $ins_email; ?>"><img src="/wp-content/uploads/2022/01/instructor-email-icon.png" alt="email"></a>
+                    <a class="elementor-animation-push" target="_blank" href="mailto:<?php echo $ins_email; ?>"><i class="fas fa-envelope"></i></a>
                 <?php endif; ?>
             </div> <!-- end instructor social -->
         </div>
@@ -120,7 +120,11 @@ $ins_regional_director  = get_field('regional_director', 'user_'. $author_id);
             </div>
         <?php endif; ?>
 
-        <?php if ($ins_bio) : ?>
+        <?php if ($ins_bio && empty($ins_youtube_video_url)) : ?>
+            <div id="about" class="tabcontent" style="display: block;">
+                <p><?php echo $ins_bio; ?></p>
+            </div>
+        <?php elseif ($ins_bio && !empty($ins_youtube_video_url)) : ?>
             <div id="about" class="tabcontent">
                 <p><?php echo $ins_bio; ?></p>
             </div>

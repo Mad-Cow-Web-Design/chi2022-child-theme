@@ -65,7 +65,7 @@
 
 .instructor-header .left {
     width: 40%;
-    &>img {
+    .inst-img img {
         border: 6px solid #fff;
         -webkit-box-shadow: 0 0 5px 5px #c5c2c2;
         -moz-box-shadow: 0 0 5px 5px #c5c2c2;
@@ -98,10 +98,15 @@
 }
 
 .instructor-header .right .workshop-date img,
-.instructor-header .right .workshop-location img,
 .instructor-header .right .workshop-cost img {
     max-width: 35px;
     margin-right: 20px;
+}
+
+.instructor-header .right .workshop-location img {
+    max-width: 20px;
+    margin-left: 8px;
+    margin-right: 28px;
 }
 
 .instructor-header {
@@ -124,6 +129,15 @@
     a {
         width: 35px;
         margin-right: 10px;
+        background-color: #4a4a4a;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        i {
+            color: #fff;
+            padding-left: 6px;
+            font-size: 14px;
+        }
     }
 }
 
