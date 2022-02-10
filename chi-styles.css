@@ -313,36 +313,26 @@ h2.comment-reply-title {
   }
 }
 /* AUTHOR / INSTRUCTOR PAGES */
-.author .author-content,
-.single-workshops .workshop-content,
-.workshop-signup .content {
+.author .author-content {
   max-width: 1140px;
   padding: 0 20px;
   margin: 0 auto;
 }
 
 @media (max-width: 767px) {
-  .author .author-content,
-.single-workshops .workshop-content,
-.workshop-signup .content {
+  .author .author-content {
     max-width: 767px;
   }
 }
 @media (max-width: 1024px) {
-  .author .author-content,
-.single-workshops .workshop-content,
-.workshop-signup .content {
+  .author .author-content {
     max-width: 1024px;
   }
 }
-.single-workshops .workshop-content h1 {
-  display: block;
-}
-
 .instructor-banner {
   height: 300px;
   background: url("/wp-content/uploads/2022/01/chiliving-plus-background-white-50.png"), #19AECB;
-  background-size: contain;
+  background-size: cover;
   left: 50%;
   padding: 10px;
   margin-left: -50vw;
@@ -361,19 +351,6 @@ h2.comment-reply-title {
   position: relative;
 }
 
-.workshop-header {
-  margin-top: 0;
-}
-.workshop-header.instructor-header {
-  margin: 25px auto;
-}
-.workshop-header.instructor-header .right {
-  padding: 50px;
-}
-.workshop-header.instructor-header .right h3 {
-  font-size: 18px;
-}
-
 .instructor-header .left {
   width: 40%;
 }
@@ -389,19 +366,6 @@ h2.comment-reply-title {
   flex-direction: column;
   justify-content: flex-end;
   padding: 50px 50px 90px;
-}
-
-.workshop-header .instructor-header .right .workshop-date,
-.workshop-header .instructor-header .right .workshop-location a,
-.workshop-header .instructor-header .right .workshop-cost {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: nowrap;
-  align-items: center;
-}
-.workshop-header .instructor-header .right .workshop-date {
-  font-weight: 800;
-  font-size: 18px;
 }
 
 .instructor-header .right .workshop-date img,
@@ -642,24 +606,6 @@ h2.comment-reply-title {
   font-weight: 700;
   margin-top: 20px;
   margin-bottom: 20px;
-}
-
-/* workshop-signup */
-.workshop-signup {
-  background-color: #4a4a4a;
-  left: 50%;
-  padding: 70px 10px;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  max-width: 100vw;
-  position: relative;
-  right: 50%;
-  width: 100vw;
-  font-family: "Lato", sans-serif;
-}
-.workshop-signup p {
-  color: #fff;
-  margin-bottom: 50px;
 }
 
 .page-id-250 .acf-fields .acf-tab-wrap {
@@ -1034,7 +980,8 @@ h2.comment-reply-title {
   padding-left: 0;
 }
 
-.woocommerce-Tabs-panel.panel ul.cr-additional-bullets li {
+.woocommerce-Tabs-panel.panel ul.cr-additional-bullets li,
+.woocommerce-Tabs-panel.panel ul li {
   list-style-type: circle;
   background: url(/wp-content/uploads/2022/01/feature-benefit-checkmark-icon.png) no-repeat 0 3px;
   padding: 0px 0px 10px 30px;
@@ -1372,7 +1319,7 @@ input.text[type=number] {
   font-size: 12px;
 }
 
-/* EVENTS */
+/* WORKSHOPS */
 .page-id-53 .workshops-year-block {
   width: 100%;
 }
@@ -1421,6 +1368,83 @@ input.text[type=number] {
   height: 45px;
   margin-right: 10px;
   font-weight: bold;
+}
+
+.single-workshops #label_5_5_1 {
+  color: #fff;
+}
+
+/* WORKSHOP */
+.single-workshops .workshop-content,
+.workshop-signup .content {
+  max-width: 1140px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+@media (max-width: 767px) {
+  .single-workshops .workshop-content,
+.workshop-signup .content {
+    max-width: 767px;
+  }
+}
+@media (max-width: 1024px) {
+  .single-workshops .workshop-content,
+.workshop-signup .content {
+    max-width: 1024px;
+  }
+}
+
+.single-workshops .workshop-content .instructor-banner {
+  margin-bottom: 70px;
+}
+.single-workshops .workshop-content h1 {
+  display: block;
+}
+
+.workshop-header {
+  margin-top: 0;
+}
+.workshop-header.instructor-header {
+  margin: 25px auto;
+}
+.workshop-header.instructor-header .right {
+  padding: 50px;
+}
+.workshop-header.instructor-header .right .workshop-date,
+.workshop-header.instructor-header .right .workshop-location a,
+.workshop-header.instructor-header .right .workshop-cost {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.workshop-header.instructor-header .right .workshop-date {
+  font-weight: 600;
+  font-size: 18px;
+}
+.workshop-header.instructor-header .right h3 {
+  font-size: 18px;
+}
+
+/* workshop-signup */
+.workshop-signup {
+  background-color: #4a4a4a;
+  left: 50%;
+  padding: 70px 10px;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  max-width: 100vw;
+  position: relative;
+  right: 50%;
+  width: 100vw;
+  font-family: "Lato", sans-serif;
+}
+.workshop-signup p {
+  color: #fff;
+  margin-bottom: 50px;
+}
+.workshop-signup h2 {
+  color: #fff;
 }
 
 .single-workshops #label_5_5_1 {

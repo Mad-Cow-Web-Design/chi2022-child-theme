@@ -1,0 +1,77 @@
+/* WORKSHOP */
+
+.single-workshops .workshop-content,
+.workshop-signup .content {
+    max-width: 1140px;
+    padding: 0 20px;
+    margin: 0 auto;
+    @media (max-width: 767px) {
+        max-width: 767px;
+    }
+    @media (max-width: 1024px) {
+        max-width: 1024px;
+    }
+}
+
+.single-workshops .workshop-content {
+    .instructor-banner {
+        margin-bottom: 70px;
+    }
+    h1 {
+        display: block;
+    }
+}
+
+.workshop-header {
+    margin-top: 0;
+    &.instructor-header {
+        margin: 25px auto;
+        .right {
+            .workshop-date,
+            .workshop-location a,
+            .workshop-cost {
+                display: flex;
+                justify-content: flex-start;
+                flex-wrap: nowrap;
+                align-items: center;
+            }
+            .workshop-date {
+                font-weight: 600;
+                font-size: 18px;
+            }
+            padding: 50px;
+            h3 {
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+
+/* workshop-signup */
+
+.workshop-signup {
+    background-color: #4a4a4a;
+    left: 50%;
+    padding: 70px 10px;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    max-width: 100vw;
+    position: relative;
+    right: 50%;
+    width: 100vw;
+    font-family: 'Lato', sans-serif;
+    p {
+        color: #fff;
+        margin-bottom: 50px;
+    }
+    h2 {
+        color: #fff;
+    }
+}
+
+.single-workshops {
+    #label_5_5_1 {
+        color: #fff;
+    }
+}

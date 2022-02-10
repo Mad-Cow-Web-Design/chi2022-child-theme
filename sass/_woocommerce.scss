@@ -134,7 +134,8 @@
     padding-left: 0;
 }
 
-.woocommerce-Tabs-panel.panel ul.cr-additional-bullets li {
+.woocommerce-Tabs-panel.panel ul.cr-additional-bullets li,
+.woocommerce-Tabs-panel.panel ul li {
     list-style-type: circle;
     background: url(/wp-content/uploads/2022/01/feature-benefit-checkmark-icon.png) no-repeat 0 3px;
     padding: 0px 0px 10px 30px;

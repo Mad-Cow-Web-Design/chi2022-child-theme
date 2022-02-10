@@ -66,7 +66,7 @@ $workshop_img = get_field('background_img', 'workshop_type' . '_' . $term_id);
         <h1><?php echo $workshop_name; ?></h1>
         <div class="instructor-header workshop-header">
             <div class="left">
-                <img src="<?php echo $ins_source_photo; ?>" alt="<?php echo $curauth->nickname; ?>">
+                <img class="inst-img" src="<?php echo $ins_source_photo; ?>" alt="<?php echo $curauth->nickname; ?>">
                 <div class="instructor-sub-header">
                     <div class="instructor-icons">
                         <?php if ($ins_chirunning_certification) : ?>
