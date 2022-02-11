@@ -20,6 +20,12 @@
   color: #4a4a4a;
 }
 
+.page-id-48 .uael-post-grid__inner.uael-post-infinite-scroll.uael-post-infinite__event-scroll,
+.page-id-47 .uael-post-grid__inner.uael-post-infinite-scroll.uael-post-infinite__event-scroll {
+  height: 1100px;
+  overflow: scroll;
+}
+
 /* SINGLE BLOG POSTS */
 h2.comment-reply-title {
   display: none;
@@ -61,6 +67,12 @@ h2.comment-reply-title {
   max-width: 1140px !important;
   padding: 10px 20px;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 767px) {
+  h2.elementor-heading-title {
+    font-size: 36px !important;
+  }
 }
 
 .chiliving-headline-underline h1,
@@ -116,11 +128,40 @@ h2.comment-reply-title {
 .white-headline-underline h6:after {
   position: absolute;
   content: "";
-  width: 200px;
-  height: 25px;
+  width: 30%;
+  height: 15px;
   left: -5px;
-  top: 36px;
+  top: 28px;
   z-index: -1;
+}
+@media (min-width: 768px) {
+  .chiliving-headline-underline h1:after,
+.chiliving-headline-underline h2:after,
+.chiliving-headline-underline h3:after,
+.chiliving-headline-underline h4:after,
+.chiliving-headline-underline h5:after,
+.chiliving-headline-underline h6:after,
+.chirunning-headline-underline h1:after,
+.chirunning-headline-underline h2:after,
+.chirunning-headline-underline h3:after,
+.chirunning-headline-underline h4:after,
+.chirunning-headline-underline h5:after,
+.chirunning-headline-underline h6:after,
+.chiwalking-headline-underline h1:after,
+.chiwalking-headline-underline h2:after,
+.chiwalking-headline-underline h3:after,
+.chiwalking-headline-underline h4:after,
+.chiwalking-headline-underline h5:after,
+.chiwalking-headline-underline h6:after,
+.white-headline-underline h1:after,
+.white-headline-underline h2:after,
+.white-headline-underline h3:after,
+.white-headline-underline h4:after,
+.white-headline-underline h5:after,
+.white-headline-underline h6:after {
+    height: 25px;
+    top: 36px;
+  }
 }
 
 .chiliving-headline-underline h1,
@@ -303,6 +344,7 @@ h2.comment-reply-title {
   .uael-post__thumbnail a img {
     height: 100%;
     object-fit: cover;
+    object-position: top;
   }
 
   .uael-post__content-wrap {
@@ -310,6 +352,10 @@ h2.comment-reply-title {
     flex-direction: column;
     justify-content: space-between;
     height: 385px;
+  }
+
+  .page-id-48 .uael-post__content-wrap {
+    height: 300px;
   }
 }
 /* AUTHOR / INSTRUCTOR PAGES */
@@ -345,39 +391,48 @@ h2.comment-reply-title {
 }
 
 .instructor-header {
-  display: flex;
-  flex-wrap: nowrap;
-  margin: -150px auto 100px;
   position: relative;
 }
-
+@media (min-width: 768px) {
+  .instructor-header {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: -150px auto 100px;
+  }
+}
 .instructor-header .left {
-  width: 40%;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .instructor-header .left {
+    width: 40%;
+    margin: 0;
+  }
 }
 .instructor-header .left .inst-img img {
+  max-width: 380px;
+  margin: 0 auto;
+  display: block;
   border: 6px solid #fff;
   -webkit-box-shadow: 0 0 5px 5px #c5c2c2;
   -moz-box-shadow: 0 0 5px 5px #c5c2c2;
   box-shadow: 0 0 5px 5px #c5c2c2;
+  max-width: 380px;
 }
-
 .instructor-header .right {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 50px 50px 90px;
+  pading: 10px;
 }
-
-.instructor-header .right .workshop-date img,
-.instructor-header .right .workshop-cost img {
-  max-width: 35px;
-  margin-right: 20px;
+@media (min-width: 768px) {
+  .instructor-header .right {
+    padding: 50px 50px 90px;
+  }
 }
-
-.instructor-header .right .workshop-location img {
+.instructor-header .right .quick-location img {
   max-width: 20px;
-  margin-left: 8px;
-  margin-right: 28px;
+  margin-right: 10px;
 }
 
 .instructor-header div.right h3 {
@@ -468,6 +523,7 @@ h2.comment-reply-title {
   text-align: justify;
 }
 .tabcontent#video iframe {
+  max-width: 100%;
   border: 6px solid #fff;
   -webkit-box-shadow: 0 0 5px 5px #c5c2c2;
   -moz-box-shadow: 0 0 5px 5px #c5c2c2;
@@ -606,6 +662,7 @@ h2.comment-reply-title {
   font-weight: 700;
   margin-top: 20px;
   margin-bottom: 20px;
+  letter-spacing: 2px;
 }
 
 .page-id-250 .acf-fields .acf-tab-wrap {
@@ -880,6 +937,10 @@ h2.comment-reply-title {
   flex-direction: column;
   justify-content: space-between;
 }
+.woocommerce ul.products li.product .mcw-archive-page-button.button,
+.woocommerce-page ul.products li.product .mcw-archive-page-button.button {
+  text-align: center;
+}
 
 @media only screen and (max-width: 768px) {
   .woocommerce ul.products[class*=columns-] li.product,
@@ -1011,7 +1072,8 @@ h2.comment-reply-title {
 .single_add_to_cart_button.button.alt,
 .woocommerce .button.mcw-archive-page-button,
 .woocommerce .button.product_type_external,
-.woocommerce #respond input#submit {
+.woocommerce #respond input#submit,
+.woocommerce .wc-proceed-to-checkout .checkout-button.button.alt.wc-forward {
   border: 2px solid #19AECB;
   background-color: #fff !important;
   color: #19AECB !important;
@@ -1024,7 +1086,8 @@ h2.comment-reply-title {
 .single_add_to_cart_button.button.alt:hover,
 .woocommerce .button.mcw-archive-page-button:hover,
 .woocommerce .button.product_type_external:hover,
-.woocommerce #respond input#submit:hover {
+.woocommerce #respond input#submit:hover,
+.woocommerce .wc-proceed-to-checkout .checkout-button.button.alt.wc-forward:hover {
   border: 2px solid #19AECB;
   background-color: #19AECB !important;
   color: #fff !important;
@@ -1319,6 +1382,13 @@ input.text[type=number] {
   font-size: 12px;
 }
 
+/* CART */
+.woocommerce-cart .site-main,
+.woocommerce-checkout .site-main {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
 /* WORKSHOPS */
 .page-id-53 .workshops-year-block {
   width: 100%;
@@ -1408,7 +1478,7 @@ input.text[type=number] {
   margin: 25px auto;
 }
 .workshop-header.instructor-header .right {
-  padding: 50px;
+  padding: 10px;
 }
 .workshop-header.instructor-header .right .workshop-date,
 .workshop-header.instructor-header .right .workshop-location a,
@@ -1418,9 +1488,24 @@ input.text[type=number] {
   flex-wrap: nowrap;
   align-items: center;
 }
+.workshop-header.instructor-header .right .workshop-date img,
+.workshop-header.instructor-header .right .workshop-cost img {
+  max-width: 35px;
+  margin-right: 20px;
+}
+.workshop-header.instructor-header .right .workshop-location img {
+  max-width: 20px;
+  margin-left: 8px;
+  margin-right: 28px;
+}
 .workshop-header.instructor-header .right .workshop-date {
   font-weight: 600;
   font-size: 18px;
+}
+@media (min-width: 768px) {
+  .workshop-header.instructor-header .right {
+    padding: 50px;
+  }
 }
 .workshop-header.instructor-header .right h3 {
   font-size: 18px;
