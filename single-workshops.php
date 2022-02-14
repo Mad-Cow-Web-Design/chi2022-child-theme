@@ -97,7 +97,7 @@ $workshop_img = get_field('background_img', 'workshop_type' . '_' . $term_id);
                         <a class="elementor-animation-push" target="_blank" href="<?php echo $ins_facebook; ?>"><i class="fab fa-facebook-f"></i></a>
                     <?php endif; ?>
                     <?php if ($ins_twitter) : ?>
-                        <a class="elementor-animation-push" target="_blank" href="<?php echo $ins_twitter; ?>"><i class="fab fa-twitter"></a>
+                        <a class="elementor-animation-push" target="_blank" href="<?php echo $ins_twitter; ?>"><i class="fab fa-twitter"></i></a>
                     <?php endif; ?>
                     <?php if ($ins_linkedin) : ?>
                         <a class="elementor-animation-push" target="_blank" href="<?php echo $ins_linkedin; ?>"><i class="fab fa-linkedin"></i></a>

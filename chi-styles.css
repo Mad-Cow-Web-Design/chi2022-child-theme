@@ -1351,6 +1351,9 @@ input.text[type=number] {
   flex-wrap: nowrap;
   align-items: center;
 }
+.workshop-header.instructor-header .right .workshop-cost {
+  margin-bottom: 70px;
+}
 .workshop-header.instructor-header .right .workshop-date img,
 .workshop-header.instructor-header .right .workshop-cost img {
   max-width: 35px;
