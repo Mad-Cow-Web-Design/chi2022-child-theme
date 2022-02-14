@@ -50,7 +50,11 @@ $ins_regional_director  = get_field('regional_director', 'user_'. $author_id);
     <div class="instructor-banner"></div>
     <div class="instructor-header">
         <div class="left">
-            <img class="inst-img" src="<?php echo $ins_source_photo; ?>" alt="<?php echo $curauth->nickname; ?>">
+            <?php if ($ins_source_photo): ?>
+                <img class="inst-img" src="<?php echo $ins_source_photo; ?>" alt="<?php echo $curauth->nickname; ?>">
+            <?php else : ?>
+                <img class="inst-img" src="/wp-content/uploads/2022/02/instructor-bio-placeholder.jpg" alt="<?php echo $curauth->nickname; ?>">
+            <?php endif; ?>
             <div class="instructor-sub-header">
                 <div class="instructor-icons">
                     <?php if ($ins_chirunning_certification) : ?>
