@@ -1073,7 +1073,8 @@ h2.comment-reply-title {
 .woocommerce .button.mcw-archive-page-button,
 .woocommerce .button.product_type_external,
 .woocommerce #respond input#submit,
-.woocommerce .wc-proceed-to-checkout .checkout-button.button.alt.wc-forward {
+.woocommerce .wc-proceed-to-checkout .checkout-button.button.alt.wc-forward,
+.woocommerce .place-order .button.alt {
   border: 2px solid #19AECB;
   background-color: #fff !important;
   color: #19AECB !important;
@@ -1087,7 +1088,8 @@ h2.comment-reply-title {
 .woocommerce .button.mcw-archive-page-button:hover,
 .woocommerce .button.product_type_external:hover,
 .woocommerce #respond input#submit:hover,
-.woocommerce .wc-proceed-to-checkout .checkout-button.button.alt.wc-forward:hover {
+.woocommerce .wc-proceed-to-checkout .checkout-button.button.alt.wc-forward:hover,
+.woocommerce .place-order .button.alt:hover {
   border: 2px solid #19AECB;
   background-color: #19AECB !important;
   color: #fff !important;
@@ -1387,6 +1389,10 @@ input.text[type=number] {
 .woocommerce-checkout .site-main {
   padding-top: 70px;
   padding-bottom: 70px;
+}
+.woocommerce-cart .site-main h3#order_review_heading,
+.woocommerce-checkout .site-main h3#order_review_heading {
+  text-transform: capitalize;
 }
 
 /* WORKSHOPS */

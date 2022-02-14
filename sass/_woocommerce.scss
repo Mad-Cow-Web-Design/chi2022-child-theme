@@ -169,7 +169,8 @@
 .woocommerce .button.mcw-archive-page-button,
 .woocommerce .button.product_type_external,
 .woocommerce #respond input#submit,
-.woocommerce .wc-proceed-to-checkout .checkout-button.button.alt.wc-forward {
+.woocommerce .wc-proceed-to-checkout .checkout-button.button.alt.wc-forward,
+.woocommerce .place-order .button.alt {
     border: 2px solid #19AECB;
     background-color: #fff!important;
     color: #19AECB!important;
@@ -491,5 +492,8 @@ input.text[type=number] {
     .site-main {
         padding-top: 70px;
         padding-bottom: 70px;
+        h3#order_review_heading {
+            text-transform: capitalize;
+        }
     }
 }
