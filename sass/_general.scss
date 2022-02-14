@@ -219,3 +219,25 @@ h2.elementor-heading-title {
         height: 300px;
     }
 }
+
+
+/* check this out carousel */
+
+.check-this-out {
+    .jet-carousel__item-inner {
+        max-width: 400px;
+        margin: 0 auto;
+        display: block;
+    }
+    @media screen and (min-width: 768px) {
+        .jet-carousel__content {
+            height: 325px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .jet-carousel__item-title {
+                height: 60px;
+            }
+        }
+    }
+}

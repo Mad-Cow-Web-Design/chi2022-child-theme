@@ -231,3 +231,35 @@ return $value;
 // // print it to the screen
 // echo '<pre>' . print_r( $roles, true ) . '</pre>';
 
+// function um_custom_echo_roles() {
+//     global $wp_roles;
+//     foreach ( $wp_roles->roles as $roleID => &$role_data ) {
+//         unset( $role_data['_um_can_access_wpadmin'] );
+//         unset( $role_data['_um_can_not_see_adminbar'] );
+//         unset( $role_data['_um_can_edit_everyone'] );
+//         unset( $role_data['_um_can_delete_everyone'] );
+//         unset( $role_data['_um_can_edit_profile'] );
+//         unset( $role_data['_um_can_delete_profile'] );
+//         unset( $role_data['_um_default_homepage'] );
+//         unset( $role_data['_um_after_login'] );
+//         unset( $role_data['_um_after_logout'] );
+//         unset( $role_data['_um_can_view_all'] );
+//         unset( $role_data['_um_can_make_private_profile'] );
+//         unset( $role_data['_um_can_access_private_profile'] );
+//         unset( $role_data['_um_status'] );
+//         unset( $role_data['_um_auto_approve_act'] );
+//         if ( ! empty( $role_meta ) ) {
+//             $wp_roles->roles[ $roleID ] = array_merge( $role_data, $role_meta );
+//         }
+//     }
+//     update_option( $wp_roles->role_key, $wp_roles->roles );
+//     $um_instructors = get_users( array(
+//         'role__in' => 'um_instructor',
+//        ) );
+//     if ( ! empty( $um_instructors ) ) {
+//         foreach ( $um_instructors as $instructor ) {
+//             $instructor->remove_role( 'um_instructor' );
+//         }
+//     }
+// }
+// add_action( 'init', 'um_custom_echo_roles' );
