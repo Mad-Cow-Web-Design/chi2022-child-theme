@@ -1352,7 +1352,7 @@ input.text[type=number] {
   align-items: center;
 }
 .workshop-header.instructor-header .right .workshop-cost {
-  margin-bottom: 70px;
+  margin-bottom: 30px;
 }
 .workshop-header.instructor-header .right .workshop-date img,
 .workshop-header.instructor-header .right .workshop-cost img {

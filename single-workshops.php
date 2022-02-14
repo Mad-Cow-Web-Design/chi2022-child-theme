@@ -142,17 +142,26 @@ $workshop_img = get_field('background_img', 'workshop_type' . '_' . $term_id);
         <?php endif; ?>
 
         <?php if ($workshop_location && empty($workshop_description)) : ?>
-        <div id="Location" class="tabcontent" style="display: block;">
-            <div class="acf-map" data-zoom="16">
-                <div class="marker" data-lat="<?php echo esc_attr($workshop_location['lat']); ?>" data-lng="<?php echo esc_attr($workshop_location['lng']); ?>"></div>
+            <div id="Location" class="tabcontent" style="display: block;">
+            <?php if (strpos($workshop_location,'Virtual') !== false) : ?>
+                <h5>Virtual</h5>
+            <?php else : ?>
+                <div class="acf-map" data-zoom="16">
+                    <div class="marker" data-lat="<?php echo esc_attr($workshop_location['lat']); ?>" data-lng="<?php echo esc_attr($workshop_location['lng']); ?>"></div>
+                </div>
+            <?php endif; ?>
             </div>
-        </div>
         <?php elseif ($workshop_location && !empty($workshop_description)) : ?>
-        <div id="Location" class="tabcontent">
-            <div class="acf-map" data-zoom="16">
-                <div class="marker" data-lat="<?php echo esc_attr($workshop_location['lat']); ?>" data-lng="<?php echo esc_attr($workshop_location['lng']); ?>"></div>
+            <div id="Location" class="tabcontent">
+            <?php if (strpos($workshop_location,'Virtual') !== false) : ?>
+                <h5>Virtual</h5>
+            <?php else : ?>
+                <div class="acf-map" data-zoom="16">
+                        <div class="marker" data-lat="<?php echo esc_attr($workshop_location['lat']); ?>" data-lng="<?php echo esc_attr($workshop_location['lng']); ?>"></div>
+                    </div>
+                </div>
+            <?php endif; ?>
             </div>
-        </div>
         <?php endif; ?>
 
         <?php if ($workshop_additional_details) : ?>
