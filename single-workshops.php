@@ -124,7 +124,7 @@ $workshop_img = get_field('background_img', 'workshop_type' . '_' . $term_id);
             <?php if ($workshop_description) : ?>
                 <button class="tablinks active" onclick="openDetails(event, 'Details')" id="defaultOpen">Workshop Details</button>
             <?php endif;
-            if ($workshop_location) : ?>
+            if ($workshop_location ||  $workshop_venue) : ?>
                 <button class="tablinks" onclick="openDetails(event, 'Location')">Workshop Location</button>
             <?php endif;
             if ($workshop_additional_details) : ?>
@@ -140,27 +140,26 @@ $workshop_img = get_field('background_img', 'workshop_type' . '_' . $term_id);
             <p><?php echo $workshop_description; ?></p>
         </div>
         <?php endif; ?>
-
         <?php if ($workshop_location && empty($workshop_description)) : ?>
             <div id="Location" class="tabcontent" style="display: block;">
-            <?php if (strpos($workshop_location,'Virtual') !== false) : ?>
-                <h5>Virtual</h5>
-            <?php else : ?>
                 <div class="acf-map" data-zoom="16">
                     <div class="marker" data-lat="<?php echo esc_attr($workshop_location['lat']); ?>" data-lng="<?php echo esc_attr($workshop_location['lng']); ?>"></div>
                 </div>
-            <?php endif; ?>
             </div>
         <?php elseif ($workshop_location && !empty($workshop_description)) : ?>
             <div id="Location" class="tabcontent">
-            <?php if (strpos($workshop_location,'Virtual') !== false) : ?>
-                <h5>Virtual</h5>
-            <?php else : ?>
                 <div class="acf-map" data-zoom="16">
                         <div class="marker" data-lat="<?php echo esc_attr($workshop_location['lat']); ?>" data-lng="<?php echo esc_attr($workshop_location['lng']); ?>"></div>
                     </div>
                 </div>
-            <?php endif; ?>
+            </div>
+        <?php elseif (empty($workshop_location) && !empty($workshop_description) && $workshop_venue) : ?>
+             <div id="Location" class="tabcontent">
+                 <h5>Virtual</h5>
+            </div>
+        <?php elseif (empty($workshop_location) && empty($workshop_description) && $workshop_venue) : ?>
+            <div id="Location" class="tabcontent" style="display: block;">
+                 <h5>Virtual</h5>
             </div>
         <?php endif; ?>
 
