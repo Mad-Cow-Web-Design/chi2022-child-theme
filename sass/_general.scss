@@ -12,89 +12,6 @@ h2.elementor-heading-title {
     }
 }
 
-// .chiliving-headline-underline,
-// .chirunning-headline-underline,
-// .chiwalking-headline-underline,
-// .white-headline-underline {
-//     h1,
-//     h2,
-//     h3,
-//     h4,
-//     h5,
-//     h6 {
-//         position: relative;
-//         z-index: 1;
-//         &:after {
-//             position: absolute;
-//             content: "";
-//             width: 30%;
-//             height: 15px;
-//             left: -5px;
-//             top: 28px;
-//             z-index: -1;
-//             @media (min-width: 768px) {
-//                 height: 25px;
-//                 top: 36px;
-//             }
-//         }
-//     }
-// }
-// .chiliving-headline-underline {
-//     h1,
-//     h2,
-//     h3,
-//     h4,
-//     h5,
-//     h6 {
-//         position: relative;
-//         z-index: 1;
-//         &:after {
-//             background-color: #19AECB;
-//         }
-//     }
-// }
-// .chirunning-headline-underline {
-//     h1,
-//     h2,
-//     h3,
-//     h4,
-//     h5,
-//     h6 {
-//         position: relative;
-//         z-index: 1;
-//         &:after {
-//             background-color: #81c723;
-//         }
-//     }
-// }
-// .chiwalking-headline-underline {
-//     h1,
-//     h2,
-//     h3,
-//     h4,
-//     h5,
-//     h6 {
-//         position: relative;
-//         z-index: 1;
-//         &:after {
-//             background-color: #3dc3a5;
-//         }
-//     }
-// }
-// .white-headline-underline {
-//     h1,
-//     h2,
-//     h3,
-//     h4,
-//     h5,
-//     h6 {
-//         position: relative;
-//         z-index: 1;
-//         &:after {
-//             background-color: #ffffff;
-//         }
-//     }
-// }
 
 /* TESTIMONIAL SLIDER */
 
@@ -185,8 +102,8 @@ h2.elementor-heading-title {
 
 /* ANY POST TEMPLATE SECTION */
 
-@media screen and (min-width: 1025px) {
-    .uael-post__inner-wrap {
+.uael-post__inner-wrap {
+    @media screen and (min-width: 1025px) {
         height: 553px;
     }
 }
@@ -215,23 +132,26 @@ h2.elementor-heading-title {
     }
 }
 
-
-/* check this out carousel */
-
 .check-this-out {
     .jet-carousel__item-inner {
         max-width: 400px;
         margin: 0 auto;
         display: block;
-    }
-    @media screen and (min-width: 768px) {
         .jet-carousel__content {
-            height: 325px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            @media screen and (min-width: 768px) {
+                height: 325px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            @media screen and (min-width: 1025px) {
+                height: 400px;
+            }
             .jet-carousel__item-title {
                 height: 60px;
+            }
+            .elementor-button.elementor-size-md.jet-carousel__item-button {
+                width: 100%;
             }
         }
     }

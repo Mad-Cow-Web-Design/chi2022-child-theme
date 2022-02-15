@@ -172,6 +172,7 @@ h2.comment-reply-title {
     height: 553px;
   }
 }
+
 .uael-post__inner-wrap.uael-post__noimage .uael-post__content-wrap {
   margin-top: 137px;
 }
@@ -197,22 +198,29 @@ h2.comment-reply-title {
     height: 300px;
   }
 }
-/* check this out carousel */
 .check-this-out .jet-carousel__item-inner {
   max-width: 400px;
   margin: 0 auto;
   display: block;
 }
 @media screen and (min-width: 768px) {
-  .check-this-out .jet-carousel__content {
+  .check-this-out .jet-carousel__item-inner .jet-carousel__content {
     height: 325px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
-  .check-this-out .jet-carousel__content .jet-carousel__item-title {
-    height: 60px;
+}
+@media screen and (min-width: 1025px) {
+  .check-this-out .jet-carousel__item-inner .jet-carousel__content {
+    height: 400px;
   }
+}
+.check-this-out .jet-carousel__item-inner .jet-carousel__content .jet-carousel__item-title {
+  height: 60px;
+}
+.check-this-out .jet-carousel__item-inner .jet-carousel__content .elementor-button.elementor-size-md.jet-carousel__item-button {
+  width: 100%;
 }
 
 /* AUTHOR / INSTRUCTOR PAGES */
