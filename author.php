@@ -113,14 +113,14 @@ $ins_regional_director  = get_field('regional_director', 'user_'. $author_id);
                 <button class="tablinks <?php echo empty($ins_youtube_video_url) ? 'active' : ''; ?>" onclick="openDetails(event, 'about')">About</button>
             <?php endif; ?>
             <?php if (!empty($ins_testimonial)) : ?>
-                <button class="tablinks" onclick="openDetails(event, 'testimonials')">Testimonials</button>
+                <button class="tablinks <?php echo (empty($ins_bio) && empty($ins_youtube_video_url)) ? 'active' : ''; ?>" onclick="openDetails(event, 'testimonials')">Testimonials</button>
             <?php endif; ?>
             <button class="tablinks" onclick="openDetails(event, 'contact')">Contact</button>
         </div>
         <!-- Tab content -->
         <?php if (!empty($ins_youtube_video_url)) : ?>
             <div id="video" class="tabcontent" style="display: block;">
-                <iframe width="560" height="315" src="<?php echo $ins_youtube_video_url; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="<?php echo $ins_youtube_video_url; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;" allowfullscreen></iframe>
             </div>
         <?php endif; ?>
         <?php if ($ins_bio) : ?>
@@ -129,7 +129,7 @@ $ins_regional_director  = get_field('regional_director', 'user_'. $author_id);
             </div>
         <?php endif; ?>
         <?php if ($ins_testimonial) : ?>
-            <div id="testimonials" class="tabcontent">
+            <div id="testimonials" class="tabcontent" style="<?php echo (empty($ins_bio) && empty($ins_youtube_video_url)) ? 'display: block;' : ''; ?>">
                 <?php
                 if( have_rows('testimonial', 'user_'. $author_id) ):
                     while( have_rows('testimonial', 'user_'. $author_id) ) : the_row();
@@ -144,7 +144,6 @@ $ins_regional_director  = get_field('regional_director', 'user_'. $author_id);
                 endif; ?>
             </div>
         <?php endif; ?>
-
         <div id="contact" class="tabcontent">
             <?php gravity_form( 4, false, false, false, '', false ); ?>
         </div>

@@ -128,11 +128,13 @@ h2.comment-reply-title {
   color: #19AECB;
 }
 
-.chirunning-testimonial .elementor-swiper-button {
+.chirunning-testimonial .elementor-swiper-button,
+.chirunning-faq a {
   color: #81c723;
 }
 
-.chiwalking-testimonial .elementor-swiper-button {
+.chiwalking-testimonial .elementor-swiper-button,
+.chiwalking-faq a {
   color: #3dc3a5;
 }
 
