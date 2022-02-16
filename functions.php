@@ -142,6 +142,12 @@ function workshop_calendar( $chi_workshops ) {
     }
     return $html;
 }
+// POPULATE EDIT YOUR WORKSHOP TAB FIELD WITH GRAVITY FORM
+add_filter('acf/format_value/key=field_620c3b824c402', 'my_acf_format_value', 10, 3);
+add_filter('acf/format_value/key=field_620c396edc256', 'my_acf_format_value', 10, 3);
+function my_acf_format_value( $value, $post_id, $field ) {
+    return do_shortcode( $value );
+}
 
 //PRE POPULATE INSTRUCTOR GRAVITY FORM FIELD WITH INSTRUCTOR EMAIL
 add_filter('gform_field_value_instructor_email', 'instructor_email');
@@ -150,6 +156,19 @@ function instructor_email($value){
     $author_id = get_the_author_meta('ID');
     $author_email = $curauth->user_email;
     return $author_email;
+}
+//PRE POPULATE INSTRUCTOR WORKSHOP EDIT FORM FIELDS
+add_filter('gform_field_value_workshop_instructor_email', 'workshop_instructor_email');
+function workshop_instructor_email($value){
+    $current_user = wp_get_current_user();
+    $workshop_instructor_email = $current_user->user_email;
+    return $workshop_instructor_email;
+}
+add_filter('gform_field_value_workshop_instructor_name', 'workshop_instructor_name');
+function workshop_instructor_name($value){
+    $current_user = wp_get_current_user();
+    $workshop_instructor_name = $current_user->display_name;;
+    return $workshop_instructor_name;
 }
 
 
@@ -263,3 +282,4 @@ return $value;
 //     }
 // }
 // add_action( 'init', 'um_custom_echo_roles' );
+
