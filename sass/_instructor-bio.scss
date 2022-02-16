@@ -21,7 +21,6 @@
 .instructor-banner {
     height: 300px;
     background: url('/wp-content/uploads/2022/01/chiliving-plus-background-white-50.png'), #19AECB;
-    background-size: cover;
     left: 50%;
     padding: 10px;
     margin-left: -50vw;
@@ -34,39 +33,44 @@
 }
 
 .instructor-header {
-    display: flex;
-    flex-wrap: nowrap;
-    margin: -150px auto 100px;
-    position: relative;
-}
-
-.instructor-header .left {
-    width: 40%;
-    .inst-img img {
-        border: 6px solid #fff;
-        -webkit-box-shadow: 0 0 5px 5px #c5c2c2;
-        -moz-box-shadow: 0 0 5px 5px #c5c2c2;
-        box-shadow: 0 0 5px 5px #c5c2c2;
+    @media (min-width: 768px) {
+        display: flex;
+        flex-wrap: nowrap;
+        margin: -150px auto 100px;
     }
-}
-
-.instructor-header .right {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 50px 50px 90px;
-}
-
-.instructor-header .right .workshop-date img,
-.instructor-header .right .workshop-cost img {
-    max-width: 35px;
-    margin-right: 20px;
-}
-
-.instructor-header .right .workshop-location img {
-    max-width: 20px;
-    margin-left: 8px;
-    margin-right: 28px;
+    position: relative;
+    .left {
+        margin: 0 auto;
+        @media (min-width: 768px) {
+            width: 40%;
+            margin: 0;
+        }
+        .inst-img {
+            img {
+                max-width: 380px;
+                margin: 0 auto;
+                display: block;
+                border: 6px solid #fff;
+                -webkit-box-shadow: 0 0 5px 5px #c5c2c2;
+                -moz-box-shadow: 0 0 5px 5px #c5c2c2;
+                box-shadow: 0 0 5px 5px #c5c2c2;
+                max-width: 380px;
+            }
+        }
+    }
+    .right {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        pading: 10px;
+        @media (min-width: 768px) {
+            padding: 50px 50px 90px;
+        }
+        .quick-location img {
+            max-width: 20px;
+            margin-right: 10px;
+        }
+    }
 }
 
 .instructor-header {
@@ -174,6 +178,7 @@
     }
     &#video {
         iframe {
+            max-width: 100%;
             border: 6px solid #fff;
             -webkit-box-shadow: 0 0 5px 5px #c5c2c2;
             -moz-box-shadow: 0 0 5px 5px #c5c2c2;
@@ -316,11 +321,18 @@
         -moz-box-shadow: 0 0 5px 4px #f5f5f5;
         box-shadow: 0 0 5px 4px #f5f5f5;
         min-width: 200px;
+        p {
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
         .race-number {
             font-size: 70px;
             font-weight: 700;
             margin-top: 20px;
             margin-bottom: 20px;
+            letter-spacing: 2px;
         }
     }
 }

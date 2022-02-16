@@ -66,7 +66,7 @@ $workshop_img = get_field('background_img', 'workshop_type' . '_' . $term_id);
         <h1><?php echo $workshop_name; ?></h1>
         <div class="instructor-header workshop-header">
             <div class="left">
-                <img class="inst-img" src="<?php echo $ins_source_photo; ?>" alt="<?php echo $curauth->nickname; ?>">
+                <img class="inst-img" src="<?php echo $ins_source_photo; ?>" alt="<?php echo $author_first_name; ?>">
                 <div class="instructor-sub-header">
                     <div class="instructor-icons">
                         <?php if ($ins_chirunning_certification) : ?>
@@ -97,7 +97,7 @@ $workshop_img = get_field('background_img', 'workshop_type' . '_' . $term_id);
                         <a class="elementor-animation-push" target="_blank" href="<?php echo $ins_facebook; ?>"><i class="fab fa-facebook-f"></i></a>
                     <?php endif; ?>
                     <?php if ($ins_twitter) : ?>
-                        <a class="elementor-animation-push" target="_blank" href="<?php echo $ins_twitter; ?>"><i class="fab fa-twitter"></a>
+                        <a class="elementor-animation-push" target="_blank" href="<?php echo $ins_twitter; ?>"><i class="fab fa-twitter"></i></a>
                     <?php endif; ?>
                     <?php if ($ins_linkedin) : ?>
                         <a class="elementor-animation-push" target="_blank" href="<?php echo $ins_linkedin; ?>"><i class="fab fa-linkedin"></i></a>
@@ -123,11 +123,11 @@ $workshop_img = get_field('background_img', 'workshop_type' . '_' . $term_id);
         <div class="tab">
             <?php if ($workshop_description) : ?>
                 <button class="tablinks active" onclick="openDetails(event, 'Details')" id="defaultOpen">Workshop Details</button>
-            <?php endif;
-            if ($workshop_location) : ?>
-                <button class="tablinks" onclick="openDetails(event, 'Location')">Workshop Location</button>
-            <?php endif;
-            if ($workshop_additional_details) : ?>
+            <?php endif; ?>
+            <?php if ($workshop_location ||  $workshop_venue) : ?>
+                <button class="tablinks <?php echo empty($workshop_description) ? 'active' : ''; ?>" onclick="openDetails(event, 'Location')">Workshop Location</button>
+            <?php endif; ?>
+            <?php if ($workshop_additional_details) : ?>
                 <button class="tablinks" onclick="openDetails(event, 'Info')">Helpful Information</button>
             <?php endif;
             if ($workshop_override_default_refund_policy == 'yes') : ?>
@@ -135,36 +135,33 @@ $workshop_img = get_field('background_img', 'workshop_type' . '_' . $term_id);
             <?php endif; ?>
         </div>
         <!-- Tab content -->
-        <?php if ($workshop_description) : ?>
-        <div id="Details" class="tabcontent" style="display: block;">
-            <p><?php echo $workshop_description; ?></p>
-        </div>
-        <?php endif; ?>
-
-        <?php if ($workshop_location && empty($workshop_description)) : ?>
-        <div id="Location" class="tabcontent" style="display: block;">
-            <div class="acf-map" data-zoom="16">
-                <div class="marker" data-lat="<?php echo esc_attr($workshop_location['lat']); ?>" data-lng="<?php echo esc_attr($workshop_location['lng']); ?>"></div>
+        <?php if (!empty($workshop_description)) : ?>
+            <div id="Details" class="tabcontent" style="display: block;">
+                <p><?php echo $workshop_description; ?></p>
             </div>
-        </div>
-        <?php elseif ($workshop_location && !empty($workshop_description)) : ?>
-        <div id="Location" class="tabcontent">
-            <div class="acf-map">
-                <div class="marker" data-lat="<?php echo esc_attr($workshop_location['lat']); ?>" data-lng="<?php echo esc_attr($workshop_location['lng']); ?>"></div>
+        <?php endif; ?>
+        <?php if (!empty($workshop_location)) : ?>
+            <div id="Location" class="tabcontent" style="<?php echo empty($workshop_description) ? 'display: block;' : ''; ?>">
+                <div class="acf-map" data-zoom="16">
+                    <div class="marker" data-lat="<?php echo esc_attr($workshop_location['lat']); ?>" data-lng="<?php echo esc_attr($workshop_location['lng']); ?>"></div>
+                </div>
             </div>
-        </div>
+        <?php else : ?>
+            <?php if (!empty($workshop_venue)) : ?>
+                <div id="Location" class="tabcontent" style="<?php echo empty($workshop_description) ? 'display: block;' : ''; ?>">
+                    <h5><?php echo $workshop_venue ; ?></h5>
+                </div>
+            <?php endif; ?>
         <?php endif; ?>
-
-        <?php if ($workshop_additional_details) : ?>
-        <div id="Info" class="tabcontent">
-            <p><?php echo $workshop_additional_details; ?></p>
-        </div>
+        <?php if (!empty($workshop_additional_details)) : ?>
+            <div id="Info" class="tabcontent">
+                <p><?php echo $workshop_additional_details; ?></p>
+            </div>
         <?php endif; ?>
-
-        <?php if ($workshop_override_default_refund_policy) : ?>
-        <div id="Cancel" class="tabcontent">
-            <p><?php echo $workshop_custom_refund; ?></p>
-        </div>
+        <?php if (!empty($workshop_override_default_refund_policy)) : ?>
+            <div id="Cancel" class="tabcontent">
+                <p><?php echo $workshop_custom_refund; ?></p>
+            </div>
         <?php endif; ?>
 
         <div class="workshop-signup">

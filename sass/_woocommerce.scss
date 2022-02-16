@@ -26,6 +26,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    .mcw-archive-page-button.button {
+        text-align: center;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -165,7 +168,9 @@
 .single_add_to_cart_button.button.alt,
 .woocommerce .button.mcw-archive-page-button,
 .woocommerce .button.product_type_external,
-.woocommerce #respond input#submit {
+.woocommerce #respond input#submit,
+.woocommerce .wc-proceed-to-checkout .checkout-button.button.alt.wc-forward,
+.woocommerce .place-order .button.alt {
     border: 2px solid #19AECB;
     background-color: #fff!important;
     color: #19AECB!important;
@@ -477,4 +482,18 @@ input.text[type=number] {
 .woocommerce .related.products .products li .price {
     color: #4a4a4a;
     font-size: 12px;
+}
+
+
+/* CART */
+
+.woocommerce-cart,
+.woocommerce-checkout {
+    .site-main {
+        padding-top: 70px;
+        padding-bottom: 70px;
+        h3#order_review_heading {
+            text-transform: capitalize;
+        }
+    }
 }

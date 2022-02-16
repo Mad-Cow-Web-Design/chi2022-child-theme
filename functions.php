@@ -142,14 +142,32 @@ function workshop_calendar( $chi_workshops ) {
     }
     return $html;
 }
+// POPULATE EDIT YOUR WORKSHOP TAB FIELD WITH GRAVITY FORM
+add_filter('acf/format_value/key=field_620c3b824c402', 'my_acf_format_value', 10, 3);
+add_filter('acf/format_value/key=field_620c396edc256', 'my_acf_format_value', 10, 3);
+function my_acf_format_value( $value, $post_id, $field ) {
+    return do_shortcode( $value );
+}
 
 //PRE POPULATE INSTRUCTOR GRAVITY FORM FIELD WITH INSTRUCTOR EMAIL
 add_filter('gform_field_value_instructor_email', 'instructor_email');
 function instructor_email($value){
-    $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
-    $author_id = get_the_author_meta('ID');
-    $author_email = $curauth->user_email;
+    $author = get_queried_object();
+    $author_email = $author->user_email;
     return $author_email;
+}
+//PRE POPULATE INSTRUCTOR WORKSHOP EDIT FORM FIELDS
+add_filter('gform_field_value_workshop_instructor_email', 'workshop_instructor_email');
+function workshop_instructor_email($value){
+    $current_user = wp_get_current_user();
+    $workshop_instructor_email = $current_user->user_email;
+    return $workshop_instructor_email;
+}
+add_filter('gform_field_value_workshop_instructor_name', 'workshop_instructor_name');
+function workshop_instructor_name($value){
+    $current_user = wp_get_current_user();
+    $workshop_instructor_name = $current_user->display_name;;
+    return $workshop_instructor_name;
 }
 
 
@@ -230,3 +248,37 @@ return $value;
 
 // // print it to the screen
 // echo '<pre>' . print_r( $roles, true ) . '</pre>';
+
+// function um_custom_echo_roles() {
+//     global $wp_roles;
+//     foreach ( $wp_roles->roles as $roleID => &$role_data ) {
+//         unset( $role_data['_um_can_access_wpadmin'] );
+//         unset( $role_data['_um_can_not_see_adminbar'] );
+//         unset( $role_data['_um_can_edit_everyone'] );
+//         unset( $role_data['_um_can_delete_everyone'] );
+//         unset( $role_data['_um_can_edit_profile'] );
+//         unset( $role_data['_um_can_delete_profile'] );
+//         unset( $role_data['_um_default_homepage'] );
+//         unset( $role_data['_um_after_login'] );
+//         unset( $role_data['_um_after_logout'] );
+//         unset( $role_data['_um_can_view_all'] );
+//         unset( $role_data['_um_can_make_private_profile'] );
+//         unset( $role_data['_um_can_access_private_profile'] );
+//         unset( $role_data['_um_status'] );
+//         unset( $role_data['_um_auto_approve_act'] );
+//         if ( ! empty( $role_meta ) ) {
+//             $wp_roles->roles[ $roleID ] = array_merge( $role_data, $role_meta );
+//         }
+//     }
+//     update_option( $wp_roles->role_key, $wp_roles->roles );
+//     $um_instructors = get_users( array(
+//         'role__in' => 'um_instructor',
+//        ) );
+//     if ( ! empty( $um_instructors ) ) {
+//         foreach ( $um_instructors as $instructor ) {
+//             $instructor->remove_role( 'um_instructor' );
+//         }
+//     }
+// }
+// add_action( 'init', 'um_custom_echo_roles' );
+
