@@ -142,7 +142,7 @@ $workshop_img = get_field('background_img', 'workshop_type' . '_' . $term_id);
         <?php endif; ?>
         <?php if (!empty($workshop_location)) : ?>
             <div id="Location" class="tabcontent" style="<?php echo empty($workshop_description) ? 'display: block;' : ''; ?>">
-                <div class="acf-map">
+                <div class="acf-map" data-zoom="16">
                     <div class="marker" data-lat="<?php echo esc_attr($workshop_location['lat']); ?>" data-lng="<?php echo esc_attr($workshop_location['lng']); ?>"></div>
                 </div>
             </div>
