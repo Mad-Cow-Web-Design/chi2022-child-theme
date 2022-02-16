@@ -143,8 +143,8 @@ function workshop_calendar( $chi_workshops ) {
     return $html;
 }
 // POPULATE EDIT YOUR WORKSHOP TAB FIELD WITH GRAVITY FORM
-add_filter('acf/format_value/key=field_620c3b824c402', 'my_acf_format_value', 10, 3);
-add_filter('acf/format_value/key=field_620c396edc256', 'my_acf_format_value', 10, 3);
+//add_filter('acf/format_value/key=field_620c3b824c402', 'my_acf_format_value', 10, 3);
+//add_filter('acf/format_value/key=field_620c396edc256', 'my_acf_format_value', 10, 3);
 function my_acf_format_value( $value, $post_id, $field ) {
     return do_shortcode( $value );
 }
