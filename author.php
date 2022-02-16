@@ -106,44 +106,36 @@ $ins_regional_director  = get_field('regional_director', 'user_'. $author_id);
         </div>
         </div><!-- End instructor header -->
         <div class="tab">
-            <?php if ($ins_youtube_video_url) : ?>
+            <?php if (!empty($ins_youtube_video_url)) : ?>
                 <button class="tablinks active" onclick="openDetails(event, 'video')" id="defaultOpen">Instructor Video</button>
             <?php endif; ?>
-            <?php if ($ins_bio) : ?>
-                <button class="tablinks" onclick="openDetails(event, 'about')">About</button>
+            <?php if (!empty($ins_bio)) : ?>
+                <button class="tablinks <?php echo empty($ins_youtube_video_url) ? 'active' : ''; ?>" onclick="openDetails(event, 'about')">About</button>
             <?php endif; ?>
-            <?php if ($ins_testimonial) : ?>
+            <?php if (!empty($ins_testimonial)) : ?>
                 <button class="tablinks" onclick="openDetails(event, 'testimonials')">Testimonials</button>
             <?php endif; ?>
             <button class="tablinks" onclick="openDetails(event, 'contact')">Contact</button>
         </div>
         <!-- Tab content -->
-        <?php if ($ins_youtube_video_url) : ?>
+        <?php if (!empty($ins_youtube_video_url)) : ?>
             <div id="video" class="tabcontent" style="display: block;">
                 <iframe width="560" height="315" src="<?php echo $ins_youtube_video_url; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         <?php endif; ?>
-
-        <?php if ($ins_bio && empty($ins_youtube_video_url)) : ?>
-            <div id="about" class="tabcontent" style="display: block;">
-                <p><?php echo $ins_bio; ?></p>
-            </div>
-        <?php elseif ($ins_bio && !empty($ins_youtube_video_url)) : ?>
-            <div id="about" class="tabcontent">
+        <?php if ($ins_bio) : ?>
+            <div id="about" class="tabcontent" style="<?php echo empty($ins_youtube_video_url) ? 'display: block;' : ''; ?>">
                 <p><?php echo $ins_bio; ?></p>
             </div>
         <?php endif; ?>
-
         <?php if ($ins_testimonial) : ?>
             <div id="testimonials" class="tabcontent">
                 <?php
                 if( have_rows('testimonial', 'user_'. $author_id) ):
                     while( have_rows('testimonial', 'user_'. $author_id) ) : the_row();
-                        $testimonial_image = get_sub_field('testimonial_image');
                         $testimonial_text = get_sub_field('testimonial_text');
                         $testimonial_author = get_sub_field('testimonial_author'); ?>
                         <div class="testimonial">
-                                <img src="<?php echo $testimonial_image; ?>" alt="<?php echo $testimonial_author; ?>">
                                 <p><?php echo $testimonial_text; ?></p>
                                 <p><?php echo $testimonial_author; ?></p>
                         </div>

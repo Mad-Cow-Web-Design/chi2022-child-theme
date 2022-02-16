@@ -20,10 +20,19 @@
   color: #4a4a4a;
 }
 
+.page-id-48 .uael-post-grid.uael-posts,
+.page-id-47 .uael-post-grid.uael-posts {
+  height: 1100px;
+  overflow: hidden;
+}
+
 .page-id-48 .uael-post-grid__inner.uael-post-infinite-scroll.uael-post-infinite__event-scroll,
 .page-id-47 .uael-post-grid__inner.uael-post-infinite-scroll.uael-post-infinite__event-scroll {
-  height: 1100px;
-  overflow: scroll;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  padding-right: 20px;
+  box-sizing: content-box;
 }
 
 /* SINGLE BLOG POSTS */
@@ -243,7 +252,6 @@ h2.comment-reply-title {
 .instructor-banner {
   height: 300px;
   background: url("/wp-content/uploads/2022/01/chiliving-plus-background-white-50.png"), #19AECB;
-  background-size: cover;
   left: 50%;
   padding: 10px;
   margin-left: -50vw;
@@ -521,6 +529,12 @@ h2.comment-reply-title {
   -moz-box-shadow: 0 0 5px 4px #f5f5f5;
   box-shadow: 0 0 5px 4px #f5f5f5;
   min-width: 200px;
+}
+.race-row .race p {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 .race-row .race .race-number {
   font-size: 70px;

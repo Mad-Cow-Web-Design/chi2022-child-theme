@@ -152,9 +152,8 @@ function my_acf_format_value( $value, $post_id, $field ) {
 //PRE POPULATE INSTRUCTOR GRAVITY FORM FIELD WITH INSTRUCTOR EMAIL
 add_filter('gform_field_value_instructor_email', 'instructor_email');
 function instructor_email($value){
-    $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
-    $author_id = get_the_author_meta('ID');
-    $author_email = $curauth->user_email;
+    $author = get_queried_object();
+    $author_email = $author->user_email;
     return $author_email;
 }
 //PRE POPULATE INSTRUCTOR WORKSHOP EDIT FORM FIELDS

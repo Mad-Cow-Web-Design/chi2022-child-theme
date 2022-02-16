@@ -123,11 +123,11 @@ $workshop_img = get_field('background_img', 'workshop_type' . '_' . $term_id);
         <div class="tab">
             <?php if ($workshop_description) : ?>
                 <button class="tablinks active" onclick="openDetails(event, 'Details')" id="defaultOpen">Workshop Details</button>
-            <?php endif;
-            if ($workshop_location ||  $workshop_venue) : ?>
-                <button class="tablinks" onclick="openDetails(event, 'Location')">Workshop Location</button>
-            <?php endif;
-            if ($workshop_additional_details) : ?>
+            <?php endif; ?>
+            <?php if ($workshop_location ||  $workshop_venue) : ?>
+                <button class="tablinks <?php echo empty($workshop_description) ? 'active' : ''; ?>" onclick="openDetails(event, 'Location')">Workshop Location</button>
+            <?php endif; ?>
+            <?php if ($workshop_additional_details) : ?>
                 <button class="tablinks" onclick="openDetails(event, 'Info')">Helpful Information</button>
             <?php endif;
             if ($workshop_override_default_refund_policy == 'yes') : ?>
@@ -135,44 +135,33 @@ $workshop_img = get_field('background_img', 'workshop_type' . '_' . $term_id);
             <?php endif; ?>
         </div>
         <!-- Tab content -->
-        <?php if ($workshop_description) : ?>
-        <div id="Details" class="tabcontent" style="display: block;">
-            <p><?php echo $workshop_description; ?></p>
-        </div>
+        <?php if (!empty($workshop_description)) : ?>
+            <div id="Details" class="tabcontent" style="display: block;">
+                <p><?php echo $workshop_description; ?></p>
+            </div>
         <?php endif; ?>
-        <?php if ($workshop_location && empty($workshop_description)) : ?>
-            <div id="Location" class="tabcontent" style="display: block;">
+        <?php if (!empty($workshop_location)) : ?>
+            <div id="Location" class="tabcontent" style="<?php echo empty($workshop_description) ? 'display: block;' : ''; ?>">
                 <div class="acf-map" data-zoom="16">
                     <div class="marker" data-lat="<?php echo esc_attr($workshop_location['lat']); ?>" data-lng="<?php echo esc_attr($workshop_location['lng']); ?>"></div>
                 </div>
             </div>
-        <?php elseif ($workshop_location && !empty($workshop_description)) : ?>
-            <div id="Location" class="tabcontent">
-                <div class="acf-map" data-zoom="16">
-                        <div class="marker" data-lat="<?php echo esc_attr($workshop_location['lat']); ?>" data-lng="<?php echo esc_attr($workshop_location['lng']); ?>"></div>
-                    </div>
+        <?php else : ?>
+            <?php if (!empty($workshop_venue)) : ?>
+                <div id="Location" class="tabcontent" style="<?php echo empty($workshop_description) ? 'display: block;' : ''; ?>">
+                    <h5><?php echo $workshop_venue ; ?></h5>
                 </div>
-            </div>
-        <?php elseif (empty($workshop_location) && !empty($workshop_description) && $workshop_venue) : ?>
-             <div id="Location" class="tabcontent">
-                 <h5>Virtual</h5>
-            </div>
-        <?php elseif (empty($workshop_location) && empty($workshop_description) && $workshop_venue) : ?>
-            <div id="Location" class="tabcontent" style="display: block;">
-                 <h5>Virtual</h5>
+            <?php endif; ?>
+        <?php endif; ?>
+        <?php if (!empty($workshop_additional_details)) : ?>
+            <div id="Info" class="tabcontent">
+                <p><?php echo $workshop_additional_details; ?></p>
             </div>
         <?php endif; ?>
-
-        <?php if ($workshop_additional_details) : ?>
-        <div id="Info" class="tabcontent">
-            <p><?php echo $workshop_additional_details; ?></p>
-        </div>
-        <?php endif; ?>
-
-        <?php if ($workshop_override_default_refund_policy) : ?>
-        <div id="Cancel" class="tabcontent">
-            <p><?php echo $workshop_custom_refund; ?></p>
-        </div>
+        <?php if (!empty($workshop_override_default_refund_policy)) : ?>
+            <div id="Cancel" class="tabcontent">
+                <p><?php echo $workshop_custom_refund; ?></p>
+            </div>
         <?php endif; ?>
 
         <div class="workshop-signup">

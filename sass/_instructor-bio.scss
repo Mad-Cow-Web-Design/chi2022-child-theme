@@ -21,7 +21,6 @@
 .instructor-banner {
     height: 300px;
     background: url('/wp-content/uploads/2022/01/chiliving-plus-background-white-50.png'), #19AECB;
-    background-size: cover;
     left: 50%;
     padding: 10px;
     margin-left: -50vw;
@@ -322,6 +321,12 @@
         -moz-box-shadow: 0 0 5px 4px #f5f5f5;
         box-shadow: 0 0 5px 4px #f5f5f5;
         min-width: 200px;
+        p {
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
         .race-number {
             font-size: 70px;
             font-weight: 700;
