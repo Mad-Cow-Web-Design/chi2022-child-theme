@@ -56,6 +56,9 @@
                 -moz-box-shadow: 0 0 5px 5px #c5c2c2;
                 box-shadow: 0 0 5px 5px #c5c2c2;
                 max-width: 380px;
+                @media (min-width: 768px) {
+                    margin: 0 0 30px 5px;
+                }
             }
         }
     }

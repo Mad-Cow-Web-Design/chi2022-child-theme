@@ -294,6 +294,11 @@ h2.comment-reply-title {
   box-shadow: 0 0 5px 5px #c5c2c2;
   max-width: 380px;
 }
+@media (min-width: 768px) {
+  .instructor-header .left .inst-img img {
+    margin: 0 0 30px 5px;
+  }
+}
 .instructor-header .right {
   display: flex;
   flex-direction: column;
