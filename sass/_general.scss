@@ -25,6 +25,9 @@ h2.elementor-heading-title {
             @media screen and (max-width: 530px) {
                 width: 50%;
             }
+            img {
+                max-width: 125px;
+            }
         }
     }
 }

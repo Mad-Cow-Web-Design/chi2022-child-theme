@@ -98,6 +98,9 @@ h2.comment-reply-title {
     width: 50%;
   }
 }
+.home-gallery-grid .uael-img-gallery-wrap .uael-grid-item img {
+  max-width: 125px;
+}
 
 /* TESTIMONIAL SLIDER */
 .elementor-swiper-button {
