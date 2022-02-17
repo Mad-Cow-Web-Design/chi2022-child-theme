@@ -112,7 +112,13 @@ $ins_regional_director  = get_field('regional_director', 'user_'. $author_id);
             <?php if (!empty($ins_bio)) : ?>
                 <button class="tablinks <?php echo empty($ins_youtube_video_url) ? 'active' : ''; ?>" onclick="openDetails(event, 'about')">About</button>
             <?php endif; ?>
-            <?php if (!empty($ins_testimonial)) : ?>
+            <?php if( have_rows('testimonial', 'user_'. $author_id) ):
+                while( have_rows('testimonial', 'user_'. $author_id) ) : the_row();
+                    $testimonial_text = get_sub_field('testimonial_text');
+                    $testimonial_author = get_sub_field('testimonial_author'); ?>
+                <?php endwhile; ?>
+            <?php endif; ?>
+            <?php if (!empty($testimonial_text)) : ?>
                 <button class="tablinks <?php echo (empty($ins_bio) && empty($ins_youtube_video_url)) ? 'active' : ''; ?>" onclick="openDetails(event, 'testimonials')">Testimonials</button>
             <?php endif; ?>
             <button class="tablinks" onclick="openDetails(event, 'contact')">Contact</button>
@@ -128,7 +134,7 @@ $ins_regional_director  = get_field('regional_director', 'user_'. $author_id);
                 <p><?php echo $ins_bio; ?></p>
             </div>
         <?php endif; ?>
-        <?php if ($ins_testimonial) : ?>
+        <?php if (!empty($testimonial_text)) : ?>
             <div id="testimonials" class="tabcontent" style="<?php echo (empty($ins_bio) && empty($ins_youtube_video_url)) ? 'display: block;' : ''; ?>">
                 <?php
                 if( have_rows('testimonial', 'user_'. $author_id) ):
@@ -144,6 +150,7 @@ $ins_regional_director  = get_field('regional_director', 'user_'. $author_id);
                 endif; ?>
             </div>
         <?php endif; ?>
+
         <div id="contact" class="tabcontent">
             <?php gravity_form( 4, false, false, false, '', false ); ?>
         </div>
