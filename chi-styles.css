@@ -84,6 +84,11 @@ h2.comment-reply-title {
   }
 }
 
+/* Home Gallery grid */
+.home-gallery-grid {
+  margin: 0 auto;
+}
+
 /* TESTIMONIAL SLIDER */
 .elementor-swiper-button {
   top: unset;
