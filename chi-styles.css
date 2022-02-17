@@ -297,13 +297,13 @@ h2.comment-reply-title {
 }
 
 .instructor-header {
+  margin: -150px auto 100px;
   position: relative;
 }
 @media (min-width: 768px) {
   .instructor-header {
     display: flex;
     flex-wrap: nowrap;
-    margin: -150px auto 100px;
   }
 }
 .instructor-header .left {
@@ -324,6 +324,7 @@ h2.comment-reply-title {
   -moz-box-shadow: 0 0 5px 5px #c5c2c2;
   box-shadow: 0 0 5px 5px #c5c2c2;
   max-width: 380px;
+  width: 100%;
 }
 @media (min-width: 768px) {
   .instructor-header .left .inst-img img {
@@ -334,7 +335,8 @@ h2.comment-reply-title {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  pading: 10px;
+  padding: 10px;
+  position: relative;
 }
 @media (min-width: 768px) {
   .instructor-header .right {
@@ -344,6 +346,40 @@ h2.comment-reply-title {
 .instructor-header .right .quick-location img {
   max-width: 20px;
   margin-right: 10px;
+}
+.instructor-header .right #phone-popup-link {
+  top: 0;
+  left: 0;
+  position: fixed;
+  opacity: 0.4;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.instructor-header .right #phone-popup-content {
+  font-weight: bold;
+  position: absolute;
+  left: 50px;
+  bottom: -90px;
+  margin: auto;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 200px;
+  height: auto;
+  padding: 15px;
+  background: #fff;
+  box-sizing: content-box;
+  border: 2px solid #19AECB;
+}
+.instructor-header .right #phone-popup-content h3 {
+  margin-bottom: 5px;
+}
+.instructor-header .right #phone-popup-content a.modal-close {
+  float: right;
+  background: none;
+  border: 1px solid #19AECB;
+  text-align: center;
 }
 
 .instructor-header div.right h3 {
@@ -365,6 +401,19 @@ h2.comment-reply-title {
   border-radius: 50%;
   width: 25px;
   height: 25px;
+}
+@media (min-width: 768px) {
+  .instructor-social a.mobile-only {
+    display: none;
+  }
+}
+.instructor-social a.desktop-only {
+  display: none;
+}
+@media (min-width: 768px) {
+  .instructor-social a.desktop-only {
+    display: block;
+  }
 }
 .instructor-social a i {
   color: #fff;
@@ -670,6 +719,9 @@ h2.comment-reply-title {
   width: 130px;
   margin-right: 1rem;
   float: left;
+}
+.madcow-instructors-map-marker-left .instructor-photo {
+  max-width: 100%;
 }
 .madcow-instructors-map-marker-left .instructor-photo img {
   max-width: 100%;

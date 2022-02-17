@@ -97,7 +97,16 @@ $ins_regional_director  = get_field('regional_director', 'user_'. $author_id);
                     <a class="elementor-animation-push" target="_blank" href="<?php echo $ins_website; ?>"><i class="fas fa-globe"></i></a>
                 <?php endif; ?>
                 <?php if ($ins_phone && $ins_show_phone_publicly == 'yes') : ?>
-                    <a class="elementor-animation-push" target="_blank" href="tel:<?php echo $ins_phone; ?>"><i class="fas fa-phone"></i></a>
+                    <a class="elementor-animation-push mobile-only" target="_blank" href="tel:<?php echo $ins_phone; ?>"><i class="fas fa-phone"></i></a>
+                    <div id="phone-popup-link" style="display:none"></div>
+                        <a class="elementor-animation-push desktop-only" href=# target=_self onClick="show()"><i class="fas fa-phone"></i></a>
+
+                    <div id="phone-popup-content" style="display:none">
+                        <a href="#" target_self onClick="hide()" class="modal-close">x</a>
+                        <h3><?php echo $author_first_name; ?>'s Phone</h3>
+                        <?php echo $ins_phone; ?>
+                    </div>
+
                 <?php endif; ?>
                 <?php if ($ins_email && $ins_show_email_publicly == 'yes') : ?>
                     <a class="elementor-animation-push" target="_blank" href="mailto:<?php echo $ins_email; ?>"><i class="fas fa-envelope"></i></a>

@@ -172,7 +172,7 @@ function workshop_instructor_name($value){
 
 
 /* ADD GTM TO HEAD AND BELOW OPENING BODY */
-//add_action('wp_head', 'madcowweb_header_snippet', 999);
+add_action('wp_head', 'madcowweb_header_snippet', 999);
 function madcowweb_header_snippet() { ?>
 <!-- Facebook Pixel Code -->
 <script>

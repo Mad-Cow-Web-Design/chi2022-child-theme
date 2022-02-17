@@ -27,18 +27,18 @@ jQuery(document).ready(function($) {
         }
 
     })
-	
-	$('.race-number').each(function () {
-		$(this).prop('Counter', 0).animate({
-				Counter: $(this).data('value')
-			}, {
-			duration: 1000,
-			easing: 'swing',
-			step: function (now) {                      
-				$(this).text(this.Counter.toFixed(0));
-			}
-		});
-	});
+
+    $('.race-number').each(function() {
+        $(this).prop('Counter', 0).animate({
+            Counter: $(this).data('value')
+        }, {
+            duration: 1000,
+            easing: 'swing',
+            step: function(now) {
+                $(this).text(this.Counter.toFixed(0));
+            }
+        });
+    });
 });
 
 //jQuery end
@@ -79,3 +79,13 @@ function openDetails(evt, detailName) {
 
 // const obj = document.getElementById("value");
 // animateValue(obj, 3, 0, 5000);
+
+function show() {
+    document.getElementById("phone-popup-link").style.display = "inline-block";
+    document.getElementById("phone-popup-content").style.display = "inline-block";
+}
+
+function hide() {
+    document.getElementById("phone-popup-link").style.display = "none";
+    document.getElementById("phone-popup-content").style.display = "none";
+}

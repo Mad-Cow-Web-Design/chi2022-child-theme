@@ -34,10 +34,10 @@
 }
 
 .instructor-header {
+    margin: -150px auto 100px;
     @media (min-width: 768px) {
         display: flex;
         flex-wrap: nowrap;
-        margin: -150px auto 100px;
     }
     position: relative;
     .left {
@@ -56,6 +56,7 @@
                 -moz-box-shadow: 0 0 5px 5px #c5c2c2;
                 box-shadow: 0 0 5px 5px #c5c2c2;
                 max-width: 380px;
+                width: 100%;
                 @media (min-width: 768px) {
                     margin: 0 0 30px 5px;
                 }
@@ -66,13 +67,48 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        pading: 10px;
+        padding: 10px;
+        position: relative;
         @media (min-width: 768px) {
             padding: 50px 50px 90px;
         }
         .quick-location img {
             max-width: 20px;
             margin-right: 10px;
+        }
+        #phone-popup-link {
+            top: 0;
+            left: 0;
+            position: fixed;
+            opacity: 0.4;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        #phone-popup-content {
+            font-weight: bold;
+            position: absolute;
+            left: 50px;
+            bottom: -90px;
+            margin: auto;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            width: 200px;
+            height: auto;
+            padding: 15px;
+            background: #fff;
+            box-sizing: content-box;
+            border: 2px solid #19AECB;
+            h3 {
+                margin-bottom: 5px;
+            }
+            a.modal-close {
+                float: right;
+                background: none;
+                border: 1px solid #19AECB;
+                text-align: center;
+            }
         }
     }
 }
@@ -101,6 +137,17 @@
         border-radius: 50%;
         width: 25px;
         height: 25px;
+        &.mobile-only {
+            @media (min-width: 768px) {
+                display: none;
+            }
+        }
+        &.desktop-only {
+            display: none;
+            @media (min-width: 768px) {
+                display: block;
+            }
+        }
         i {
             color: #fff;
             padding-left: 6px;
