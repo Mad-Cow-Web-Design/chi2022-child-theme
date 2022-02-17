@@ -124,6 +124,27 @@ h2.elementor-heading-title {
 
 /* ANY POST TEMPLATE SECTION */
 
+
+/* adjust blog module on all but home/success stories/blog */
+
+.uael-post-grid__inner.uael-post__columns-3.uael-post__columns-tablet-2.uael-post__columns-mobile-1 {
+    .uael-post-wrapper {
+        &:not(.home),
+        &:not(.page-id-47),
+        &:not(.page-id-48) {
+            @media screen and (min-width: 768px) and (max-width: 1024px) {
+                width: 33%;
+                .uael-post__inner-wrap {
+                    height: 630px;
+                }
+                .uael-post__content-wrap {
+                    height: 460px;
+                }
+            }
+        }
+    }
+}
+
 .uael-post__inner-wrap {
     @media screen and (min-width: 1025px) {
         height: 553px;

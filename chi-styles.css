@@ -196,6 +196,19 @@ h2.comment-reply-title {
 }
 
 /* ANY POST TEMPLATE SECTION */
+/* adjust blog module on all but home/success stories/blog */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .uael-post-grid__inner.uael-post__columns-3.uael-post__columns-tablet-2.uael-post__columns-mobile-1 .uael-post-wrapper:not(.home), .uael-post-grid__inner.uael-post__columns-3.uael-post__columns-tablet-2.uael-post__columns-mobile-1 .uael-post-wrapper:not(.page-id-47), .uael-post-grid__inner.uael-post__columns-3.uael-post__columns-tablet-2.uael-post__columns-mobile-1 .uael-post-wrapper:not(.page-id-48) {
+    width: 33%;
+  }
+  .uael-post-grid__inner.uael-post__columns-3.uael-post__columns-tablet-2.uael-post__columns-mobile-1 .uael-post-wrapper:not(.home) .uael-post__inner-wrap, .uael-post-grid__inner.uael-post__columns-3.uael-post__columns-tablet-2.uael-post__columns-mobile-1 .uael-post-wrapper:not(.page-id-47) .uael-post__inner-wrap, .uael-post-grid__inner.uael-post__columns-3.uael-post__columns-tablet-2.uael-post__columns-mobile-1 .uael-post-wrapper:not(.page-id-48) .uael-post__inner-wrap {
+    height: 630px;
+  }
+  .uael-post-grid__inner.uael-post__columns-3.uael-post__columns-tablet-2.uael-post__columns-mobile-1 .uael-post-wrapper:not(.home) .uael-post__content-wrap, .uael-post-grid__inner.uael-post__columns-3.uael-post__columns-tablet-2.uael-post__columns-mobile-1 .uael-post-wrapper:not(.page-id-47) .uael-post__content-wrap, .uael-post-grid__inner.uael-post__columns-3.uael-post__columns-tablet-2.uael-post__columns-mobile-1 .uael-post-wrapper:not(.page-id-48) .uael-post__content-wrap {
+    height: 460px;
+  }
+}
+
 @media screen and (min-width: 1025px) {
   .uael-post__inner-wrap {
     height: 553px;
