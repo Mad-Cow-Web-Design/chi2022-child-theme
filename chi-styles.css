@@ -253,7 +253,7 @@ h2.comment-reply-title {
 }
 .instructor-banner {
   height: 300px;
-  background: url("/wp-content/uploads/2022/01/chiliving-plus-background-white-50.png"), #19AECB;
+  background-color: #19AECB;
   left: 50%;
   padding: 10px;
   margin-left: -50vw;
@@ -1353,6 +1353,8 @@ input.text[type=number] {
 
 .single-workshops .workshop-content .instructor-banner {
   margin-bottom: 70px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .single-workshops .workshop-content h1 {
   display: block;
