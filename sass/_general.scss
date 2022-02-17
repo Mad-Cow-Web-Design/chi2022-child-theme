@@ -18,6 +18,14 @@ h2.elementor-heading-title {
 .home-gallery-grid {
     .uael-img-gallery-wrap {
         margin: 0 auto;
+        .uael-grid-item {
+            @media screen and (max-width: 767px) {
+                width: 33%;
+            }
+            @media screen and (max-width: 530px) {
+                width: 50%;
+            }
+        }
     }
 }
 

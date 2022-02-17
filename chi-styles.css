@@ -88,6 +88,16 @@ h2.comment-reply-title {
 .home-gallery-grid .uael-img-gallery-wrap {
   margin: 0 auto;
 }
+@media screen and (max-width: 767px) {
+  .home-gallery-grid .uael-img-gallery-wrap .uael-grid-item {
+    width: 33%;
+  }
+}
+@media screen and (max-width: 530px) {
+  .home-gallery-grid .uael-img-gallery-wrap .uael-grid-item {
+    width: 50%;
+  }
+}
 
 /* TESTIMONIAL SLIDER */
 .elementor-swiper-button {
