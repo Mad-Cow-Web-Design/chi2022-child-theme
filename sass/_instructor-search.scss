@@ -37,8 +37,10 @@
     float: left;
     .instructor-photo {
         max-width: 100%;
+        width: 100%;
         img {
             max-width: 100%;
+            width: 100%;
             &.instructor-photo {
                 width: 100%;
             }
