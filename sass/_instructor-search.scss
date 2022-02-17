@@ -35,6 +35,11 @@
     width: 130px;
     margin-right: 1rem;
     float: left;
+    .instructor-photo {
+        img {
+            max-width: 100%;
+        }
+    }
 }
 
 .madcow-instructors-map-marker-right {

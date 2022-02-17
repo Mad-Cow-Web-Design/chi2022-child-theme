@@ -645,6 +645,9 @@ h2.comment-reply-title {
   margin-right: 1rem;
   float: left;
 }
+.madcow-instructors-map-marker-left .instructor-photo img {
+  max-width: 100%;
+}
 
 .madcow-instructors-map-marker-right {
   width: 270px;
