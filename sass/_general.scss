@@ -17,7 +17,8 @@ h2.elementor-heading-title {
 
 .home-gallery-grid {
     .uael-img-gallery-wrap {
-        margin: 0 auto;
+        margin-left: 0!important;
+        margin-right: 0!important;
         .uael-grid-item {
             @media screen and (max-width: 767px) {
                 width: 33%;
@@ -107,11 +108,6 @@ h2.elementor-heading-title {
 
 
 /* FOOTER */
-
-.home-gallery-grid .uael-img-gallery-wrap {
-    margin-left: 0!important;
-    margin-right: 0!important;
-}
 
 .footer-top-arrow {
     position: fixed;

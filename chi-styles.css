@@ -86,7 +86,8 @@ h2.comment-reply-title {
 
 /* Home Gallery grid */
 .home-gallery-grid .uael-img-gallery-wrap {
-  margin: 0 auto;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 @media screen and (max-width: 767px) {
   .home-gallery-grid .uael-img-gallery-wrap .uael-grid-item {
@@ -182,11 +183,6 @@ h2.comment-reply-title {
 }
 
 /* FOOTER */
-.home-gallery-grid .uael-img-gallery-wrap {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-
 .footer-top-arrow {
   position: fixed;
   bottom: 40px;
