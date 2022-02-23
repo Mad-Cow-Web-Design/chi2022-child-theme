@@ -182,9 +182,9 @@ h2.comment-reply-title {
 }
 
 /* FOOTER */
-.elementor-133 .elementor-element.elementor-element-32ef576 .uael-img-gallery-wrap {
-  margin-left: 0;
-  margin-right: 0;
+.home-gallery-grid .uael-img-gallery-wrap {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 .footer-top-arrow {
