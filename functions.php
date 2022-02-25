@@ -170,6 +170,13 @@ function workshop_instructor_name($value){
     return $workshop_instructor_name;
 }
 
+//PRE POPULATE INSTRUCTOR WORKSHOP REGISTRATION LINK
+add_filter('gform_field_value_workshop_registration', 'workshop_registration');
+function workshop_registration($value){
+    $workshop_link_to_purchase_workshop = get_field('link_to_purchase_workshop');
+    return $workshop_link_to_purchase_workshop;
+}
+
 
 /* ADD GTM TO HEAD AND BELOW OPENING BODY */
 
