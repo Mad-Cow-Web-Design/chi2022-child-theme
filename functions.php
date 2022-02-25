@@ -192,14 +192,13 @@ function madcowweb_header_snippet() { ?>
   src="https://www.facebook.com/tr?id=1665318150424342&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Facebook Pixel Code -->
-<!-- GA Google Analytics @ https://m0n.co/ga -->
-<script type="text/plain" data-cli-class="cli-blocker-script" data-cli-label="Google Analytics"  data-cli-script-type="non-necessary" data-cli-block="true" data-cli-block-if-ccpa-optout="false" data-cli-element-position="head">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-18513126-1', 'auto');
-    ga('send', 'pageview');
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-18513126-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-18513126-1');
 </script>
   <!-- THIS ADDS SUPPORT FOR FONT AWESOME -->
 <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
