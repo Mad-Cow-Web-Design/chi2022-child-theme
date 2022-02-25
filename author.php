@@ -201,7 +201,7 @@ $ins_regional_director  = get_field('regional_director', 'user_'. $author_id);
                         echo '<p>' . $workshop_start_date->format('m\/d\/Y') . '</p>';
                         echo '<a href="' . get_the_permalink($workshop->ID) . '">' . $workshop_name . '</a>';
                         echo '<p class="workshop-location">' . $workshop_city . ' ' . $workshop_state . ' ' . $workshop_country . '</p>';
-                        echo '<a class="workshop-register" href="' . get_the_permalink($workshop->ID) . '" target="_blank">LEARN MORE</a>';
+                        echo '<a class="workshop-register" href="' . get_the_permalink($workshop->ID) . '">LEARN MORE</a>';
                         ?>
                     </div><!-- endworkshop -->
                         <?php endforeach; ?>
