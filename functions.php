@@ -137,7 +137,6 @@ function workshop_calendar( $chi_workshops ) {
                                 if (!empty($workshop_location['city'])):
                                     $html .= '<p>' . $workshop_location['city'] . ', ' . $workshop_location['state_short'] . ', ' . $workshop_location['country_short'] . '</p>';
                                 endif;
-                                print_r($workshop_location);
                                 $html .= '</a>';
                                 $html .= '</div><!--end workshop-block -->';
                     endforeach;
