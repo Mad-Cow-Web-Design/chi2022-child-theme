@@ -192,9 +192,6 @@ $ins_regional_director  = get_field('regional_director', 'user_'. $author_id);
                     $workshop_cost = get_field('cost', $workshop->ID);
                     $workshop_start_date = get_field('start_date_&_time', $workshop->ID, false);
                     $workshop_start_date = new DateTime($workshop_start_date);
-                    $workshop_city = get_field('city', $workshop->ID);
-                    $workshop_state = get_field('state', $workshop->ID);
-                    $workshop_country = get_field('country', $workshop->ID);
                     $workshop_register = get_field('link_to_purchase_workshop', $workshop->ID); ?>
                     <div class="workshop">
                         <?php
