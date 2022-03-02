@@ -102,6 +102,7 @@ function workshop_calendar( $chi_workshops ) {
                         $workshop_end_day = $end_date->format('d');
                         $workshop_start_month = $start_date->format('n');
                         $workshop_end_month = $end_date->format('n');
+                        $workshop_location  = get_field('location', $workshop->ID, fals);
                         $types = get_the_terms( $workshop->ID, 'workshop_type');
                         if ( ! empty( $types ) && ! is_wp_error( $types ) ) {
                             $workshop_types = wp_list_pluck( $types, 'slug' );
@@ -120,18 +121,24 @@ function workshop_calendar( $chi_workshops ) {
                                     $html .= '</span>';
                                 $html .= '</div>';
                                 if ($workshop_types[0] == 'chirunning-clinic'):
-                                    $html .= '<a class="chirunning-clinic" href="' . get_permalink($workshop->ID) . '">' . $workshop->post_title . '</a>';
+                                    $html .= '<a class="chirunning-clinic" href="' . get_permalink($workshop->ID) . '">';
                                 elseif ($workshop_types[0] == 'chirunning-tune-up'):
-                                    $html .= '<a class="chirunning-tune-up" href="' . get_permalink($workshop->ID) . '">' . $workshop->post_title . '</a>';
+                                    $html .= '<a class="chirunning-tune-up" href="' . get_permalink($workshop->ID) . '">';
                                 elseif ($workshop_types[0] == 'chirunning-workshop'):
-                                    $html .= '<a class="chirunning-workshop" href="' . get_permalink($workshop->ID) . '">' . $workshop->post_title . '</a>';
+                                    $html .= '<a class="chirunning-workshop" href="' . get_permalink($workshop->ID) . '">';
                                 elseif ($workshop_types[0] == 'chiwalk-run-workshop'):
-                                    $html .= '<a class="chiwalk-run-workshop" href="' . get_permalink($workshop->ID) . '">' . $workshop->post_title . '</a>';
+                                    $html .= '<a class="chiwalk-run-workshop" href="' . get_permalink($workshop->ID) . '">';
                                 elseif ($workshop_types[0] == 'chiwalking-workshop'):
-                                    $html .= '<a class="chiwalking-workshop" href="' . get_permalink($workshop->ID) . '">' . $workshop->post_title . '</a>';
+                                    $html .= '<a class="chiwalking-workshop" href="' . get_permalink($workshop->ID) . '">';
                                 else :
-                                    $html .= '<a href="' . get_permalink($workshop->ID) . '">' . $workshop->post_title . '</a>';
+                                    $html .= '<a href="' . get_permalink($workshop->ID) . '">';
                                 endif;
+                                $html .= $workshop->post_title;
+                                if (!empty($workshop_location['city'])):
+                                    $html .= '<p>' . $workshop_location['city'] . ', ' . $workshop_location['state_short'] . ', ' . $workshop_location['country_short'] . '</p>';
+                                endif;
+                                print_r($workshop_location);
+                                $html .= '</a>';
                                 $html .= '</div><!--end workshop-block -->';
                     endforeach;
                 $html .= '</div><!--end workshop-month -->';

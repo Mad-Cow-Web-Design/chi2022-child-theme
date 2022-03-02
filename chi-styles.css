@@ -1404,6 +1404,9 @@ input.text[type=number] {
   margin-bottom: 30px;
 }
 .page-id-53 .workshop-block a {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   color: #19AECB;
   letter-spacing: 0.75px;
   font-weight: 400;
@@ -1416,6 +1419,11 @@ input.text[type=number] {
 }
 .page-id-53 .workshop-block a.chiwalking-workshop {
   color: #3F68B1;
+}
+.page-id-53 .workshop-block a p {
+  color: #000;
+  font-size: 14px;
+  margin-bottom: 0;
 }
 .page-id-53 .workshop-date {
   width: 100%;
