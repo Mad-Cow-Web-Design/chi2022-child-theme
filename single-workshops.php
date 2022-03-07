@@ -126,10 +126,8 @@ $workshop_img = get_field('background_img', 'workshop_type' . '_' . $term_id);
             <?php endif; ?>
             <?php if ($workshop_additional_details) : ?>
                 <button class="tablinks" onclick="openDetails(event, 'Info')">Helpful Information</button>
-            <?php endif;
-            if ($workshop_override_default_refund_policy == 'yes') : ?>
-                <button class="tablinks" onclick="openDetails(event, 'Cancel')">Cancellation Policy</button>
             <?php endif; ?>
+                <button class="tablinks" onclick="openDetails(event, 'Cancel')">Cancellation Policy</button>
         </div>
         <!-- Tab content -->
         <?php if (!empty($workshop_description)) : ?>
@@ -155,12 +153,15 @@ $workshop_img = get_field('background_img', 'workshop_type' . '_' . $term_id);
                 <p><?php echo $workshop_additional_details; ?></p>
             </div>
         <?php endif; ?>
-        <?php if (!empty($workshop_override_default_refund_policy)) : ?>
-            <div id="Cancel" class="tabcontent">
+        <div id="Cancel" class="tabcontent">
+            <?php if ($workshop_override_default_refund_policy == "yes") : ?>
                 <p><?php echo $workshop_custom_refund; ?></p>
-            </div>
-        <?php endif; ?>
-
+            <?php else : ?>
+                <p>Cancel 14 days before the workshop and you will be refunded your registration payment minus a $35 processing fee, or you can use the registration payment for a future workshop with ChiLiving, Inc. within one year with no penalty.</p>
+                <p>If you cancel within 14 days of the workshop, you will not receive a refund, but the fee can be credited towards a future workshop purchased with Chi Living, Inc. within one year. If you cancel within two days of the workshop you forfeit your full payment.</p>
+                <p>The Instructor reserves the right to cancel/reschedule the workshop, in which case you will receive a full refund.</p>
+            <?php endif; ?>
+        </div>
         <div class="workshop-signup">
             <div class="content">
                 <h2>Start Your Registration</h2>

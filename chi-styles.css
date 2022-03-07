@@ -84,6 +84,18 @@ h2.comment-reply-title {
   }
 }
 
+li.chirunning-nav a {
+  color: #81c723 !important;
+}
+
+li.chiwalking-nav a {
+  color: #3dc3a5 !important;
+}
+
+li.chiliving-nav a {
+  color: #9761a8 !important;
+}
+
 /* Home Gallery grid */
 .home-gallery-grid .uael-img-gallery-wrap {
   margin-left: 0 !important;
