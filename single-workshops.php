@@ -36,6 +36,13 @@ $workshop_link_to_purchase_workshop = get_field('link_to_purchase_workshop');
 $workshop_start_date = get_field('start_date_&_time');
 $workshop_start_date = new DateTime($workshop_start_date);
 $workshop_end_date = get_field('end_date_&_time');
+
+$chi_workshop_start_date = get_field('chi_start_day');
+$chi_workshop_start_time = get_field('chi_start_time');
+$chi_workshop_end_date = get_field('chi_end_day');
+$chi_workshop_end_time = get_field('chi_end_time');
+
+
 $workshop_additional_details = get_field('additional_details');
 $workshop_venue = get_field('venue');
 $workshop_address = get_field('address');
@@ -80,7 +87,7 @@ $workshop_img = get_field('background_img', 'workshop_type' . '_' . $term_id);
             </div>
             <div class="right">
                 <p class="workshop-date">
-                    <img src="<?php echo site_url( '/' ); ?>wp-content/uploads/2022/01/workshop-date-icon.png" alt=""><?php echo $workshop_start_date->format('m\/d\/Y | g A'); ?>
+                    <img src="<?php echo site_url( '/' ); ?>wp-content/uploads/2022/01/workshop-date-icon.png" alt=""><?php echo $chi_workshop_start_date . ' | ' .  $chi_workshop_start_time; ?>
                 </p>
                 <p class="workshop-location">
                     <a target="_blank" href="<?php echo $workshop_link_to_map_for_location; ?>"><img src="<?php echo site_url( '/' ); ?>wp-content/uploads/2022/01/workshop-location-icon.png" alt=""><?php echo $workshop_venue; ?></a>
@@ -162,6 +169,24 @@ $workshop_img = get_field('background_img', 'workshop_type' . '_' . $term_id);
                 <p>The Instructor reserves the right to cancel/reschedule the workshop, in which case you will receive a full refund.</p>
             <?php endif; ?>
         </div>
+        <?php
+       // $workshop_instructor_id = get_field('instructor',$workshop->ID);
+       // $workshop_instructor = get_user_by('id', $workshop_instructor_id);
+       // $chi_current_user = get_current_user_id();
+        // print_r ($workshop_instructor->ID);
+        // print_r ($chi_current_user);
+        //if (is_user_logged_in()) :
+            //if ($chi_current_user === $workshop_instructor->ID):
+            //if ($chi_current_user === 2): ?>
+        <!-- <div class="workshop-update">
+            <h3>If you update the fields below, changes will be made immediately and your workshop will be switched to
+                "Draft" mode until it is approved.</h3>
+            <?php //gravity_form( 25, false, false, false, '', false ); ?>
+        </div> -->
+    <?php
+            //endif;
+        //endif;
+        ?>
         <div class="workshop-signup">
             <div class="content">
                 <h2>Start Your Registration</h2>
