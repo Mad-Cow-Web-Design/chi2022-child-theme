@@ -1507,6 +1507,9 @@ input.text[type=number] {
   flex-wrap: nowrap;
   align-items: center;
 }
+.workshop-header.instructor-header .right h2 {
+  font-size: 40px;
+}
 .workshop-header.instructor-header .right .workshop-cost {
   margin-bottom: 30px;
 }
