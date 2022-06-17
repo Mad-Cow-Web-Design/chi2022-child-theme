@@ -1486,7 +1486,7 @@ input.text[type=number] {
   max-height: 0;
 }
 .single-workshops .workshop-content #workshop-update.show-update-form {
-  max-height: 1000px;
+  max-height: 2200px;
   transition: all 1s;
 }
 
