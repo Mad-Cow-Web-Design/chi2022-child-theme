@@ -88,7 +88,14 @@ $workshop_img = get_field('background_img', 'workshop_type' . '_' . $term_id);
             </div>
             <div class="right">
                 <p class="workshop-date">
-                    <img src="<?php echo site_url( '/' ); ?>wp-content/uploads/2022/01/workshop-date-icon.png" alt=""><?php echo $chi_workshop_start_date . ' | ' .  $chi_workshop_start_time; ?>
+                    <img src="<?php echo site_url( '/' ); ?>wp-content/uploads/2022/01/workshop-date-icon.png" alt=""><?php echo $chi_workshop_start_date . ' | ' .  $chi_workshop_start_time;
+                    if ($chi_workshop_start_time == $chi_workshop_end_time ) :
+                        echo '';
+                    elseif (!isset($chi_workshop_end_time) || empty($chi_workshop_end_time)) :
+                        echo '';
+                    elseif ($chi_workshop_start_time !== $chi_workshop_end_time ) :
+                        echo ' - ' . $chi_workshop_end_time ;
+                    endif; ?>
                 </p>
                 <p class="workshop-location">
                     <a target="_blank" href="<?php echo $workshop_link_to_map_for_location; ?>"><img src="<?php echo site_url( '/' ); ?>wp-content/uploads/2022/01/workshop-location-icon.png" alt=""><?php echo $workshop_venue; ?></a>
@@ -176,7 +183,7 @@ $workshop_img = get_field('background_img', 'workshop_type' . '_' . $term_id);
             if ($chi_current_user === $workshop_instructor_id): ?>
             <button id="show-update-form">Update This Workshop</button>
                 <div id="workshop-update">
-                    <h5>If you update the fields below, changes will be made immediately and your workshop will be switched to "Draft" mode until it is approved. Only fields that have new content in them will be changed. Blank fields will be ignored.</h5>
+                    <h5>When you update the fields below, changes will be made immediately. Only fields that have new content in them will be changed. Blank fields will be ignored.</h5>
                     <?php gravity_form( 25, false, false, false, '', false ); ?>
                 </div>
             <?php endif;
