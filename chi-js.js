@@ -89,3 +89,24 @@ function hide() {
     document.getElementById("phone-popup-link").style.display = "none";
     document.getElementById("phone-popup-content").style.display = "none";
 }
+
+// selecting the element
+// let button = document.getElementById('show-update-form');
+// let formDiv = document.getElementById('workshop-update')
+//     // Add class to the element
+// button.addEventListener('click', function() {
+//     formDiv.classList.add('.show-update-form');
+// });
+
+document.addEventListener("DOMContentLoaded", function() {
+    var button = document.getElementById('show-update-form');
+    var formDiv = document.getElementById('workshop-update')
+        // var faqContainers = document.getElementsByClassName('faq-container');
+        // var faqToggle = document.getElementsByTagName('body')[0];
+        // for (var i = 0; i < faqContainers.length; i++) {
+
+    button.addEventListener('click', function() {
+        formDiv.classList.add('show-update-form');
+    });
+
+});

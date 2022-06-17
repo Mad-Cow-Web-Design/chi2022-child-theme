@@ -1481,6 +1481,13 @@ input.text[type=number] {
 .single-workshops .workshop-content h1 {
   display: block;
 }
+.single-workshops .workshop-content #workshop-update {
+  max-height: 0;
+}
+.single-workshops .workshop-content #workshop-update.show-update-form {
+  max-height: 100px;
+  transition: all 1s;
+}
 
 .workshop-header {
   margin-top: 0;

@@ -13,6 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header();
+$chi_current_user = get_current_user_id();
 $workshop_instructor_id = get_field('instructor');
 $workshop_instructor = get_user_by('id', $workshop_instructor_id);
 $author_first_name = $workshop_instructor->display_name;
@@ -169,24 +170,17 @@ $workshop_img = get_field('background_img', 'workshop_type' . '_' . $term_id);
                 <p>The Instructor reserves the right to cancel/reschedule the workshop, in which case you will receive a full refund.</p>
             <?php endif; ?>
         </div>
+
         <?php
-       // $workshop_instructor_id = get_field('instructor',$workshop->ID);
-       // $workshop_instructor = get_user_by('id', $workshop_instructor_id);
-       // $chi_current_user = get_current_user_id();
-        // print_r ($workshop_instructor->ID);
-        // print_r ($chi_current_user);
-        //if (is_user_logged_in()) :
-            //if ($chi_current_user === $workshop_instructor->ID):
-            //if ($chi_current_user === 2): ?>
-        <!-- <div class="workshop-update">
-            <h3>If you update the fields below, changes will be made immediately and your workshop will be switched to
-                "Draft" mode until it is approved.</h3>
-            <?php //gravity_form( 25, false, false, false, '', false ); ?>
-        </div> -->
-    <?php
-            //endif;
-        //endif;
-        ?>
+        if (is_user_logged_in()) :
+            if ($chi_current_user === $workshop_instructor_id): ?>
+            <button id="show-update-form">Update This Workshop</button>
+                <div id="workshop-update">
+                    <h5>If you update the fields below, changes will be made immediately and your workshop will be switched to "Draft" mode until it is approved. Only fields that have new content in them will be changed. Blank fields will be ignored.</h5>
+                    <?php gravity_form( 25, false, false, false, '', false ); ?>
+                </div>
+            <?php endif;
+        endif; ?>
         <div class="workshop-signup">
             <div class="content">
                 <h2>Start Your Registration</h2>
@@ -197,6 +191,3 @@ $workshop_img = get_field('background_img', 'workshop_type' . '_' . $term_id);
     </div><!-- end workshop-content -->
 <?php
 get_footer();
-
-
-
