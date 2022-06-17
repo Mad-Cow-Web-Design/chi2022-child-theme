@@ -478,6 +478,7 @@ li.chiliving-nav a {
   font-size: 14px;
   width: 200px;
   text-align: left;
+  background: transparent;
 }
 .tab button:hover, .tab button.active {
   border-bottom: 2px solid #19AECB;
@@ -1485,7 +1486,7 @@ input.text[type=number] {
   max-height: 0;
 }
 .single-workshops .workshop-content #workshop-update.show-update-form {
-  max-height: 100px;
+  max-height: 1000px;
   transition: all 1s;
 }
 
