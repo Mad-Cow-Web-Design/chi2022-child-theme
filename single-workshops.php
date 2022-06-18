@@ -89,7 +89,19 @@ $workshop_img = get_field('background_img', 'workshop_type' . '_' . $term_id);
             <div class="right">
                 <h2><?php echo $author_first_name; ?></h2>
                 <p class="workshop-date">
-                    <img src="<?php echo site_url( '/' ); ?>wp-content/uploads/2022/01/workshop-date-icon.png" alt=""><?php echo $chi_workshop_start_date . ' | ' .  $chi_workshop_start_time;
+                    <img src="<?php echo site_url( '/' ); ?>wp-content/uploads/2022/01/workshop-date-icon.png" alt="">
+                    <?php echo $chi_workshop_start_date;
+
+                    if ($chi_workshop_start_date == $chi_workshop_end_date ) :
+                        echo '';
+                    elseif (!isset($chi_workshop_end_date) || empty($chi_workshop_end_date)) :
+                        echo '';
+                    elseif ($chi_workshop_start_date !== $chi_workshop_end_date ) :
+                        echo ' - ' . $chi_workshop_end_date ;
+                    endif;
+
+                    echo ' | ' .  $chi_workshop_start_time;
+
                     if ($chi_workshop_start_time == $chi_workshop_end_time ) :
                         echo '';
                     elseif (!isset($chi_workshop_end_time) || empty($chi_workshop_end_time)) :
