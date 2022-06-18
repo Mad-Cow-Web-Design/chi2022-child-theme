@@ -75,7 +75,7 @@ function workshop_calendar( $chi_workshops ) {
     if ( $chi_workshops ) {
         $html = '<div class="workshops">';
         foreach ( $chi_workshops as $workshop ) :
-            $start_date = get_field('chi_start_day', $workshop->ID, false);
+            $start_date = get_field('chi_start_day', $workshop->ID);
             $start_date = new DateTime($start_date);
             $year = $start_date->format('Y');
             $month = $start_date->format('F');
@@ -94,14 +94,16 @@ function workshop_calendar( $chi_workshops ) {
                     foreach ($months as $postKey => $posts) :
                         $workshop = $posts['workshop'];
                         $workshop_date = $posts['date'];
-                        $start_date = get_field('chi_start_day', $workshop->ID, false);
+                        $start_date = get_field('chi_start_day', $workshop->ID);
                         $start_date = new DateTime($start_date);
                         $end_date = get_field('chi_end_day', $workshop->ID, false);
-                        $end_date = new DateTime($end_date);
+                        if(isset($end_date) || !empty($end_date)) :
+                            $end_date = new DateTime($end_date);
+                            $workshop_end_day = $end_date->format('d');
+                            $workshop_end_month = $end_date->format('n');
+                        endif;
                         $workshop_start_day = $start_date->format('d');
-                        $workshop_end_day = $end_date->format('d');
                         $workshop_start_month = $start_date->format('n');
-                        $workshop_end_month = $end_date->format('n');
                         $workshop_location  = get_field('location', $workshop->ID, false);
                         $types = get_the_terms( $workshop->ID, 'workshop_type');
                         if ( ! empty( $types ) && ! is_wp_error( $types ) ) {
@@ -111,10 +113,10 @@ function workshop_calendar( $chi_workshops ) {
                                 $html .= '<div class="workshop-date">';
                                     $html .= '<span>';
                                     $html .= $workshop_start_month . ' / ' . $workshop_start_day;
-                                    if ($workshop_start_month != $workshop_end_month):
-                                        $html .= ' -<br/>' . $workshop_end_month . ' / ' . $workshop_end_day;
-                                    else:
-                                        if ($workshop_start_day != $workshop_end_day):
+                                    if (isset($end_date) || !empty($end_date)) :
+                                        if ($workshop_start_month != $workshop_end_month):
+                                            $html .= ' -<br/>' . $workshop_end_month . ' / ' . $workshop_end_day;
+                                        elseif ($workshop_start_day != $workshop_end_day):
                                             $html .= ' -<br/>' . $workshop_end_month . ' / ' . $workshop_end_day;
                                         endif;
                                     endif;
