@@ -333,7 +333,7 @@ return $value;
 
 //add_action( 'woocommerce_before_main_content', 'mad_cow_custom_packages_header', 10 );
 function mad_cow_custom_packages_header() {
-    if( is_tax( 'product_cat', array( 57 ) ) ) :
+    if( is_tax('product_cat', array( 57 ) )) :
         echo do_shortcode('[elementor-template id="13988"]');
     endif;
 }
