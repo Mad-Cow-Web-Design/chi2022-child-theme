@@ -105,8 +105,10 @@ document.addEventListener("DOMContentLoaded", function() {
         // var faqToggle = document.getElementsByTagName('body')[0];
         // for (var i = 0; i < faqContainers.length; i++) {
 
-    button.addEventListener('click', function() {
-        formDiv.classList.add('show-update-form');
-    });
+    if (button) {
+        button.addEventListener('click', function() {
+            formDiv.classList.add('show-update-form');
+        });
+    }
 
 });

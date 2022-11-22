@@ -329,3 +329,16 @@ return $value;
 // }
 // add_action( 'init', 'um_custom_echo_roles' );
 
+// Add custom header to packages category archive
+
+//add_action( 'woocommerce_before_main_content', 'mad_cow_custom_packages_header', 10 );
+function mad_cow_custom_packages_header() {
+    if( is_tax( 'product_cat', array( 57 ) ) ) :
+        echo do_shortcode('[elementor-template id="13988"]');
+    endif;
+}
+
+//add_action('wp_body_open', 'madcow_holiday_banner');
+function madcow_holiday_banner(){
+    echo '<div class="holiday-banner"><h3>15% OFF* with Code:   HOLIDAY15</h3></div>';
+}
