@@ -13,7 +13,7 @@ jobs:
     name: Deploy to WP Engine
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@master
       # CONFIGURE SSH
       - run: mkdir ~/.ssh
       - run: echo "$WPENGINE_SSH_KEY_PRIVATE" >> ~/.ssh/wpekey
